@@ -1,0 +1,869 @@
+[32m[INFO] [0m2025/05/03 19:11:12 logger.go:75: Logging initialized. Level: DEBUG. Output to console and file 'blockchain.log'
+[32m[INFO] [0m2025/05/03 19:11:12 main.go:21: --- Starting Simplified Blockchain Simulation ---
+[32m[INFO] [0m2025/05/03 19:11:12 main.go:40: Creating 4 Validator Wallets...
+[32m[INFO] [0m2025/05/03 19:11:12 crypto.go:111: Created new wallet: 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[32m[INFO] [0m2025/05/03 19:11:12 crypto.go:111: Created new wallet: 0x7d91e5aa455ec652e2e155c838420373fb54eba4
+[32m[INFO] [0m2025/05/03 19:11:12 crypto.go:111: Created new wallet: 0x50e215ed47725a275ee3d135ade76867f99732b6
+[32m[INFO] [0m2025/05/03 19:11:12 crypto.go:111: Created new wallet: 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[32m[INFO] [0m2025/05/03 19:11:12 main.go:46: Validator Set Addresses: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061 0x7d91e5aa455ec652e2e155c838420373fb54eba4 0x50e215ed47725a275ee3d135ade76867f99732b6 0xeab90647392c1e74abed4af4b08476655fed7d8f]
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 0 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 1 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 2 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 3 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[32m[INFO] [0m2025/05/03 19:11:12 manager.go:27: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 19:11:12 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:11:12 node.go:127: Created Genesis Block: Hash f96c1e174d4a0931dfb7b0a7e85e8da41d28cd87cb65616e8ffca632258b0c2b, StateRoot: 1223349a40d2ee10bd1bebb5889ef8018c8bc13359ed94b387810af96c6e4268
+[32m[INFO] [0m2025/05/03 19:11:12 main.go:54: Creating 5 Network Nodes (4 Validators)...
+[32m[INFO] [0m2025/05/03 19:11:12 crypto.go:111: Created new wallet: 0xb78eb32aac6980195b8b0de2f9b6d5ef3deeb1f3
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 0 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 1 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 2 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 3 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[32m[INFO] [0m2025/05/03 19:11:12 manager.go:27: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 19:11:12 blockchain.go:43: [Validator-0xb78e] Blockchain initialized. Genesis: f96c1e174d4a0931dfb7b0a7e85e8da41d28cd87cb65616e8ffca632258b0c2b, Height: 0
+[32m[INFO] [0m2025/05/03 19:11:12 node.go:79: Created Node: Validator-0xb78e (Validator: true, Addr: 0xb78eb32aac6980195b8b0de2f9b6d5ef3deeb1f3)
+[32m[INFO] [0m2025/05/03 19:11:12 blockchain.go:43: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061] Blockchain initialized. Genesis: f96c1e174d4a0931dfb7b0a7e85e8da41d28cd87cb65616e8ffca632258b0c2b, Height: 0
+[32m[INFO] [0m2025/05/03 19:11:12 node.go:110: Assigned validator wallet 0xc44a34eed26c307856dcad6a8ceedc11e3fea061 to node (previously Validator-0xb78e)
+[32m[INFO] [0m2025/05/03 19:11:12 network.go:50: Network: Registered node 0xc44a34eed26c307856dcad6a8ceedc11e3fea061 (Total: 1)
+[32m[INFO] [0m2025/05/03 19:11:12 crypto.go:111: Created new wallet: 0x9c7b74badaf471d59df6bb26d671c45b4ba10fa8
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 0 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 1 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 2 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 3 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[32m[INFO] [0m2025/05/03 19:11:12 manager.go:27: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 19:11:12 blockchain.go:43: [Validator-0x9c7b] Blockchain initialized. Genesis: f96c1e174d4a0931dfb7b0a7e85e8da41d28cd87cb65616e8ffca632258b0c2b, Height: 0
+[32m[INFO] [0m2025/05/03 19:11:12 node.go:79: Created Node: Validator-0x9c7b (Validator: true, Addr: 0x9c7b74badaf471d59df6bb26d671c45b4ba10fa8)
+[32m[INFO] [0m2025/05/03 19:11:12 blockchain.go:43: [0x7d91e5aa455ec652e2e155c838420373fb54eba4] Blockchain initialized. Genesis: f96c1e174d4a0931dfb7b0a7e85e8da41d28cd87cb65616e8ffca632258b0c2b, Height: 0
+[32m[INFO] [0m2025/05/03 19:11:12 node.go:110: Assigned validator wallet 0x7d91e5aa455ec652e2e155c838420373fb54eba4 to node (previously Validator-0x9c7b)
+[32m[INFO] [0m2025/05/03 19:11:12 network.go:50: Network: Registered node 0x7d91e5aa455ec652e2e155c838420373fb54eba4 (Total: 2)
+[32m[INFO] [0m2025/05/03 19:11:12 crypto.go:111: Created new wallet: 0x70d0f366f45eea413abbe17975d045f77527cb17
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 0 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 1 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 2 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 3 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[32m[INFO] [0m2025/05/03 19:11:12 manager.go:27: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 19:11:12 blockchain.go:43: [Validator-0x70d0] Blockchain initialized. Genesis: f96c1e174d4a0931dfb7b0a7e85e8da41d28cd87cb65616e8ffca632258b0c2b, Height: 0
+[32m[INFO] [0m2025/05/03 19:11:12 node.go:79: Created Node: Validator-0x70d0 (Validator: true, Addr: 0x70d0f366f45eea413abbe17975d045f77527cb17)
+[32m[INFO] [0m2025/05/03 19:11:12 blockchain.go:43: [0x50e215ed47725a275ee3d135ade76867f99732b6] Blockchain initialized. Genesis: f96c1e174d4a0931dfb7b0a7e85e8da41d28cd87cb65616e8ffca632258b0c2b, Height: 0
+[32m[INFO] [0m2025/05/03 19:11:12 node.go:110: Assigned validator wallet 0x50e215ed47725a275ee3d135ade76867f99732b6 to node (previously Validator-0x70d0)
+[32m[INFO] [0m2025/05/03 19:11:12 network.go:50: Network: Registered node 0x50e215ed47725a275ee3d135ade76867f99732b6 (Total: 3)
+[32m[INFO] [0m2025/05/03 19:11:12 crypto.go:111: Created new wallet: 0x9d06b1e5a3d46abd89962cd83bbdc6c4a43450cb
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 0 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 1 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 2 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 3 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[32m[INFO] [0m2025/05/03 19:11:12 manager.go:27: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 19:11:12 blockchain.go:43: [Validator-0x9d06] Blockchain initialized. Genesis: f96c1e174d4a0931dfb7b0a7e85e8da41d28cd87cb65616e8ffca632258b0c2b, Height: 0
+[32m[INFO] [0m2025/05/03 19:11:12 node.go:79: Created Node: Validator-0x9d06 (Validator: true, Addr: 0x9d06b1e5a3d46abd89962cd83bbdc6c4a43450cb)
+[32m[INFO] [0m2025/05/03 19:11:12 blockchain.go:43: [0xeab90647392c1e74abed4af4b08476655fed7d8f] Blockchain initialized. Genesis: f96c1e174d4a0931dfb7b0a7e85e8da41d28cd87cb65616e8ffca632258b0c2b, Height: 0
+[32m[INFO] [0m2025/05/03 19:11:12 node.go:110: Assigned validator wallet 0xeab90647392c1e74abed4af4b08476655fed7d8f to node (previously Validator-0x9d06)
+[32m[INFO] [0m2025/05/03 19:11:12 network.go:50: Network: Registered node 0xeab90647392c1e74abed4af4b08476655fed7d8f (Total: 4)
+[32m[INFO] [0m2025/05/03 19:11:12 crypto.go:111: Created new wallet: 0xa1ee0ba423fc3d799812817b4c6908e461dbb4f0
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 0 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 1 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 2 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[34m[DEBUG] [0m2025/05/03 19:11:12 shard.go:26: Shard 3 initialized with SMT root: 0000000000000000000000000000000000000000000000000000000000000000
+[32m[INFO] [0m2025/05/03 19:11:12 manager.go:27: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 19:11:12 blockchain.go:43: [Node-0xa1ee] Blockchain initialized. Genesis: f96c1e174d4a0931dfb7b0a7e85e8da41d28cd87cb65616e8ffca632258b0c2b, Height: 0
+[32m[INFO] [0m2025/05/03 19:11:12 node.go:79: Created Node: Node-0xa1ee (Validator: false, Addr: 0xa1ee0ba423fc3d799812817b4c6908e461dbb4f0)
+[32m[INFO] [0m2025/05/03 19:11:12 network.go:50: Network: Registered node Node-0xa1ee (Total: 5)
+[32m[INFO] [0m2025/05/03 19:11:12 main.go:71: Starting all nodes...
+[32m[INFO] [0m2025/05/03 19:11:12 node.go:133: Node 0xc44a34eed26c307856dcad6a8ceedc11e3fea061 starting...
+[32m[INFO] [0m2025/05/03 19:11:12 node.go:133: Node 0x7d91e5aa455ec652e2e155c838420373fb54eba4 starting...
+[32m[INFO] [0m2025/05/03 19:11:12 node.go:133: Node 0x50e215ed47725a275ee3d135ade76867f99732b6 starting...
+[32m[INFO] [0m2025/05/03 19:11:12 node.go:139: Node 0xc44a34eed26c307856dcad6a8ceedc11e3fea061 (Validator) starting proposal loop (Block Time: 3s)...
+[32m[INFO] [0m2025/05/03 19:11:12 node.go:139: Node 0x7d91e5aa455ec652e2e155c838420373fb54eba4 (Validator) starting proposal loop (Block Time: 3s)...
+[32m[INFO] [0m2025/05/03 19:11:12 node.go:133: Node 0xeab90647392c1e74abed4af4b08476655fed7d8f starting...
+[32m[INFO] [0m2025/05/03 19:11:12 node.go:139: Node 0x50e215ed47725a275ee3d135ade76867f99732b6 (Validator) starting proposal loop (Block Time: 3s)...
+[32m[INFO] [0m2025/05/03 19:11:12 node.go:133: Node Node-0xa1ee starting...
+[32m[INFO] [0m2025/05/03 19:11:12 main.go:75: Starting transaction simulator...
+[32m[INFO] [0m2025/05/03 19:11:12 main.go:113: Simulation running... Press Ctrl+C to stop.
+[32m[INFO] [0m2025/05/03 19:11:12 main.go:83: Transaction simulator using sender: 0xeab90647392c1e74abed4af4b08476655fed7d8f (0xeab90647392c1e74abed4af4b08476655fed7d8f)
+[32m[INFO] [0m2025/05/03 19:11:12 main.go:95: Transaction simulator using Number of Shards: 4
+[32m[INFO] [0m2025/05/03 19:11:12 node.go:139: Node 0xeab90647392c1e74abed4af4b08476655fed7d8f (Validator) starting proposal loop (Block Time: 3s)...
+[32m[INFO] [0m2025/05/03 19:11:12 node.go:153: Node Node-0xa1ee (Non-validator) started. Listening for network messages.
+[32m[INFO] [0m2025/05/03 19:11:14 main.go:105: ==> [0xeab90647392c1e74abed4af4b08476655fed7d8f] Created Tx: f84e8de0... (To: 0x7d91e5..., Nonce: 0, Shard: 3)
+[34m[DEBUG] [0m2025/05/03 19:11:14 network.go:76: Network: Broadcasting Tx f84e8de0 from 0xeab90647392c1e74abed4af4b08476655fed7d8f...
+[34m[DEBUG] [0m2025/05/03 19:11:14 blockchain.go:159: TxPool Add: Added f84e8de0... (Nonce 0) Pool size now 1
+[34m[DEBUG] [0m2025/05/03 19:11:14 blockchain.go:80: [0x50e215ed47725a275ee3d135ade76867f99732b6] Added Tx f84e8de0 (Nonce 0) to mempool (Pool size: 1)
+[34m[DEBUG] [0m2025/05/03 19:11:14 blockchain.go:159: TxPool Add: Added f84e8de0... (Nonce 0) Pool size now 1
+[34m[DEBUG] [0m2025/05/03 19:11:14 blockchain.go:80: [Node-0xa1ee] Added Tx f84e8de0 (Nonce 0) to mempool (Pool size: 1)
+[34m[DEBUG] [0m2025/05/03 19:11:14 blockchain.go:159: TxPool Add: Added f84e8de0... (Nonce 0) Pool size now 1
+[34m[DEBUG] [0m2025/05/03 19:11:14 blockchain.go:80: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061] Added Tx f84e8de0 (Nonce 0) to mempool (Pool size: 1)
+[34m[DEBUG] [0m2025/05/03 19:11:14 blockchain.go:159: TxPool Add: Added f84e8de0... (Nonce 0) Pool size now 1
+[34m[DEBUG] [0m2025/05/03 19:11:14 blockchain.go:80: [0x7d91e5aa455ec652e2e155c838420373fb54eba4] Added Tx f84e8de0 (Nonce 0) to mempool (Pool size: 1)
+[34m[DEBUG] [0m2025/05/03 19:11:15 blockchain.go:161: TxPool GetPending: Called. Pool size: 1. Max count: 10. Checking nonces...
+[34m[DEBUG] [0m2025/05/03 19:11:15 blockchain.go:161: TxPool GetPending: Including Tx f84e8de0... (Nonce 0)
+[34m[DEBUG] [0m2025/05/03 19:11:15 blockchain.go:161: TxPool GetPending: Returning 1 executable transactions.
+[34m[DEBUG] [0m2025/05/03 19:11:15 node.go:191: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061 H:1] tryProposeBlock: Got 1 EXECUTA BLE pending txs: [f84e8de0...]
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:102: [SIM] Creating snapshot for simulating 1 txs...
+[34m[DEBUG] [0m2025/05/03 19:11:15 blockchain.go:161: TxPool GetPending: Called. Pool size: 1. Max count: 10. Checking nonces...
+[34m[DEBUG] [0m2025/05/03 19:11:15 blockchain.go:161: TxPool GetPending: Including Tx f84e8de0... (Nonce 0)
+[34m[DEBUG] [0m2025/05/03 19:11:15 blockchain.go:161: TxPool GetPending: Returning 1 executable transactions.
+[34m[DEBUG] [0m2025/05/03 19:11:15 node.go:191: [0x50e215ed47725a275ee3d135ade76867f99732b6 H:1] tryProposeBlock: Got 1 EXECUTA BLE pending txs: [f84e8de0...]
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:102: [SIM] Creating snapshot for simulating 1 txs...
+[34m[DEBUG] [0m2025/05/03 19:11:15 shard.go:49: Shard 0 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:15 shard.go:49: Shard 1 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:15 shard.go:49: Shard 2 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:15 shard.go:49: Shard 3 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:47: Created StateManager snapshot.
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:109: [SIM] Applying 1 txs to snapshot...
+[34m[DEBUG] [0m2025/05/03 19:11:15 blockchain.go:161: TxPool GetPending: Called. Pool size: 1. Max count: 10. Checking nonces...
+[34m[DEBUG] [0m2025/05/03 19:11:15 blockchain.go:161: TxPool GetPending: Including Tx f84e8de0... (Nonce 0)
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:121: [SIM] Simulation successful. Predicted root from snapshot: 1a014608
+[34m[DEBUG] [0m2025/05/03 19:11:15 node.go:204: [0x50e215ed47725a275ee3d135ade76867f99732b6 H:1] Simulation successful. Expected State Root: 1a014608...
+[34m[DEBUG] [0m2025/05/03 19:11:15 blockchain.go:161: TxPool GetPending: Returning 1 executable transactions.
+[34m[DEBUG] [0m2025/05/03 19:11:15 node.go:191: [0x7d91e5aa455ec652e2e155c838420373fb54eba4 H:1] tryProposeBlock: Got 1 EXECUTA BLE pending txs: [f84e8de0...]
+[34m[DEBUG] [0m2025/05/03 19:11:15 blockchain.go:161: TxPool GetPending: Called. Pool size: 0. Max count: 10. Checking nonces...
+[34m[DEBUG] [0m2025/05/03 19:11:15 shard.go:49: Shard 3 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:15 shard.go:49: Shard 0 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:15 shard.go:49: Shard 1 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:15 shard.go:49: Shard 2 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:47: Created StateManager snapshot.
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:109: [SIM] Applying 1 txs to snapshot...
+[34m[DEBUG] [0m2025/05/03 19:11:15 vrf.go:34: [VRF Sim] Evaluate(input: 13e275be...) -> output: 0e3a2707..., proof: 563f210c...
+[34m[DEBUG] [0m2025/05/03 19:11:15 vrf.go:34: [VRF Sim] Evaluate(input: 13e275be...) -> output: 6a419988..., proof: a1958ba1...
+[34m[DEBUG] [0m2025/05/03 19:11:15 vrf.go:34: [VRF Sim] Evaluate(input: 13e275be...) -> output: 8a6a9e0b..., proof: b506bdf9...
+[34m[DEBUG] [0m2025/05/03 19:11:15 vrf.go:34: [VRF Sim] Evaluate(input: 13e275be...) -> output: 8dfbfc96..., proof: 0f7291b0...
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:102: [SIM] Creating snapshot for simulating 1 txs...
+[34m[DEBUG] [0m2025/05/03 19:11:15 shard.go:49: Shard 0 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:15 shard.go:49: Shard 1 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:15 shard.go:49: Shard 2 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:15 shard.go:49: Shard 3 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:47: Created StateManager snapshot.
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:109: [SIM] Applying 1 txs to snapshot...
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:121: [SIM] Simulation successful. Predicted root from snapshot: 1a014608
+[34m[DEBUG] [0m2025/05/03 19:11:15 node.go:204: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061 H:1] Simulation successful. Expected State Root: 1a014608...
+[34m[DEBUG] [0m2025/05/03 19:11:15 node.go:193: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:1] tryProposeBlock: No executable pending txs found.
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:95: [VRF Propose H:1] Leader determined: 0xc44a34eed26c307856dcad6a8ceedc11e3fea061 (Output: 0e3a2707...)
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:121: [SIM] Simulation successful. Predicted root from snapshot: 1a014608
+[34m[DEBUG] [0m2025/05/03 19:11:15 node.go:204: [0x7d91e5aa455ec652e2e155c838420373fb54eba4 H:1] Simulation successful. Expected State Root: 1a014608...
+[34m[DEBUG] [0m2025/05/03 19:11:15 vrf.go:34: [VRF Sim] Evaluate(input: 13e275be...) -> output: 0e3a2707..., proof: 563f210c...
+[34m[DEBUG] [0m2025/05/03 19:11:15 vrf.go:34: [VRF Sim] Evaluate(input: 13e275be...) -> output: 6a419988..., proof: a1958ba1...
+[34m[DEBUG] [0m2025/05/03 19:11:15 vrf.go:34: [VRF Sim] Evaluate(input: 13e275be...) -> output: 8a6a9e0b..., proof: b506bdf9...
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:102: [SIM] Creating snapshot for simulating 0 txs...
+[34m[DEBUG] [0m2025/05/03 19:11:15 shard.go:49: Shard 3 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:15 shard.go:49: Shard 0 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:15 shard.go:49: Shard 1 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:15 shard.go:49: Shard 2 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:47: Created StateManager snapshot.
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:109: [SIM] Applying 0 txs to snapshot...
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:121: [SIM] Simulation successful. Predicted root from snapshot: 1223349a
+[34m[DEBUG] [0m2025/05/03 19:11:15 vrf.go:34: [VRF Sim] Evaluate(input: 13e275be...) -> output: 0e3a2707..., proof: 563f210c...
+[34m[DEBUG] [0m2025/05/03 19:11:15 vrf.go:34: [VRF Sim] Evaluate(input: 13e275be...) -> output: 6a419988..., proof: a1958ba1...
+[34m[DEBUG] [0m2025/05/03 19:11:15 vrf.go:34: [VRF Sim] Evaluate(input: 13e275be...) -> output: 8a6a9e0b..., proof: b506bdf9...
+[34m[DEBUG] [0m2025/05/03 19:11:15 vrf.go:34: [VRF Sim] Evaluate(input: 13e275be...) -> output: 8dfbfc96..., proof: 0f7291b0...
+[34m[DEBUG] [0m2025/05/03 19:11:15 vrf.go:34: [VRF Sim] Evaluate(input: 13e275be...) -> output: 8dfbfc96..., proof: 0f7291b0...
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:95: [VRF Propose H:1] Leader determined: 0xc44a34eed26c307856dcad6a8ceedc11e3fea061 (Output: 0e3a2707...)
+[34m[DEBUG] [0m2025/05/03 19:11:15 node.go:204: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:1] Simulation successful. Expected State Root: 1223349a...
+[34m[DEBUG] [0m2025/05/03 19:11:15 vrf.go:34: [VRF Sim] Evaluate(input: 13e275be...) -> output: 0e3a2707..., proof: 563f210c...
+[34m[DEBUG] [0m2025/05/03 19:11:15 vrf.go:34: [VRF Sim] Evaluate(input: 13e275be...) -> output: 6a419988..., proof: a1958ba1...
+[34m[DEBUG] [0m2025/05/03 19:11:15 vrf.go:34: [VRF Sim] Evaluate(input: 13e275be...) -> output: 8a6a9e0b..., proof: b506bdf9...
+[34m[DEBUG] [0m2025/05/03 19:11:15 vrf.go:34: [VRF Sim] Evaluate(input: 13e275be...) -> output: 8dfbfc96..., proof: 0f7291b0...
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:95: [VRF Propose H:1] Leader determined: 0xc44a34eed26c307856dcad6a8ceedc11e3fea061 (Output: 0e3a2707...)
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:95: [VRF Propose H:1] Leader determined: 0xc44a34eed26c307856dcad6a8ceedc11e3fea061 (Output: 0e3a2707...)
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:108: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061 H:1] Collecting signatures for block 79e4cb21...
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:117: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061 H:1] Collected signature from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061 (1/3)
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:117: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061 H:1] Collected signature from 0x7d91e5aa455ec652e2e155c838420373fb54eba4 (2/3)
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:117: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061 H:1] Collected signature from 0x50e215ed47725a275ee3d135ade76867f99732b6 (3/3)
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:117: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061 H:1] Collected signature from 0xeab90647392c1e74abed4af4b08476655fed7d8f (4/3)
+[32m[INFO] [0m2025/05/03 19:11:15 simple_poa.go:126: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061] Proposing Block 1 (79e4cb2142a67d34c381d2174fb1f479a265d23060d2a778556f531a4a5f2306) as VRF Leader with 4 signatures
+[34m[DEBUG] [0m2025/05/03 19:11:15 node.go:217: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061 H:1] Proposed block (79e4cb21) with 1 txs and header state root 1a014608
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:58: ApplyBlock 1: Applying 1 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:69: Successfully applied all state changes for block 1 (79e4cb2142a6)
+[32m[INFO] [0m2025/05/03 19:11:15 blockchain.go:113: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061] === Appended Block 1 (79e4cb2142a6) | Prev: f96c1e174d4a... | State: 1a0146088bd1... | Txs: 1 ===
+[34m[DEBUG] [0m2025/05/03 19:11:15 blockchain.go:160: TxPool: Removed 1 confirmed transactions (Pool size: 0)
+[34m[DEBUG] [0m2025/05/03 19:11:15 node.go:230: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061 H:1] Self-proposed block (79e4cb21) accepted locally.
+[34m[DEBUG] [0m2025/05/03 19:11:15 node.go:233: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061 H:1] Broadcasting locally validated block (79e4cb21)...
+[32m[INFO] [0m2025/05/03 19:11:15 network.go:101: Network: Broadcasting Block 1 (79e4cb2142a6...) from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:15 node.go:259: [0x50e215ed47725a275ee3d135ade76867f99732b6] Received Block 1 (79e4cb2142a67d34c381d2174fb1f479a265d23060d2a778556f531a4a5f2306) from network proposer 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:15 vrf.go:71: [VRF Sim] Verify(input: 13e275be..., output: 0e3a2707...) SUCCEEDED.
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:145: Block 1 VRF proof validated for proposer 0xc44a34eed26c307856dcad6a8ceedc11e3fea061.
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:160: Block 1 Sig 1/3 verified from 0x7d91e5aa455ec652e2e155c838420373fb54eba4
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:160: Block 1 Sig 2/3 verified from 0x50e215ed47725a275ee3d135ade76867f99732b6
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:160: Block 1 Sig 3/3 verified from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:160: Block 1 Sig 4/3 verified from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:164: Block 1 Threshold Signature (4/3) validation passed.
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:58: ApplyBlock 1: Applying 1 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:69: Successfully applied all state changes for block 1 (79e4cb2142a6)
+[32m[INFO] [0m2025/05/03 19:11:15 blockchain.go:113: [0x50e215ed47725a275ee3d135ade76867f99732b6] === Appended Block 1 (79e4cb2142a6) | Prev: f96c1e174d4a... | State: 1a0146088bd1... | Txs: 1 ===
+[34m[DEBUG] [0m2025/05/03 19:11:15 blockchain.go:160: TxPool: Removed 1 confirmed transactions (Pool size: 0)
+[34m[DEBUG] [0m2025/05/03 19:11:15 node.go:259: [0x7d91e5aa455ec652e2e155c838420373fb54eba4] Received Block 1 (79e4cb2142a67d34c381d2174fb1f479a265d23060d2a778556f531a4a5f2306) from network proposer 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:15 vrf.go:71: [VRF Sim] Verify(input: 13e275be..., output: 0e3a2707...) SUCCEEDED.
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:145: Block 1 VRF proof validated for proposer 0xc44a34eed26c307856dcad6a8ceedc11e3fea061.
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:160: Block 1 Sig 1/3 verified from 0x7d91e5aa455ec652e2e155c838420373fb54eba4
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:160: Block 1 Sig 2/3 verified from 0x50e215ed47725a275ee3d135ade76867f99732b6
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:160: Block 1 Sig 3/3 verified from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:160: Block 1 Sig 4/3 verified from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:164: Block 1 Threshold Signature (4/3) validation passed.
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:58: ApplyBlock 1: Applying 1 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:69: Successfully applied all state changes for block 1 (79e4cb2142a6)
+[32m[INFO] [0m2025/05/03 19:11:15 blockchain.go:113: [0x7d91e5aa455ec652e2e155c838420373fb54eba4] === Appended Block 1 (79e4cb2142a6) | Prev: f96c1e174d4a... | State: 1a0146088bd1... | Txs: 1 ===
+[34m[DEBUG] [0m2025/05/03 19:11:15 blockchain.go:160: TxPool: Removed 1 confirmed transactions (Pool size: 0)
+[34m[DEBUG] [0m2025/05/03 19:11:15 node.go:259: [0xeab90647392c1e74abed4af4b08476655fed7d8f] Received Block 1 (79e4cb2142a67d34c381d2174fb1f479a265d23060d2a778556f531a4a5f2306) from network proposer 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:15 vrf.go:71: [VRF Sim] Verify(input: 13e275be..., output: 0e3a2707...) SUCCEEDED.
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:145: Block 1 VRF proof validated for proposer 0xc44a34eed26c307856dcad6a8ceedc11e3fea061.
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:160: Block 1 Sig 1/3 verified from 0x7d91e5aa455ec652e2e155c838420373fb54eba4
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:160: Block 1 Sig 2/3 verified from 0x50e215ed47725a275ee3d135ade76867f99732b6
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:160: Block 1 Sig 3/3 verified from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:160: Block 1 Sig 4/3 verified from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:164: Block 1 Threshold Signature (4/3) validation passed.
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:58: ApplyBlock 1: Applying 1 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:69: Successfully applied all state changes for block 1 (79e4cb2142a6)
+[32m[INFO] [0m2025/05/03 19:11:15 blockchain.go:113: [0xeab90647392c1e74abed4af4b08476655fed7d8f] === Appended Block 1 (79e4cb2142a6) | Prev: f96c1e174d4a... | State: 1a0146088bd1... | Txs: 1 ===
+[34m[DEBUG] [0m2025/05/03 19:11:15 node.go:259: [Node-0xa1ee] Received Block 1 (79e4cb2142a67d34c381d2174fb1f479a265d23060d2a778556f531a4a5f2306) from network proposer 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:15 vrf.go:71: [VRF Sim] Verify(input: 13e275be..., output: 0e3a2707...) SUCCEEDED.
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:145: Block 1 VRF proof validated for proposer 0xc44a34eed26c307856dcad6a8ceedc11e3fea061.
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:160: Block 1 Sig 1/3 verified from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:160: Block 1 Sig 2/3 verified from 0x7d91e5aa455ec652e2e155c838420373fb54eba4
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:160: Block 1 Sig 3/3 verified from 0x50e215ed47725a275ee3d135ade76867f99732b6
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:160: Block 1 Sig 4/3 verified from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:15 simple_poa.go:164: Block 1 Threshold Signature (4/3) validation passed.
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:58: ApplyBlock 1: Applying 1 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:15 manager.go:69: Successfully applied all state changes for block 1 (79e4cb2142a6)
+[32m[INFO] [0m2025/05/03 19:11:15 blockchain.go:113: [Node-0xa1ee] === Appended Block 1 (79e4cb2142a6) | Prev: f96c1e174d4a... | State: 1a0146088bd1... | Txs: 1 ===
+[34m[DEBUG] [0m2025/05/03 19:11:15 blockchain.go:160: TxPool: Removed 1 confirmed transactions (Pool size: 0)
+[32m[INFO] [0m2025/05/03 19:11:16 main.go:105: ==> [0xeab90647392c1e74abed4af4b08476655fed7d8f] Created Tx: b8aa57e2... (To: 0xa1ee0b..., Nonce: 1, Shard: 3)
+[34m[DEBUG] [0m2025/05/03 19:11:16 network.go:76: Network: Broadcasting Tx b8aa57e2 from 0xeab90647392c1e74abed4af4b08476655fed7d8f...
+[34m[DEBUG] [0m2025/05/03 19:11:16 blockchain.go:159: TxPool Add: Added b8aa57e2... (Nonce 1) Pool size now 1
+[34m[DEBUG] [0m2025/05/03 19:11:16 blockchain.go:80: [0x7d91e5aa455ec652e2e155c838420373fb54eba4] Added Tx b8aa57e2 (Nonce 1) to mempool (Pool size: 1)
+[34m[DEBUG] [0m2025/05/03 19:11:16 blockchain.go:159: TxPool Add: Added b8aa57e2... (Nonce 1) Pool size now 1
+[34m[DEBUG] [0m2025/05/03 19:11:16 blockchain.go:80: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061] Added Tx b8aa57e2 (Nonce 1) to mempool (Pool size: 1)
+[34m[DEBUG] [0m2025/05/03 19:11:16 blockchain.go:159: TxPool Add: Added b8aa57e2... (Nonce 1) Pool size now 1
+[34m[DEBUG] [0m2025/05/03 19:11:16 blockchain.go:80: [Node-0xa1ee] Added Tx b8aa57e2 (Nonce 1) to mempool (Pool size: 1)
+[34m[DEBUG] [0m2025/05/03 19:11:16 blockchain.go:159: TxPool Add: Added b8aa57e2... (Nonce 1) Pool size now 1
+[34m[DEBUG] [0m2025/05/03 19:11:16 blockchain.go:80: [0x50e215ed47725a275ee3d135ade76867f99732b6] Added Tx b8aa57e2 (Nonce 1) to mempool (Pool size: 1)
+[32m[INFO] [0m2025/05/03 19:11:17 main.go:105: ==> [0xeab90647392c1e74abed4af4b08476655fed7d8f] Created Tx: 29330dab... (To: 0x7d91e5..., Nonce: 2, Shard: 3)
+[34m[DEBUG] [0m2025/05/03 19:11:17 network.go:76: Network: Broadcasting Tx 29330dab from 0xeab90647392c1e74abed4af4b08476655fed7d8f...
+[33m[WARN] [0m2025/05/03 19:11:17 blockchain.go:72: [0x7d91e5aa455ec652e2e155c838420373fb54eba4] Tx 29330dab... rejected from mempool: invalid nonce for pool admission: expected 1, got 2
+[33m[WARN] [0m2025/05/03 19:11:17 blockchain.go:72: [Node-0xa1ee] Tx 29330dab... rejected from mempool: invalid nonce for pool admission: expected 1, got 2
+[33m[WARN] [0m2025/05/03 19:11:17 blockchain.go:72: [0x50e215ed47725a275ee3d135ade76867f99732b6] Tx 29330dab... rejected from mempool: invalid nonce for pool admission: expected 1, got 2
+[33m[WARN] [0m2025/05/03 19:11:17 blockchain.go:72: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061] Tx 29330dab... rejected from mempool: invalid nonce for pool admission: expected 1, got 2
+[32m[INFO] [0m2025/05/03 19:11:18 main.go:105: ==> [0xeab90647392c1e74abed4af4b08476655fed7d8f] Created Tx: bccaeb70... (To: 0xc44a34..., Nonce: 3, Shard: 2)
+[34m[DEBUG] [0m2025/05/03 19:11:18 network.go:76: Network: Broadcasting Tx bccaeb70 from 0xeab90647392c1e74abed4af4b08476655fed7d8f...
+[33m[WARN] [0m2025/05/03 19:11:18 blockchain.go:72: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061] Tx bccaeb70... rejected from mempool: invalid nonce for pool admission: expected 1, got 3
+[33m[WARN] [0m2025/05/03 19:11:18 blockchain.go:72: [0x50e215ed47725a275ee3d135ade76867f99732b6] Tx bccaeb70... rejected from mempool: invalid nonce for pool admission: expected 1, got 3
+[33m[WARN] [0m2025/05/03 19:11:18 blockchain.go:72: [Node-0xa1ee] Tx bccaeb70... rejected from mempool: invalid nonce for pool admission: expected 1, got 3
+[33m[WARN] [0m2025/05/03 19:11:18 blockchain.go:72: [0x7d91e5aa455ec652e2e155c838420373fb54eba4] Tx bccaeb70... rejected from mempool: invalid nonce for pool admission: expected 1, got 3
+[34m[DEBUG] [0m2025/05/03 19:11:18 blockchain.go:161: TxPool GetPending: Called. Pool size: 1. Max count: 10. Checking nonces...
+[34m[DEBUG] [0m2025/05/03 19:11:18 blockchain.go:161: TxPool GetPending: Including Tx b8aa57e2... (Nonce 1)
+[34m[DEBUG] [0m2025/05/03 19:11:18 blockchain.go:161: TxPool GetPending: Called. Pool size: 1. Max count: 10. Checking nonces...
+[34m[DEBUG] [0m2025/05/03 19:11:18 blockchain.go:161: TxPool GetPending: Called. Pool size: 1. Max count: 10. Checking nonces...
+[34m[DEBUG] [0m2025/05/03 19:11:18 blockchain.go:161: TxPool GetPending: Including Tx b8aa57e2... (Nonce 1)
+[34m[DEBUG] [0m2025/05/03 19:11:18 blockchain.go:161: TxPool GetPending: Returning 1 executable transactions.
+[34m[DEBUG] [0m2025/05/03 19:11:18 node.go:191: [0x50e215ed47725a275ee3d135ade76867f99732b6 H:2] tryProposeBlock: Got 1 EXECUTA BLE pending txs: [b8aa57e2...]
+[34m[DEBUG] [0m2025/05/03 19:11:18 manager.go:102: [SIM] Creating snapshot for simulating 1 txs...
+[34m[DEBUG] [0m2025/05/03 19:11:18 blockchain.go:161: TxPool GetPending: Including Tx b8aa57e2... (Nonce 1)
+[34m[DEBUG] [0m2025/05/03 19:11:18 blockchain.go:161: TxPool GetPending: Returning 1 executable transactions.
+[34m[DEBUG] [0m2025/05/03 19:11:18 node.go:191: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061 H:2] tryProposeBlock: Got 1 EXECUTA BLE pending txs: [b8aa57e2...]
+[34m[DEBUG] [0m2025/05/03 19:11:18 manager.go:102: [SIM] Creating snapshot for simulating 1 txs...
+[34m[DEBUG] [0m2025/05/03 19:11:18 blockchain.go:161: TxPool GetPending: Returning 1 executable transactions.
+[34m[DEBUG] [0m2025/05/03 19:11:18 node.go:191: [0x7d91e5aa455ec652e2e155c838420373fb54eba4 H:2] tryProposeBlock: Got 1 EXECUTA BLE pending txs: [b8aa57e2...]
+[34m[DEBUG] [0m2025/05/03 19:11:18 blockchain.go:161: TxPool GetPending: Called. Pool size: 0. Max count: 10. Checking nonces...
+[34m[DEBUG] [0m2025/05/03 19:11:18 shard.go:49: Shard 0 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:18 shard.go:49: Shard 1 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:18 shard.go:49: Shard 2 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:18 shard.go:49: Shard 0 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:18 shard.go:49: Shard 1 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:18 shard.go:49: Shard 2 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:18 manager.go:102: [SIM] Creating snapshot for simulating 1 txs...
+[34m[DEBUG] [0m2025/05/03 19:11:18 node.go:193: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:2] tryProposeBlock: No executable pending txs found.
+[34m[DEBUG] [0m2025/05/03 19:11:18 shard.go:49: Shard 3 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:18 manager.go:47: Created StateManager snapshot.
+[34m[DEBUG] [0m2025/05/03 19:11:18 manager.go:109: [SIM] Applying 1 txs to snapshot...
+[34m[DEBUG] [0m2025/05/03 19:11:18 shard.go:49: Shard 3 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:18 manager.go:47: Created StateManager snapshot.
+[34m[DEBUG] [0m2025/05/03 19:11:18 manager.go:109: [SIM] Applying 1 txs to snapshot...
+[34m[DEBUG] [0m2025/05/03 19:11:18 shard.go:49: Shard 1 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:18 manager.go:102: [SIM] Creating snapshot for simulating 0 txs...
+[34m[DEBUG] [0m2025/05/03 19:11:18 manager.go:121: [SIM] Simulation successful. Predicted root from snapshot: 80243312
+[34m[DEBUG] [0m2025/05/03 19:11:18 node.go:204: [0x50e215ed47725a275ee3d135ade76867f99732b6 H:2] Simulation successful. Expected State Root: 80243312...
+[34m[DEBUG] [0m2025/05/03 19:11:18 vrf.go:34: [VRF Sim] Evaluate(input: 0fe1014f...) -> output: ddcac463..., proof: cf6e41ee...
+[34m[DEBUG] [0m2025/05/03 19:11:18 shard.go:49: Shard 2 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:18 shard.go:49: Shard 3 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:18 manager.go:121: [SIM] Simulation successful. Predicted root from snapshot: 80243312
+[34m[DEBUG] [0m2025/05/03 19:11:18 node.go:204: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061 H:2] Simulation successful. Expected State Root: 80243312...
+[34m[DEBUG] [0m2025/05/03 19:11:18 shard.go:49: Shard 2 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:18 vrf.go:34: [VRF Sim] Evaluate(input: 0fe1014f...) -> output: 491dbf2a..., proof: 29d85570...
+[34m[DEBUG] [0m2025/05/03 19:11:18 vrf.go:34: [VRF Sim] Evaluate(input: 0fe1014f...) -> output: 49495bd4..., proof: 172cd539...
+[34m[DEBUG] [0m2025/05/03 19:11:18 vrf.go:34: [VRF Sim] Evaluate(input: 0fe1014f...) -> output: 06f60a94..., proof: 09c564b9...
+[34m[DEBUG] [0m2025/05/03 19:11:18 simple_poa.go:95: [VRF Propose H:2] Leader determined: 0xeab90647392c1e74abed4af4b08476655fed7d8f (Output: 06f60a94...)
+[34m[DEBUG] [0m2025/05/03 19:11:18 shard.go:49: Shard 3 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:18 vrf.go:34: [VRF Sim] Evaluate(input: 0fe1014f...) -> output: ddcac463..., proof: cf6e41ee...
+[34m[DEBUG] [0m2025/05/03 19:11:18 shard.go:49: Shard 0 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:18 shard.go:49: Shard 0 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:18 vrf.go:34: [VRF Sim] Evaluate(input: 0fe1014f...) -> output: 491dbf2a..., proof: 29d85570...
+[34m[DEBUG] [0m2025/05/03 19:11:18 vrf.go:34: [VRF Sim] Evaluate(input: 0fe1014f...) -> output: 49495bd4..., proof: 172cd539...
+[34m[DEBUG] [0m2025/05/03 19:11:18 vrf.go:34: [VRF Sim] Evaluate(input: 0fe1014f...) -> output: 06f60a94..., proof: 09c564b9...
+[34m[DEBUG] [0m2025/05/03 19:11:18 simple_poa.go:95: [VRF Propose H:2] Leader determined: 0xeab90647392c1e74abed4af4b08476655fed7d8f (Output: 06f60a94...)
+[34m[DEBUG] [0m2025/05/03 19:11:18 shard.go:49: Shard 1 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:18 manager.go:47: Created StateManager snapshot.
+[34m[DEBUG] [0m2025/05/03 19:11:18 manager.go:109: [SIM] Applying 0 txs to snapshot...
+[34m[DEBUG] [0m2025/05/03 19:11:18 manager.go:47: Created StateManager snapshot.
+[34m[DEBUG] [0m2025/05/03 19:11:18 manager.go:109: [SIM] Applying 1 txs to snapshot...
+[34m[DEBUG] [0m2025/05/03 19:11:18 manager.go:121: [SIM] Simulation successful. Predicted root from snapshot: 1a014608
+[34m[DEBUG] [0m2025/05/03 19:11:18 node.go:204: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:2] Simulation successful. Expected State Root: 1a014608...
+[34m[DEBUG] [0m2025/05/03 19:11:18 manager.go:121: [SIM] Simulation successful. Predicted root from snapshot: 80243312
+[34m[DEBUG] [0m2025/05/03 19:11:18 node.go:204: [0x7d91e5aa455ec652e2e155c838420373fb54eba4 H:2] Simulation successful. Expected State Root: 80243312...
+[34m[DEBUG] [0m2025/05/03 19:11:18 vrf.go:34: [VRF Sim] Evaluate(input: 0fe1014f...) -> output: ddcac463..., proof: cf6e41ee...
+[34m[DEBUG] [0m2025/05/03 19:11:18 vrf.go:34: [VRF Sim] Evaluate(input: 0fe1014f...) -> output: ddcac463..., proof: cf6e41ee...
+[34m[DEBUG] [0m2025/05/03 19:11:18 vrf.go:34: [VRF Sim] Evaluate(input: 0fe1014f...) -> output: 491dbf2a..., proof: 29d85570...
+[34m[DEBUG] [0m2025/05/03 19:11:18 vrf.go:34: [VRF Sim] Evaluate(input: 0fe1014f...) -> output: 49495bd4..., proof: 172cd539...
+[34m[DEBUG] [0m2025/05/03 19:11:18 vrf.go:34: [VRF Sim] Evaluate(input: 0fe1014f...) -> output: 06f60a94..., proof: 09c564b9...
+[34m[DEBUG] [0m2025/05/03 19:11:18 simple_poa.go:95: [VRF Propose H:2] Leader determined: 0xeab90647392c1e74abed4af4b08476655fed7d8f (Output: 06f60a94...)
+[32m[INFO] [0m2025/05/03 19:11:18 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:18 vrf.go:34: [VRF Sim] Evaluate(input: 0fe1014f...) -> output: 491dbf2a..., proof: 29d85570...
+[34m[DEBUG] [0m2025/05/03 19:11:18 vrf.go:34: [VRF Sim] Evaluate(input: 0fe1014f...) -> output: 49495bd4..., proof: 172cd539...
+[34m[DEBUG] [0m2025/05/03 19:11:18 vrf.go:34: [VRF Sim] Evaluate(input: 0fe1014f...) -> output: 06f60a94..., proof: 09c564b9...
+[34m[DEBUG] [0m2025/05/03 19:11:18 simple_poa.go:95: [VRF Propose H:2] Leader determined: 0xeab90647392c1e74abed4af4b08476655fed7d8f (Output: 06f60a94...)
+[34m[DEBUG] [0m2025/05/03 19:11:18 simple_poa.go:108: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:2] Collecting signatures for block 450a0f25...
+[32m[INFO] [0m2025/05/03 19:11:18 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:18 simple_poa.go:117: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:2] Collected signature from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061 (1/3)
+[32m[INFO] [0m2025/05/03 19:11:18 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:18 simple_poa.go:117: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:2] Collected signature from 0x7d91e5aa455ec652e2e155c838420373fb54eba4 (2/3)
+[32m[INFO] [0m2025/05/03 19:11:18 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:18 simple_poa.go:117: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:2] Collected signature from 0x50e215ed47725a275ee3d135ade76867f99732b6 (3/3)
+[32m[INFO] [0m2025/05/03 19:11:18 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:18 simple_poa.go:117: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:2] Collected signature from 0xeab90647392c1e74abed4af4b08476655fed7d8f (4/3)
+[32m[INFO] [0m2025/05/03 19:11:18 simple_poa.go:126: [0xeab90647392c1e74abed4af4b08476655fed7d8f] Proposing Block 2 (450a0f25dc80a85df9beffd13e61f97ba9ff8f3661597f410bfa3f46bc4b83fd) as VRF Leader with 4 signatures
+[34m[DEBUG] [0m2025/05/03 19:11:18 node.go:217: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:2] Proposed block (450a0f25) with 0 txs and header state root 1a014608
+[32m[INFO] [0m2025/05/03 19:11:18 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:18 manager.go:58: ApplyBlock 2: Applying 0 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:18 manager.go:69: Successfully applied all state changes for block 2 (450a0f25dc80)
+[32m[INFO] [0m2025/05/03 19:11:18 blockchain.go:113: [0xeab90647392c1e74abed4af4b08476655fed7d8f] === Appended Block 2 (450a0f25dc80) | Prev: 79e4cb2142a6... | State: 1a0146088bd1... | Txs: 0 ===
+[34m[DEBUG] [0m2025/05/03 19:11:18 node.go:230: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:2] Self-proposed block (450a0f25) accepted locally.
+[34m[DEBUG] [0m2025/05/03 19:11:18 node.go:233: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:2] Broadcasting locally validated block (450a0f25)...
+[32m[INFO] [0m2025/05/03 19:11:18 network.go:101: Network: Broadcasting Block 2 (450a0f25dc80...) from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:18 node.go:259: [0x7d91e5aa455ec652e2e155c838420373fb54eba4] Received Block 2 (450a0f25dc80a85df9beffd13e61f97ba9ff8f3661597f410bfa3f46bc4b83fd) from network proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:18 vrf.go:71: [VRF Sim] Verify(input: 0fe1014f..., output: 06f60a94...) SUCCEEDED.
+[34m[DEBUG] [0m2025/05/03 19:11:18 simple_poa.go:145: Block 2 VRF proof validated for proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f.
+[34m[DEBUG] [0m2025/05/03 19:11:18 simple_poa.go:160: Block 2 Sig 1/3 verified from 0x50e215ed47725a275ee3d135ade76867f99732b6
+[34m[DEBUG] [0m2025/05/03 19:11:18 simple_poa.go:160: Block 2 Sig 2/3 verified from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:18 simple_poa.go:160: Block 2 Sig 3/3 verified from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:18 simple_poa.go:160: Block 2 Sig 4/3 verified from 0x7d91e5aa455ec652e2e155c838420373fb54eba4
+[34m[DEBUG] [0m2025/05/03 19:11:18 simple_poa.go:164: Block 2 Threshold Signature (4/3) validation passed.
+[32m[INFO] [0m2025/05/03 19:11:18 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:18 manager.go:58: ApplyBlock 2: Applying 0 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:18 manager.go:69: Successfully applied all state changes for block 2 (450a0f25dc80)
+[32m[INFO] [0m2025/05/03 19:11:18 blockchain.go:113: [0x7d91e5aa455ec652e2e155c838420373fb54eba4] === Appended Block 2 (450a0f25dc80) | Prev: 79e4cb2142a6... | State: 1a0146088bd1... | Txs: 0 ===
+[34m[DEBUG] [0m2025/05/03 19:11:18 node.go:259: [Node-0xa1ee] Received Block 2 (450a0f25dc80a85df9beffd13e61f97ba9ff8f3661597f410bfa3f46bc4b83fd) from network proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:18 vrf.go:71: [VRF Sim] Verify(input: 0fe1014f..., output: 06f60a94...) SUCCEEDED.
+[34m[DEBUG] [0m2025/05/03 19:11:18 simple_poa.go:145: Block 2 VRF proof validated for proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f.
+[34m[DEBUG] [0m2025/05/03 19:11:18 simple_poa.go:160: Block 2 Sig 1/3 verified from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:18 simple_poa.go:160: Block 2 Sig 2/3 verified from 0x7d91e5aa455ec652e2e155c838420373fb54eba4
+[34m[DEBUG] [0m2025/05/03 19:11:18 simple_poa.go:160: Block 2 Sig 3/3 verified from 0x50e215ed47725a275ee3d135ade76867f99732b6
+[34m[DEBUG] [0m2025/05/03 19:11:18 simple_poa.go:160: Block 2 Sig 4/3 verified from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:18 simple_poa.go:164: Block 2 Threshold Signature (4/3) validation passed.
+[32m[INFO] [0m2025/05/03 19:11:18 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:18 manager.go:58: ApplyBlock 2: Applying 0 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:18 manager.go:69: Successfully applied all state changes for block 2 (450a0f25dc80)
+[32m[INFO] [0m2025/05/03 19:11:18 blockchain.go:113: [Node-0xa1ee] === Appended Block 2 (450a0f25dc80) | Prev: 79e4cb2142a6... | State: 1a0146088bd1... | Txs: 0 ===
+[34m[DEBUG] [0m2025/05/03 19:11:19 node.go:259: [0x50e215ed47725a275ee3d135ade76867f99732b6] Received Block 2 (450a0f25dc80a85df9beffd13e61f97ba9ff8f3661597f410bfa3f46bc4b83fd) from network proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:19 vrf.go:71: [VRF Sim] Verify(input: 0fe1014f..., output: 06f60a94...) SUCCEEDED.
+[34m[DEBUG] [0m2025/05/03 19:11:19 simple_poa.go:145: Block 2 VRF proof validated for proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f.
+[34m[DEBUG] [0m2025/05/03 19:11:19 simple_poa.go:160: Block 2 Sig 1/3 verified from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:19 simple_poa.go:160: Block 2 Sig 2/3 verified from 0x7d91e5aa455ec652e2e155c838420373fb54eba4
+[34m[DEBUG] [0m2025/05/03 19:11:19 simple_poa.go:160: Block 2 Sig 3/3 verified from 0x50e215ed47725a275ee3d135ade76867f99732b6
+[34m[DEBUG] [0m2025/05/03 19:11:19 simple_poa.go:160: Block 2 Sig 4/3 verified from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:19 simple_poa.go:164: Block 2 Threshold Signature (4/3) validation passed.
+[32m[INFO] [0m2025/05/03 19:11:19 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:19 manager.go:58: ApplyBlock 2: Applying 0 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:19 manager.go:69: Successfully applied all state changes for block 2 (450a0f25dc80)
+[32m[INFO] [0m2025/05/03 19:11:19 blockchain.go:113: [0x50e215ed47725a275ee3d135ade76867f99732b6] === Appended Block 2 (450a0f25dc80) | Prev: 79e4cb2142a6... | State: 1a0146088bd1... | Txs: 0 ===
+[34m[DEBUG] [0m2025/05/03 19:11:19 node.go:259: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061] Received Block 2 (450a0f25dc80a85df9beffd13e61f97ba9ff8f3661597f410bfa3f46bc4b83fd) from network proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:19 vrf.go:71: [VRF Sim] Verify(input: 0fe1014f..., output: 06f60a94...) SUCCEEDED.
+[34m[DEBUG] [0m2025/05/03 19:11:19 simple_poa.go:145: Block 2 VRF proof validated for proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f.
+[34m[DEBUG] [0m2025/05/03 19:11:19 simple_poa.go:160: Block 2 Sig 1/3 verified from 0x50e215ed47725a275ee3d135ade76867f99732b6
+[34m[DEBUG] [0m2025/05/03 19:11:19 simple_poa.go:160: Block 2 Sig 2/3 verified from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:19 simple_poa.go:160: Block 2 Sig 3/3 verified from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:19 simple_poa.go:160: Block 2 Sig 4/3 verified from 0x7d91e5aa455ec652e2e155c838420373fb54eba4
+[34m[DEBUG] [0m2025/05/03 19:11:19 simple_poa.go:164: Block 2 Threshold Signature (4/3) validation passed.
+[32m[INFO] [0m2025/05/03 19:11:19 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:19 manager.go:58: ApplyBlock 2: Applying 0 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:19 manager.go:69: Successfully applied all state changes for block 2 (450a0f25dc80)
+[32m[INFO] [0m2025/05/03 19:11:19 blockchain.go:113: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061] === Appended Block 2 (450a0f25dc80) | Prev: 79e4cb2142a6... | State: 1a0146088bd1... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:11:19 main.go:105: ==> [0xeab90647392c1e74abed4af4b08476655fed7d8f] Created Tx: 7410efd5... (To: 0x7d91e5..., Nonce: 4, Shard: 3)
+[34m[DEBUG] [0m2025/05/03 19:11:19 network.go:76: Network: Broadcasting Tx 7410efd5 from 0xeab90647392c1e74abed4af4b08476655fed7d8f...
+[33m[WARN] [0m2025/05/03 19:11:19 blockchain.go:72: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061] Tx 7410efd5... rejected from mempool: invalid nonce for pool admission: expected 1, got 4
+[33m[WARN] [0m2025/05/03 19:11:19 blockchain.go:72: [Node-0xa1ee] Tx 7410efd5... rejected from mempool: invalid nonce for pool admission: expected 1, got 4
+[33m[WARN] [0m2025/05/03 19:11:19 blockchain.go:72: [0x50e215ed47725a275ee3d135ade76867f99732b6] Tx 7410efd5... rejected from mempool: invalid nonce for pool admission: expected 1, got 4
+[33m[WARN] [0m2025/05/03 19:11:19 blockchain.go:72: [0x7d91e5aa455ec652e2e155c838420373fb54eba4] Tx 7410efd5... rejected from mempool: invalid nonce for pool admission: expected 1, got 4
+[32m[INFO] [0m2025/05/03 19:11:20 main.go:105: ==> [0xeab90647392c1e74abed4af4b08476655fed7d8f] Created Tx: 2dd167d5... (To: 0x7d91e5..., Nonce: 5, Shard: 3)
+[34m[DEBUG] [0m2025/05/03 19:11:20 network.go:76: Network: Broadcasting Tx 2dd167d5 from 0xeab90647392c1e74abed4af4b08476655fed7d8f...
+[33m[WARN] [0m2025/05/03 19:11:20 blockchain.go:72: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061] Tx 2dd167d5... rejected from mempool: invalid nonce for pool admission: expected 1, got 5
+[33m[WARN] [0m2025/05/03 19:11:20 blockchain.go:72: [0x7d91e5aa455ec652e2e155c838420373fb54eba4] Tx 2dd167d5... rejected from mempool: invalid nonce for pool admission: expected 1, got 5
+[33m[WARN] [0m2025/05/03 19:11:20 blockchain.go:72: [Node-0xa1ee] Tx 2dd167d5... rejected from mempool: invalid nonce for pool admission: expected 1, got 5
+[33m[WARN] [0m2025/05/03 19:11:20 blockchain.go:72: [0x50e215ed47725a275ee3d135ade76867f99732b6] Tx 2dd167d5... rejected from mempool: invalid nonce for pool admission: expected 1, got 5
+[32m[INFO] [0m2025/05/03 19:11:21 main.go:105: ==> [0xeab90647392c1e74abed4af4b08476655fed7d8f] Created Tx: 4436472b... (To: 0xc44a34..., Nonce: 6, Shard: 2)
+[34m[DEBUG] [0m2025/05/03 19:11:21 network.go:76: Network: Broadcasting Tx 4436472b from 0xeab90647392c1e74abed4af4b08476655fed7d8f...
+[33m[WARN] [0m2025/05/03 19:11:21 blockchain.go:72: [Node-0xa1ee] Tx 4436472b... rejected from mempool: invalid nonce for pool admission: expected 1, got 6
+[33m[WARN] [0m2025/05/03 19:11:21 blockchain.go:72: [0x50e215ed47725a275ee3d135ade76867f99732b6] Tx 4436472b... rejected from mempool: invalid nonce for pool admission: expected 1, got 6
+[33m[WARN] [0m2025/05/03 19:11:21 blockchain.go:72: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061] Tx 4436472b... rejected from mempool: invalid nonce for pool admission: expected 1, got 6
+[33m[WARN] [0m2025/05/03 19:11:21 blockchain.go:72: [0x7d91e5aa455ec652e2e155c838420373fb54eba4] Tx 4436472b... rejected from mempool: invalid nonce for pool admission: expected 1, got 6
+[34m[DEBUG] [0m2025/05/03 19:11:21 blockchain.go:161: TxPool GetPending: Called. Pool size: 1. Max count: 10. Checking nonces...
+[34m[DEBUG] [0m2025/05/03 19:11:21 blockchain.go:161: TxPool GetPending: Called. Pool size: 1. Max count: 10. Checking nonces...
+[34m[DEBUG] [0m2025/05/03 19:11:21 blockchain.go:161: TxPool GetPending: Including Tx b8aa57e2... (Nonce 1)
+[34m[DEBUG] [0m2025/05/03 19:11:21 blockchain.go:161: TxPool GetPending: Returning 1 executable transactions.
+[34m[DEBUG] [0m2025/05/03 19:11:21 blockchain.go:161: TxPool GetPending: Called. Pool size: 1. Max count: 10. Checking nonces...
+[34m[DEBUG] [0m2025/05/03 19:11:21 blockchain.go:161: TxPool GetPending: Including Tx b8aa57e2... (Nonce 1)
+[34m[DEBUG] [0m2025/05/03 19:11:21 blockchain.go:161: TxPool GetPending: Returning 1 executable transactions.
+[34m[DEBUG] [0m2025/05/03 19:11:21 node.go:191: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061 H:3] tryProposeBlock: Got 1 EXECUTA BLE pending txs: [b8aa57e2...]
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:102: [SIM] Creating snapshot for simulating 1 txs...
+[34m[DEBUG] [0m2025/05/03 19:11:21 blockchain.go:161: TxPool GetPending: Called. Pool size: 0. Max count: 10. Checking nonces...
+[34m[DEBUG] [0m2025/05/03 19:11:21 node.go:193: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:3] tryProposeBlock: No executable pending txs found.
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:102: [SIM] Creating snapshot for simulating 0 txs...
+[34m[DEBUG] [0m2025/05/03 19:11:21 node.go:191: [0x50e215ed47725a275ee3d135ade76867f99732b6 H:3] tryProposeBlock: Got 1 EXECUTA BLE pending txs: [b8aa57e2...]
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:102: [SIM] Creating snapshot for simulating 1 txs...
+[34m[DEBUG] [0m2025/05/03 19:11:21 blockchain.go:161: TxPool GetPending: Including Tx b8aa57e2... (Nonce 1)
+[34m[DEBUG] [0m2025/05/03 19:11:21 blockchain.go:161: TxPool GetPending: Returning 1 executable transactions.
+[34m[DEBUG] [0m2025/05/03 19:11:21 node.go:191: [0x7d91e5aa455ec652e2e155c838420373fb54eba4 H:3] tryProposeBlock: Got 1 EXECUTA BLE pending txs: [b8aa57e2...]
+[34m[DEBUG] [0m2025/05/03 19:11:21 shard.go:49: Shard 0 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:21 shard.go:49: Shard 0 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:21 shard.go:49: Shard 0 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:21 shard.go:49: Shard 1 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:21 shard.go:49: Shard 2 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:102: [SIM] Creating snapshot for simulating 1 txs...
+[34m[DEBUG] [0m2025/05/03 19:11:21 shard.go:49: Shard 3 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:47: Created StateManager snapshot.
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:109: [SIM] Applying 1 txs to snapshot...
+[34m[DEBUG] [0m2025/05/03 19:11:21 shard.go:49: Shard 1 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:21 shard.go:49: Shard 1 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:21 shard.go:49: Shard 2 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:21 shard.go:49: Shard 0 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:21 shard.go:49: Shard 1 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:21 shard.go:49: Shard 2 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:121: [SIM] Simulation successful. Predicted root from snapshot: 80243312
+[34m[DEBUG] [0m2025/05/03 19:11:21 node.go:204: [0x50e215ed47725a275ee3d135ade76867f99732b6 H:3] Simulation successful. Expected State Root: 80243312...
+[34m[DEBUG] [0m2025/05/03 19:11:21 vrf.go:34: [VRF Sim] Evaluate(input: b5bd3e66...) -> output: c8367859..., proof: f62ea408...
+[34m[DEBUG] [0m2025/05/03 19:11:21 vrf.go:34: [VRF Sim] Evaluate(input: b5bd3e66...) -> output: d890f028..., proof: ccc2d19c...
+[34m[DEBUG] [0m2025/05/03 19:11:21 vrf.go:34: [VRF Sim] Evaluate(input: b5bd3e66...) -> output: f8fcae21..., proof: 1d8861b5...
+[34m[DEBUG] [0m2025/05/03 19:11:21 shard.go:49: Shard 2 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:21 shard.go:49: Shard 3 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:21 shard.go:49: Shard 3 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:47: Created StateManager snapshot.
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:109: [SIM] Applying 0 txs to snapshot...
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:121: [SIM] Simulation successful. Predicted root from snapshot: 1a014608
+[34m[DEBUG] [0m2025/05/03 19:11:21 node.go:204: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:3] Simulation successful. Expected State Root: 1a014608...
+[34m[DEBUG] [0m2025/05/03 19:11:21 vrf.go:34: [VRF Sim] Evaluate(input: b5bd3e66...) -> output: c8367859..., proof: f62ea408...
+[34m[DEBUG] [0m2025/05/03 19:11:21 vrf.go:34: [VRF Sim] Evaluate(input: b5bd3e66...) -> output: d890f028..., proof: ccc2d19c...
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:47: Created StateManager snapshot.
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:109: [SIM] Applying 1 txs to snapshot...
+[34m[DEBUG] [0m2025/05/03 19:11:21 vrf.go:34: [VRF Sim] Evaluate(input: b5bd3e66...) -> output: 051cd2f0..., proof: bf126bd4...
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:95: [VRF Propose H:3] Leader determined: 0xeab90647392c1e74abed4af4b08476655fed7d8f (Output: 051cd2f0...)
+[34m[DEBUG] [0m2025/05/03 19:11:21 shard.go:49: Shard 3 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:21 vrf.go:34: [VRF Sim] Evaluate(input: b5bd3e66...) -> output: f8fcae21..., proof: 1d8861b5...
+[34m[DEBUG] [0m2025/05/03 19:11:21 vrf.go:34: [VRF Sim] Evaluate(input: b5bd3e66...) -> output: 051cd2f0..., proof: bf126bd4...
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:95: [VRF Propose H:3] Leader determined: 0xeab90647392c1e74abed4af4b08476655fed7d8f (Output: 051cd2f0...)
+[32m[INFO] [0m2025/05/03 19:11:21 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:121: [SIM] Simulation successful. Predicted root from snapshot: 80243312
+[34m[DEBUG] [0m2025/05/03 19:11:21 node.go:204: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061 H:3] Simulation successful. Expected State Root: 80243312...
+[34m[DEBUG] [0m2025/05/03 19:11:21 vrf.go:34: [VRF Sim] Evaluate(input: b5bd3e66...) -> output: c8367859..., proof: f62ea408...
+[34m[DEBUG] [0m2025/05/03 19:11:21 vrf.go:34: [VRF Sim] Evaluate(input: b5bd3e66...) -> output: d890f028..., proof: ccc2d19c...
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:47: Created StateManager snapshot.
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:108: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:3] Collecting signatures for block 5c551871...
+[32m[INFO] [0m2025/05/03 19:11:21 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:21 vrf.go:34: [VRF Sim] Evaluate(input: b5bd3e66...) -> output: f8fcae21..., proof: 1d8861b5...
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:109: [SIM] Applying 1 txs to snapshot...
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:117: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:3] Collected signature from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061 (1/3)
+[32m[INFO] [0m2025/05/03 19:11:21 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:21 vrf.go:34: [VRF Sim] Evaluate(input: b5bd3e66...) -> output: 051cd2f0..., proof: bf126bd4...
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:95: [VRF Propose H:3] Leader determined: 0xeab90647392c1e74abed4af4b08476655fed7d8f (Output: 051cd2f0...)
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:121: [SIM] Simulation successful. Predicted root from snapshot: 80243312
+[34m[DEBUG] [0m2025/05/03 19:11:21 node.go:204: [0x7d91e5aa455ec652e2e155c838420373fb54eba4 H:3] Simulation successful. Expected State Root: 80243312...
+[34m[DEBUG] [0m2025/05/03 19:11:21 vrf.go:34: [VRF Sim] Evaluate(input: b5bd3e66...) -> output: c8367859..., proof: f62ea408...
+[34m[DEBUG] [0m2025/05/03 19:11:21 vrf.go:34: [VRF Sim] Evaluate(input: b5bd3e66...) -> output: d890f028..., proof: ccc2d19c...
+[34m[DEBUG] [0m2025/05/03 19:11:21 vrf.go:34: [VRF Sim] Evaluate(input: b5bd3e66...) -> output: f8fcae21..., proof: 1d8861b5...
+[34m[DEBUG] [0m2025/05/03 19:11:21 vrf.go:34: [VRF Sim] Evaluate(input: b5bd3e66...) -> output: 051cd2f0..., proof: bf126bd4...
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:95: [VRF Propose H:3] Leader determined: 0xeab90647392c1e74abed4af4b08476655fed7d8f (Output: 051cd2f0...)
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:117: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:3] Collected signature from 0x7d91e5aa455ec652e2e155c838420373fb54eba4 (2/3)
+[32m[INFO] [0m2025/05/03 19:11:21 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:117: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:3] Collected signature from 0x50e215ed47725a275ee3d135ade76867f99732b6 (3/3)
+[32m[INFO] [0m2025/05/03 19:11:21 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:117: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:3] Collected signature from 0xeab90647392c1e74abed4af4b08476655fed7d8f (4/3)
+[32m[INFO] [0m2025/05/03 19:11:21 simple_poa.go:126: [0xeab90647392c1e74abed4af4b08476655fed7d8f] Proposing Block 3 (5c551871d579546cc261f279b3af028c6519adbac12d35d4a841b1ce913bc6e0) as VRF Leader with 4 signatures
+[34m[DEBUG] [0m2025/05/03 19:11:21 node.go:217: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:3] Proposed block (5c551871) with 0 txs and header state root 1a014608
+[32m[INFO] [0m2025/05/03 19:11:21 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:58: ApplyBlock 3: Applying 0 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:69: Successfully applied all state changes for block 3 (5c551871d579)
+[32m[INFO] [0m2025/05/03 19:11:21 blockchain.go:113: [0xeab90647392c1e74abed4af4b08476655fed7d8f] === Appended Block 3 (5c551871d579) | Prev: 450a0f25dc80... | State: 1a0146088bd1... | Txs: 0 ===
+[34m[DEBUG] [0m2025/05/03 19:11:21 node.go:230: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:3] Self-proposed block (5c551871) accepted locally.
+[34m[DEBUG] [0m2025/05/03 19:11:21 node.go:233: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:3] Broadcasting locally validated block (5c551871)...
+[32m[INFO] [0m2025/05/03 19:11:21 network.go:101: Network: Broadcasting Block 3 (5c551871d579...) from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:21 node.go:259: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061] Received Block 3 (5c551871d579546cc261f279b3af028c6519adbac12d35d4a841b1ce913bc6e0) from network proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:21 vrf.go:71: [VRF Sim] Verify(input: b5bd3e66..., output: 051cd2f0...) SUCCEEDED.
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:145: Block 3 VRF proof validated for proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f.
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:160: Block 3 Sig 1/3 verified from 0x7d91e5aa455ec652e2e155c838420373fb54eba4
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:160: Block 3 Sig 2/3 verified from 0x50e215ed47725a275ee3d135ade76867f99732b6
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:160: Block 3 Sig 3/3 verified from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:160: Block 3 Sig 4/3 verified from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:164: Block 3 Threshold Signature (4/3) validation passed.
+[32m[INFO] [0m2025/05/03 19:11:21 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:58: ApplyBlock 3: Applying 0 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:69: Successfully applied all state changes for block 3 (5c551871d579)
+[32m[INFO] [0m2025/05/03 19:11:21 blockchain.go:113: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061] === Appended Block 3 (5c551871d579) | Prev: 450a0f25dc80... | State: 1a0146088bd1... | Txs: 0 ===
+[34m[DEBUG] [0m2025/05/03 19:11:21 node.go:259: [0x50e215ed47725a275ee3d135ade76867f99732b6] Received Block 3 (5c551871d579546cc261f279b3af028c6519adbac12d35d4a841b1ce913bc6e0) from network proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:21 vrf.go:71: [VRF Sim] Verify(input: b5bd3e66..., output: 051cd2f0...) SUCCEEDED.
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:145: Block 3 VRF proof validated for proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f.
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:160: Block 3 Sig 1/3 verified from 0x7d91e5aa455ec652e2e155c838420373fb54eba4
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:160: Block 3 Sig 2/3 verified from 0x50e215ed47725a275ee3d135ade76867f99732b6
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:160: Block 3 Sig 3/3 verified from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:160: Block 3 Sig 4/3 verified from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:164: Block 3 Threshold Signature (4/3) validation passed.
+[32m[INFO] [0m2025/05/03 19:11:21 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:58: ApplyBlock 3: Applying 0 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:69: Successfully applied all state changes for block 3 (5c551871d579)
+[32m[INFO] [0m2025/05/03 19:11:21 blockchain.go:113: [0x50e215ed47725a275ee3d135ade76867f99732b6] === Appended Block 3 (5c551871d579) | Prev: 450a0f25dc80... | State: 1a0146088bd1... | Txs: 0 ===
+[34m[DEBUG] [0m2025/05/03 19:11:21 node.go:259: [Node-0xa1ee] Received Block 3 (5c551871d579546cc261f279b3af028c6519adbac12d35d4a841b1ce913bc6e0) from network proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:21 vrf.go:71: [VRF Sim] Verify(input: b5bd3e66..., output: 051cd2f0...) SUCCEEDED.
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:145: Block 3 VRF proof validated for proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f.
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:160: Block 3 Sig 1/3 verified from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:160: Block 3 Sig 2/3 verified from 0x7d91e5aa455ec652e2e155c838420373fb54eba4
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:160: Block 3 Sig 3/3 verified from 0x50e215ed47725a275ee3d135ade76867f99732b6
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:160: Block 3 Sig 4/3 verified from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:164: Block 3 Threshold Signature (4/3) validation passed.
+[32m[INFO] [0m2025/05/03 19:11:21 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:58: ApplyBlock 3: Applying 0 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:69: Successfully applied all state changes for block 3 (5c551871d579)
+[32m[INFO] [0m2025/05/03 19:11:21 blockchain.go:113: [Node-0xa1ee] === Appended Block 3 (5c551871d579) | Prev: 450a0f25dc80... | State: 1a0146088bd1... | Txs: 0 ===
+[34m[DEBUG] [0m2025/05/03 19:11:21 node.go:259: [0x7d91e5aa455ec652e2e155c838420373fb54eba4] Received Block 3 (5c551871d579546cc261f279b3af028c6519adbac12d35d4a841b1ce913bc6e0) from network proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:21 vrf.go:71: [VRF Sim] Verify(input: b5bd3e66..., output: 051cd2f0...) SUCCEEDED.
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:145: Block 3 VRF proof validated for proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f.
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:160: Block 3 Sig 1/3 verified from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:160: Block 3 Sig 2/3 verified from 0x7d91e5aa455ec652e2e155c838420373fb54eba4
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:160: Block 3 Sig 3/3 verified from 0x50e215ed47725a275ee3d135ade76867f99732b6
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:160: Block 3 Sig 4/3 verified from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:21 simple_poa.go:164: Block 3 Threshold Signature (4/3) validation passed.
+[32m[INFO] [0m2025/05/03 19:11:21 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:58: ApplyBlock 3: Applying 0 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:21 manager.go:69: Successfully applied all state changes for block 3 (5c551871d579)
+[32m[INFO] [0m2025/05/03 19:11:21 blockchain.go:113: [0x7d91e5aa455ec652e2e155c838420373fb54eba4] === Appended Block 3 (5c551871d579) | Prev: 450a0f25dc80... | State: 1a0146088bd1... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:11:23 main.go:105: ==> [0xeab90647392c1e74abed4af4b08476655fed7d8f] Created Tx: 92c54b96... (To: 0xa1ee0b..., Nonce: 7, Shard: 3)
+[34m[DEBUG] [0m2025/05/03 19:11:23 network.go:76: Network: Broadcasting Tx 92c54b96 from 0xeab90647392c1e74abed4af4b08476655fed7d8f...
+[33m[WARN] [0m2025/05/03 19:11:23 blockchain.go:72: [0x7d91e5aa455ec652e2e155c838420373fb54eba4] Tx 92c54b96... rejected from mempool: invalid nonce for pool admission: expected 1, got 7
+[33m[WARN] [0m2025/05/03 19:11:23 blockchain.go:72: [0x50e215ed47725a275ee3d135ade76867f99732b6] Tx 92c54b96... rejected from mempool: invalid nonce for pool admission: expected 1, got 7
+[33m[WARN] [0m2025/05/03 19:11:23 blockchain.go:72: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061] Tx 92c54b96... rejected from mempool: invalid nonce for pool admission: expected 1, got 7
+[33m[WARN] [0m2025/05/03 19:11:23 blockchain.go:72: [Node-0xa1ee] Tx 92c54b96... rejected from mempool: invalid nonce for pool admission: expected 1, got 7
+[32m[INFO] [0m2025/05/03 19:11:24 main.go:105: ==> [0xeab90647392c1e74abed4af4b08476655fed7d8f] Created Tx: cf0ca3a5... (To: 0xc44a34..., Nonce: 8, Shard: 2)
+[34m[DEBUG] [0m2025/05/03 19:11:24 network.go:76: Network: Broadcasting Tx cf0ca3a5 from 0xeab90647392c1e74abed4af4b08476655fed7d8f...
+[33m[WARN] [0m2025/05/03 19:11:24 blockchain.go:72: [0x7d91e5aa455ec652e2e155c838420373fb54eba4] Tx cf0ca3a5... rejected from mempool: invalid nonce for pool admission: expected 1, got 8
+[33m[WARN] [0m2025/05/03 19:11:24 blockchain.go:72: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061] Tx cf0ca3a5... rejected from mempool: invalid nonce for pool admission: expected 1, got 8
+[33m[WARN] [0m2025/05/03 19:11:24 blockchain.go:72: [0x50e215ed47725a275ee3d135ade76867f99732b6] Tx cf0ca3a5... rejected from mempool: invalid nonce for pool admission: expected 1, got 8
+[33m[WARN] [0m2025/05/03 19:11:24 blockchain.go:72: [Node-0xa1ee] Tx cf0ca3a5... rejected from mempool: invalid nonce for pool admission: expected 1, got 8
+[34m[DEBUG] [0m2025/05/03 19:11:24 blockchain.go:161: TxPool GetPending: Called. Pool size: 1. Max count: 10. Checking nonces...
+[34m[DEBUG] [0m2025/05/03 19:11:24 blockchain.go:161: TxPool GetPending: Called. Pool size: 0. Max count: 10. Checking nonces...
+[34m[DEBUG] [0m2025/05/03 19:11:24 node.go:193: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:4] tryProposeBlock: No executable pending txs found.
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:102: [SIM] Creating snapshot for simulating 0 txs...
+[34m[DEBUG] [0m2025/05/03 19:11:24 blockchain.go:161: TxPool GetPending: Called. Pool size: 1. Max count: 10. Checking nonces...
+[34m[DEBUG] [0m2025/05/03 19:11:24 blockchain.go:161: TxPool GetPending: Called. Pool size: 1. Max count: 10. Checking nonces...
+[34m[DEBUG] [0m2025/05/03 19:11:24 blockchain.go:161: TxPool GetPending: Including Tx b8aa57e2... (Nonce 1)
+[34m[DEBUG] [0m2025/05/03 19:11:24 blockchain.go:161: TxPool GetPending: Returning 1 executable transactions.
+[34m[DEBUG] [0m2025/05/03 19:11:24 blockchain.go:161: TxPool GetPending: Including Tx b8aa57e2... (Nonce 1)
+[34m[DEBUG] [0m2025/05/03 19:11:24 blockchain.go:161: TxPool GetPending: Returning 1 executable transactions.
+[34m[DEBUG] [0m2025/05/03 19:11:24 node.go:191: [0x7d91e5aa455ec652e2e155c838420373fb54eba4 H:4] tryProposeBlock: Got 1 EXECUTA BLE pending txs: [b8aa57e2...]
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:102: [SIM] Creating snapshot for simulating 1 txs...
+[34m[DEBUG] [0m2025/05/03 19:11:24 node.go:191: [0x50e215ed47725a275ee3d135ade76867f99732b6 H:4] tryProposeBlock: Got 1 EXECUTA BLE pending txs: [b8aa57e2...]
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:102: [SIM] Creating snapshot for simulating 1 txs...
+[34m[DEBUG] [0m2025/05/03 19:11:24 shard.go:49: Shard 0 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:24 blockchain.go:161: TxPool GetPending: Including Tx b8aa57e2... (Nonce 1)
+[34m[DEBUG] [0m2025/05/03 19:11:24 shard.go:49: Shard 0 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:24 shard.go:49: Shard 1 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:24 shard.go:49: Shard 2 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:24 shard.go:49: Shard 0 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:24 shard.go:49: Shard 1 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:24 shard.go:49: Shard 2 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:24 shard.go:49: Shard 3 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:24 blockchain.go:161: TxPool GetPending: Returning 1 executable transactions.
+[34m[DEBUG] [0m2025/05/03 19:11:24 shard.go:49: Shard 1 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:24 shard.go:49: Shard 2 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:24 shard.go:49: Shard 3 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:47: Created StateManager snapshot.
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:109: [SIM] Applying 0 txs to snapshot...
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:47: Created StateManager snapshot.
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:109: [SIM] Applying 1 txs to snapshot...
+[34m[DEBUG] [0m2025/05/03 19:11:24 node.go:191: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061 H:4] tryProposeBlock: Got 1 EXECUTA BLE pending txs: [b8aa57e2...]
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:102: [SIM] Creating snapshot for simulating 1 txs...
+[34m[DEBUG] [0m2025/05/03 19:11:24 shard.go:49: Shard 1 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:24 shard.go:49: Shard 2 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:24 shard.go:49: Shard 3 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:47: Created StateManager snapshot.
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:109: [SIM] Applying 1 txs to snapshot...
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:121: [SIM] Simulation successful. Predicted root from snapshot: 1a014608
+[34m[DEBUG] [0m2025/05/03 19:11:24 node.go:204: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:4] Simulation successful. Expected State Root: 1a014608...
+[34m[DEBUG] [0m2025/05/03 19:11:24 vrf.go:34: [VRF Sim] Evaluate(input: 3437d520...) -> output: 77350bca..., proof: 3d70ea37...
+[34m[DEBUG] [0m2025/05/03 19:11:24 vrf.go:34: [VRF Sim] Evaluate(input: 3437d520...) -> output: b6bf8069..., proof: b732fdfb...
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:121: [SIM] Simulation successful. Predicted root from snapshot: 80243312
+[34m[DEBUG] [0m2025/05/03 19:11:24 shard.go:49: Shard 3 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:121: [SIM] Simulation successful. Predicted root from snapshot: 80243312
+[34m[DEBUG] [0m2025/05/03 19:11:24 node.go:204: [0x7d91e5aa455ec652e2e155c838420373fb54eba4 H:4] Simulation successful. Expected State Root: 80243312...
+[34m[DEBUG] [0m2025/05/03 19:11:24 vrf.go:34: [VRF Sim] Evaluate(input: 3437d520...) -> output: 77350bca..., proof: 3d70ea37...
+[34m[DEBUG] [0m2025/05/03 19:11:24 vrf.go:34: [VRF Sim] Evaluate(input: 3437d520...) -> output: b6bf8069..., proof: b732fdfb...
+[34m[DEBUG] [0m2025/05/03 19:11:24 vrf.go:34: [VRF Sim] Evaluate(input: 3437d520...) -> output: ea3c5294..., proof: 0f8e7b9a...
+[34m[DEBUG] [0m2025/05/03 19:11:24 vrf.go:34: [VRF Sim] Evaluate(input: 3437d520...) -> output: 4f79f8b7..., proof: 8b9b708e...
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:95: [VRF Propose H:4] Leader determined: 0xeab90647392c1e74abed4af4b08476655fed7d8f (Output: 4f79f8b7...)
+[34m[DEBUG] [0m2025/05/03 19:11:24 vrf.go:34: [VRF Sim] Evaluate(input: 3437d520...) -> output: ea3c5294..., proof: 0f8e7b9a...
+[34m[DEBUG] [0m2025/05/03 19:11:24 vrf.go:34: [VRF Sim] Evaluate(input: 3437d520...) -> output: 4f79f8b7..., proof: 8b9b708e...
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:95: [VRF Propose H:4] Leader determined: 0xeab90647392c1e74abed4af4b08476655fed7d8f (Output: 4f79f8b7...)
+[32m[INFO] [0m2025/05/03 19:11:24 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:24 node.go:204: [0x50e215ed47725a275ee3d135ade76867f99732b6 H:4] Simulation successful. Expected State Root: 80243312...
+[34m[DEBUG] [0m2025/05/03 19:11:24 vrf.go:34: [VRF Sim] Evaluate(input: 3437d520...) -> output: 77350bca..., proof: 3d70ea37...
+[34m[DEBUG] [0m2025/05/03 19:11:24 shard.go:49: Shard 0 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:108: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:4] Collecting signatures for block 290cd2e0...
+[32m[INFO] [0m2025/05/03 19:11:24 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:24 vrf.go:34: [VRF Sim] Evaluate(input: 3437d520...) -> output: b6bf8069..., proof: b732fdfb...
+[34m[DEBUG] [0m2025/05/03 19:11:24 vrf.go:34: [VRF Sim] Evaluate(input: 3437d520...) -> output: ea3c5294..., proof: 0f8e7b9a...
+[34m[DEBUG] [0m2025/05/03 19:11:24 vrf.go:34: [VRF Sim] Evaluate(input: 3437d520...) -> output: 4f79f8b7..., proof: 8b9b708e...
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:47: Created StateManager snapshot.
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:109: [SIM] Applying 1 txs to snapshot...
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:117: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:4] Collected signature from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061 (1/3)
+[32m[INFO] [0m2025/05/03 19:11:24 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:95: [VRF Propose H:4] Leader determined: 0xeab90647392c1e74abed4af4b08476655fed7d8f (Output: 4f79f8b7...)
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:121: [SIM] Simulation successful. Predicted root from snapshot: 80243312
+[34m[DEBUG] [0m2025/05/03 19:11:24 node.go:204: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061 H:4] Simulation successful. Expected State Root: 80243312...
+[34m[DEBUG] [0m2025/05/03 19:11:24 vrf.go:34: [VRF Sim] Evaluate(input: 3437d520...) -> output: 77350bca..., proof: 3d70ea37...
+[34m[DEBUG] [0m2025/05/03 19:11:24 vrf.go:34: [VRF Sim] Evaluate(input: 3437d520...) -> output: b6bf8069..., proof: b732fdfb...
+[34m[DEBUG] [0m2025/05/03 19:11:24 vrf.go:34: [VRF Sim] Evaluate(input: 3437d520...) -> output: ea3c5294..., proof: 0f8e7b9a...
+[34m[DEBUG] [0m2025/05/03 19:11:24 vrf.go:34: [VRF Sim] Evaluate(input: 3437d520...) -> output: 4f79f8b7..., proof: 8b9b708e...
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:95: [VRF Propose H:4] Leader determined: 0xeab90647392c1e74abed4af4b08476655fed7d8f (Output: 4f79f8b7...)
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:117: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:4] Collected signature from 0x7d91e5aa455ec652e2e155c838420373fb54eba4 (2/3)
+[32m[INFO] [0m2025/05/03 19:11:24 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:117: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:4] Collected signature from 0x50e215ed47725a275ee3d135ade76867f99732b6 (3/3)
+[32m[INFO] [0m2025/05/03 19:11:24 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:117: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:4] Collected signature from 0xeab90647392c1e74abed4af4b08476655fed7d8f (4/3)
+[32m[INFO] [0m2025/05/03 19:11:24 simple_poa.go:126: [0xeab90647392c1e74abed4af4b08476655fed7d8f] Proposing Block 4 (290cd2e03b95b5bde00aaa48e22b3e65bb23b3e81ef70eaf46e84030908cd060) as VRF Leader with 4 signatures
+[34m[DEBUG] [0m2025/05/03 19:11:24 node.go:217: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:4] Proposed block (290cd2e0) with 0 txs and header state root 1a014608
+[32m[INFO] [0m2025/05/03 19:11:24 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:58: ApplyBlock 4: Applying 0 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:69: Successfully applied all state changes for block 4 (290cd2e03b95)
+[32m[INFO] [0m2025/05/03 19:11:24 blockchain.go:113: [0xeab90647392c1e74abed4af4b08476655fed7d8f] === Appended Block 4 (290cd2e03b95) | Prev: 5c551871d579... | State: 1a0146088bd1... | Txs: 0 ===
+[34m[DEBUG] [0m2025/05/03 19:11:24 node.go:230: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:4] Self-proposed block (290cd2e0) accepted locally.
+[34m[DEBUG] [0m2025/05/03 19:11:24 node.go:233: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:4] Broadcasting locally validated block (290cd2e0)...
+[32m[INFO] [0m2025/05/03 19:11:24 network.go:101: Network: Broadcasting Block 4 (290cd2e03b95...) from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:24 node.go:259: [0x50e215ed47725a275ee3d135ade76867f99732b6] Received Block 4 (290cd2e03b95b5bde00aaa48e22b3e65bb23b3e81ef70eaf46e84030908cd060) from network proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:24 vrf.go:71: [VRF Sim] Verify(input: 3437d520..., output: 4f79f8b7...) SUCCEEDED.
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:145: Block 4 VRF proof validated for proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f.
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:160: Block 4 Sig 1/3 verified from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:160: Block 4 Sig 2/3 verified from 0x7d91e5aa455ec652e2e155c838420373fb54eba4
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:160: Block 4 Sig 3/3 verified from 0x50e215ed47725a275ee3d135ade76867f99732b6
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:160: Block 4 Sig 4/3 verified from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:164: Block 4 Threshold Signature (4/3) validation passed.
+[32m[INFO] [0m2025/05/03 19:11:24 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:58: ApplyBlock 4: Applying 0 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:69: Successfully applied all state changes for block 4 (290cd2e03b95)
+[32m[INFO] [0m2025/05/03 19:11:24 blockchain.go:113: [0x50e215ed47725a275ee3d135ade76867f99732b6] === Appended Block 4 (290cd2e03b95) | Prev: 5c551871d579... | State: 1a0146088bd1... | Txs: 0 ===
+[34m[DEBUG] [0m2025/05/03 19:11:24 node.go:259: [Node-0xa1ee] Received Block 4 (290cd2e03b95b5bde00aaa48e22b3e65bb23b3e81ef70eaf46e84030908cd060) from network proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:24 vrf.go:71: [VRF Sim] Verify(input: 3437d520..., output: 4f79f8b7...) SUCCEEDED.
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:145: Block 4 VRF proof validated for proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f.
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:160: Block 4 Sig 1/3 verified from 0x7d91e5aa455ec652e2e155c838420373fb54eba4
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:160: Block 4 Sig 2/3 verified from 0x50e215ed47725a275ee3d135ade76867f99732b6
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:160: Block 4 Sig 3/3 verified from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:160: Block 4 Sig 4/3 verified from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:164: Block 4 Threshold Signature (4/3) validation passed.
+[32m[INFO] [0m2025/05/03 19:11:24 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:58: ApplyBlock 4: Applying 0 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:69: Successfully applied all state changes for block 4 (290cd2e03b95)
+[32m[INFO] [0m2025/05/03 19:11:24 blockchain.go:113: [Node-0xa1ee] === Appended Block 4 (290cd2e03b95) | Prev: 5c551871d579... | State: 1a0146088bd1... | Txs: 0 ===
+[34m[DEBUG] [0m2025/05/03 19:11:24 node.go:259: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061] Received Block 4 (290cd2e03b95b5bde00aaa48e22b3e65bb23b3e81ef70eaf46e84030908cd060) from network proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:24 vrf.go:71: [VRF Sim] Verify(input: 3437d520..., output: 4f79f8b7...) SUCCEEDED.
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:145: Block 4 VRF proof validated for proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f.
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:160: Block 4 Sig 1/3 verified from 0x50e215ed47725a275ee3d135ade76867f99732b6
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:160: Block 4 Sig 2/3 verified from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:160: Block 4 Sig 3/3 verified from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:160: Block 4 Sig 4/3 verified from 0x7d91e5aa455ec652e2e155c838420373fb54eba4
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:164: Block 4 Threshold Signature (4/3) validation passed.
+[32m[INFO] [0m2025/05/03 19:11:24 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:58: ApplyBlock 4: Applying 0 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:69: Successfully applied all state changes for block 4 (290cd2e03b95)
+[32m[INFO] [0m2025/05/03 19:11:24 blockchain.go:113: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061] === Appended Block 4 (290cd2e03b95) | Prev: 5c551871d579... | State: 1a0146088bd1... | Txs: 0 ===
+[34m[DEBUG] [0m2025/05/03 19:11:24 node.go:259: [0x7d91e5aa455ec652e2e155c838420373fb54eba4] Received Block 4 (290cd2e03b95b5bde00aaa48e22b3e65bb23b3e81ef70eaf46e84030908cd060) from network proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:24 vrf.go:71: [VRF Sim] Verify(input: 3437d520..., output: 4f79f8b7...) SUCCEEDED.
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:145: Block 4 VRF proof validated for proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f.
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:160: Block 4 Sig 1/3 verified from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:160: Block 4 Sig 2/3 verified from 0x7d91e5aa455ec652e2e155c838420373fb54eba4
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:160: Block 4 Sig 3/3 verified from 0x50e215ed47725a275ee3d135ade76867f99732b6
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:160: Block 4 Sig 4/3 verified from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:24 simple_poa.go:164: Block 4 Threshold Signature (4/3) validation passed.
+[32m[INFO] [0m2025/05/03 19:11:24 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:58: ApplyBlock 4: Applying 0 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:24 manager.go:69: Successfully applied all state changes for block 4 (290cd2e03b95)
+[32m[INFO] [0m2025/05/03 19:11:24 blockchain.go:113: [0x7d91e5aa455ec652e2e155c838420373fb54eba4] === Appended Block 4 (290cd2e03b95) | Prev: 5c551871d579... | State: 1a0146088bd1... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:11:26 main.go:105: ==> [0xeab90647392c1e74abed4af4b08476655fed7d8f] Created Tx: 9326071d... (To: 0x50e215..., Nonce: 9, Shard: 0)
+[34m[DEBUG] [0m2025/05/03 19:11:26 network.go:76: Network: Broadcasting Tx 9326071d from 0xeab90647392c1e74abed4af4b08476655fed7d8f...
+[33m[WARN] [0m2025/05/03 19:11:26 blockchain.go:72: [Node-0xa1ee] Tx 9326071d... rejected from mempool: invalid nonce for pool admission: expected 1, got 9
+[33m[WARN] [0m2025/05/03 19:11:26 blockchain.go:72: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061] Tx 9326071d... rejected from mempool: invalid nonce for pool admission: expected 1, got 9
+[33m[WARN] [0m2025/05/03 19:11:26 blockchain.go:72: [0x7d91e5aa455ec652e2e155c838420373fb54eba4] Tx 9326071d... rejected from mempool: invalid nonce for pool admission: expected 1, got 9
+[33m[WARN] [0m2025/05/03 19:11:26 blockchain.go:72: [0x50e215ed47725a275ee3d135ade76867f99732b6] Tx 9326071d... rejected from mempool: invalid nonce for pool admission: expected 1, got 9
+[32m[INFO] [0m2025/05/03 19:11:27 main.go:105: ==> [0xeab90647392c1e74abed4af4b08476655fed7d8f] Created Tx: bf5410cd... (To: 0xa1ee0b..., Nonce: 10, Shard: 3)
+[34m[DEBUG] [0m2025/05/03 19:11:27 network.go:76: Network: Broadcasting Tx bf5410cd from 0xeab90647392c1e74abed4af4b08476655fed7d8f...
+[33m[WARN] [0m2025/05/03 19:11:27 blockchain.go:72: [Node-0xa1ee] Tx bf5410cd... rejected from mempool: invalid nonce for pool admission: expected 1, got 10
+[33m[WARN] [0m2025/05/03 19:11:27 blockchain.go:72: [0x7d91e5aa455ec652e2e155c838420373fb54eba4] Tx bf5410cd... rejected from mempool: invalid nonce for pool admission: expected 1, got 10
+[33m[WARN] [0m2025/05/03 19:11:27 blockchain.go:72: [0x50e215ed47725a275ee3d135ade76867f99732b6] Tx bf5410cd... rejected from mempool: invalid nonce for pool admission: expected 1, got 10
+[33m[WARN] [0m2025/05/03 19:11:27 blockchain.go:72: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061] Tx bf5410cd... rejected from mempool: invalid nonce for pool admission: expected 1, got 10
+[34m[DEBUG] [0m2025/05/03 19:11:27 blockchain.go:161: TxPool GetPending: Called. Pool size: 0. Max count: 10. Checking nonces...
+[34m[DEBUG] [0m2025/05/03 19:11:27 node.go:193: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:5] tryProposeBlock: No executable pending txs found.
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:102: [SIM] Creating snapshot for simulating 0 txs...
+[34m[DEBUG] [0m2025/05/03 19:11:27 blockchain.go:161: TxPool GetPending: Called. Pool size: 1. Max count: 10. Checking nonces...
+[34m[DEBUG] [0m2025/05/03 19:11:27 blockchain.go:161: TxPool GetPending: Including Tx b8aa57e2... (Nonce 1)
+[34m[DEBUG] [0m2025/05/03 19:11:27 blockchain.go:161: TxPool GetPending: Returning 1 executable transactions.
+[34m[DEBUG] [0m2025/05/03 19:11:27 node.go:191: [0x50e215ed47725a275ee3d135ade76867f99732b6 H:5] tryProposeBlock: Got 1 EXECUTA BLE pending txs: [b8aa57e2...]
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:102: [SIM] Creating snapshot for simulating 1 txs...
+[34m[DEBUG] [0m2025/05/03 19:11:27 shard.go:49: Shard 0 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:27 shard.go:49: Shard 1 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:27 shard.go:49: Shard 2 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:27 shard.go:49: Shard 3 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:27 blockchain.go:161: TxPool GetPending: Called. Pool size: 1. Max count: 10. Checking nonces...
+[34m[DEBUG] [0m2025/05/03 19:11:27 blockchain.go:161: TxPool GetPending: Called. Pool size: 1. Max count: 10. Checking nonces...
+[34m[DEBUG] [0m2025/05/03 19:11:27 shard.go:49: Shard 0 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:47: Created StateManager snapshot.
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:109: [SIM] Applying 1 txs to snapshot...
+[34m[DEBUG] [0m2025/05/03 19:11:27 blockchain.go:161: TxPool GetPending: Including Tx b8aa57e2... (Nonce 1)
+[34m[DEBUG] [0m2025/05/03 19:11:27 blockchain.go:161: TxPool GetPending: Including Tx b8aa57e2... (Nonce 1)
+[34m[DEBUG] [0m2025/05/03 19:11:27 blockchain.go:161: TxPool GetPending: Returning 1 executable transactions.
+[34m[DEBUG] [0m2025/05/03 19:11:27 node.go:191: [0x7d91e5aa455ec652e2e155c838420373fb54eba4 H:5] tryProposeBlock: Got 1 EXECUTA BLE pending txs: [b8aa57e2...]
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:102: [SIM] Creating snapshot for simulating 1 txs...
+[34m[DEBUG] [0m2025/05/03 19:11:27 shard.go:49: Shard 1 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:27 blockchain.go:161: TxPool GetPending: Returning 1 executable transactions.
+[34m[DEBUG] [0m2025/05/03 19:11:27 node.go:191: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061 H:5] tryProposeBlock: Got 1 EXECUTA BLE pending txs: [b8aa57e2...]
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:102: [SIM] Creating snapshot for simulating 1 txs...
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:121: [SIM] Simulation successful. Predicted root from snapshot: 80243312
+[34m[DEBUG] [0m2025/05/03 19:11:27 node.go:204: [0x50e215ed47725a275ee3d135ade76867f99732b6 H:5] Simulation successful. Expected State Root: 80243312...
+[34m[DEBUG] [0m2025/05/03 19:11:27 vrf.go:34: [VRF Sim] Evaluate(input: ee345c5a...) -> output: 5ab27ecb..., proof: b636b57b...
+[34m[DEBUG] [0m2025/05/03 19:11:27 vrf.go:34: [VRF Sim] Evaluate(input: ee345c5a...) -> output: f71bd9d5..., proof: 647c1d45...
+[34m[DEBUG] [0m2025/05/03 19:11:27 vrf.go:34: [VRF Sim] Evaluate(input: ee345c5a...) -> output: e04b5b43..., proof: 8e0943a0...
+[34m[DEBUG] [0m2025/05/03 19:11:27 vrf.go:34: [VRF Sim] Evaluate(input: ee345c5a...) -> output: 4b2e15af..., proof: c2d8607d...
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:95: [VRF Propose H:5] Leader determined: 0xeab90647392c1e74abed4af4b08476655fed7d8f (Output: 4b2e15af...)
+[34m[DEBUG] [0m2025/05/03 19:11:27 shard.go:49: Shard 3 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:27 shard.go:49: Shard 2 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:27 shard.go:49: Shard 0 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:27 shard.go:49: Shard 1 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:27 shard.go:49: Shard 2 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:27 shard.go:49: Shard 0 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:27 shard.go:49: Shard 1 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:27 shard.go:49: Shard 2 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:27 shard.go:49: Shard 3 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:47: Created StateManager snapshot.
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:109: [SIM] Applying 0 txs to snapshot...
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:121: [SIM] Simulation successful. Predicted root from snapshot: 1a014608
+[34m[DEBUG] [0m2025/05/03 19:11:27 shard.go:49: Shard 3 copied using SMT Copy.
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:47: Created StateManager snapshot.
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:109: [SIM] Applying 1 txs to snapshot...
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:47: Created StateManager snapshot.
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:109: [SIM] Applying 1 txs to snapshot...
+[34m[DEBUG] [0m2025/05/03 19:11:27 node.go:204: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:5] Simulation successful. Expected State Root: 1a014608...
+[34m[DEBUG] [0m2025/05/03 19:11:27 vrf.go:34: [VRF Sim] Evaluate(input: ee345c5a...) -> output: 5ab27ecb..., proof: b636b57b...
+[34m[DEBUG] [0m2025/05/03 19:11:27 vrf.go:34: [VRF Sim] Evaluate(input: ee345c5a...) -> output: f71bd9d5..., proof: 647c1d45...
+[34m[DEBUG] [0m2025/05/03 19:11:27 vrf.go:34: [VRF Sim] Evaluate(input: ee345c5a...) -> output: e04b5b43..., proof: 8e0943a0...
+[34m[DEBUG] [0m2025/05/03 19:11:27 vrf.go:34: [VRF Sim] Evaluate(input: ee345c5a...) -> output: 4b2e15af..., proof: c2d8607d...
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:95: [VRF Propose H:5] Leader determined: 0xeab90647392c1e74abed4af4b08476655fed7d8f (Output: 4b2e15af...)
+[32m[INFO] [0m2025/05/03 19:11:27 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:121: [SIM] Simulation successful. Predicted root from snapshot: 80243312
+[34m[DEBUG] [0m2025/05/03 19:11:27 node.go:204: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061 H:5] Simulation successful. Expected State Root: 80243312...
+[34m[DEBUG] [0m2025/05/03 19:11:27 vrf.go:34: [VRF Sim] Evaluate(input: ee345c5a...) -> output: 5ab27ecb..., proof: b636b57b...
+[34m[DEBUG] [0m2025/05/03 19:11:27 vrf.go:34: [VRF Sim] Evaluate(input: ee345c5a...) -> output: f71bd9d5..., proof: 647c1d45...
+[34m[DEBUG] [0m2025/05/03 19:11:27 vrf.go:34: [VRF Sim] Evaluate(input: ee345c5a...) -> output: e04b5b43..., proof: 8e0943a0...
+[34m[DEBUG] [0m2025/05/03 19:11:27 vrf.go:34: [VRF Sim] Evaluate(input: ee345c5a...) -> output: 4b2e15af..., proof: c2d8607d...
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:95: [VRF Propose H:5] Leader determined: 0xeab90647392c1e74abed4af4b08476655fed7d8f (Output: 4b2e15af...)
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:121: [SIM] Simulation successful. Predicted root from snapshot: 80243312
+[34m[DEBUG] [0m2025/05/03 19:11:27 node.go:204: [0x7d91e5aa455ec652e2e155c838420373fb54eba4 H:5] Simulation successful. Expected State Root: 80243312...
+[34m[DEBUG] [0m2025/05/03 19:11:27 vrf.go:34: [VRF Sim] Evaluate(input: ee345c5a...) -> output: 5ab27ecb..., proof: b636b57b...
+[34m[DEBUG] [0m2025/05/03 19:11:27 vrf.go:34: [VRF Sim] Evaluate(input: ee345c5a...) -> output: f71bd9d5..., proof: 647c1d45...
+[34m[DEBUG] [0m2025/05/03 19:11:27 vrf.go:34: [VRF Sim] Evaluate(input: ee345c5a...) -> output: e04b5b43..., proof: 8e0943a0...
+[34m[DEBUG] [0m2025/05/03 19:11:27 vrf.go:34: [VRF Sim] Evaluate(input: ee345c5a...) -> output: 4b2e15af..., proof: c2d8607d...
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:95: [VRF Propose H:5] Leader determined: 0xeab90647392c1e74abed4af4b08476655fed7d8f (Output: 4b2e15af...)
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:108: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:5] Collecting signatures for block a8e819bf...
+[32m[INFO] [0m2025/05/03 19:11:27 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:117: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:5] Collected signature from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061 (1/3)
+[32m[INFO] [0m2025/05/03 19:11:27 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:117: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:5] Collected signature from 0x7d91e5aa455ec652e2e155c838420373fb54eba4 (2/3)
+[32m[INFO] [0m2025/05/03 19:11:27 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:117: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:5] Collected signature from 0x50e215ed47725a275ee3d135ade76867f99732b6 (3/3)
+[32m[INFO] [0m2025/05/03 19:11:27 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:117: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:5] Collected signature from 0xeab90647392c1e74abed4af4b08476655fed7d8f (4/3)
+[32m[INFO] [0m2025/05/03 19:11:27 simple_poa.go:126: [0xeab90647392c1e74abed4af4b08476655fed7d8f] Proposing Block 5 (a8e819bf141f7ae83f70f5d23e7f8e117d7fc790f04a833447786342a1af913a) as VRF Leader with 4 signatures
+[34m[DEBUG] [0m2025/05/03 19:11:27 node.go:217: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:5] Proposed block (a8e819bf) with 0 txs and header state root 1a014608
+[32m[INFO] [0m2025/05/03 19:11:27 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:58: ApplyBlock 5: Applying 0 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:69: Successfully applied all state changes for block 5 (a8e819bf141f)
+[32m[INFO] [0m2025/05/03 19:11:27 blockchain.go:113: [0xeab90647392c1e74abed4af4b08476655fed7d8f] === Appended Block 5 (a8e819bf141f) | Prev: 290cd2e03b95... | State: 1a0146088bd1... | Txs: 0 ===
+[34m[DEBUG] [0m2025/05/03 19:11:27 node.go:230: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:5] Self-proposed block (a8e819bf) accepted locally.
+[34m[DEBUG] [0m2025/05/03 19:11:27 node.go:233: [0xeab90647392c1e74abed4af4b08476655fed7d8f H:5] Broadcasting locally validated block (a8e819bf)...
+[32m[INFO] [0m2025/05/03 19:11:27 network.go:101: Network: Broadcasting Block 5 (a8e819bf141f...) from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:27 node.go:259: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061] Received Block 5 (a8e819bf141f7ae83f70f5d23e7f8e117d7fc790f04a833447786342a1af913a) from network proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:27 vrf.go:71: [VRF Sim] Verify(input: ee345c5a..., output: 4b2e15af...) SUCCEEDED.
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:145: Block 5 VRF proof validated for proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f.
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:160: Block 5 Sig 1/3 verified from 0x7d91e5aa455ec652e2e155c838420373fb54eba4
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:160: Block 5 Sig 2/3 verified from 0x50e215ed47725a275ee3d135ade76867f99732b6
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:160: Block 5 Sig 3/3 verified from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:160: Block 5 Sig 4/3 verified from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:164: Block 5 Threshold Signature (4/3) validation passed.
+[32m[INFO] [0m2025/05/03 19:11:27 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:58: ApplyBlock 5: Applying 0 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:69: Successfully applied all state changes for block 5 (a8e819bf141f)
+[32m[INFO] [0m2025/05/03 19:11:27 blockchain.go:113: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061] === Appended Block 5 (a8e819bf141f) | Prev: 290cd2e03b95... | State: 1a0146088bd1... | Txs: 0 ===
+[34m[DEBUG] [0m2025/05/03 19:11:27 node.go:259: [0x50e215ed47725a275ee3d135ade76867f99732b6] Received Block 5 (a8e819bf141f7ae83f70f5d23e7f8e117d7fc790f04a833447786342a1af913a) from network proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:27 vrf.go:71: [VRF Sim] Verify(input: ee345c5a..., output: 4b2e15af...) SUCCEEDED.
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:145: Block 5 VRF proof validated for proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f.
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:160: Block 5 Sig 1/3 verified from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:160: Block 5 Sig 2/3 verified from 0x7d91e5aa455ec652e2e155c838420373fb54eba4
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:160: Block 5 Sig 3/3 verified from 0x50e215ed47725a275ee3d135ade76867f99732b6
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:160: Block 5 Sig 4/3 verified from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:164: Block 5 Threshold Signature (4/3) validation passed.
+[32m[INFO] [0m2025/05/03 19:11:27 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:58: ApplyBlock 5: Applying 0 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:69: Successfully applied all state changes for block 5 (a8e819bf141f)
+[32m[INFO] [0m2025/05/03 19:11:27 blockchain.go:113: [0x50e215ed47725a275ee3d135ade76867f99732b6] === Appended Block 5 (a8e819bf141f) | Prev: 290cd2e03b95... | State: 1a0146088bd1... | Txs: 0 ===
+[34m[DEBUG] [0m2025/05/03 19:11:27 node.go:259: [Node-0xa1ee] Received Block 5 (a8e819bf141f7ae83f70f5d23e7f8e117d7fc790f04a833447786342a1af913a) from network proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:27 vrf.go:71: [VRF Sim] Verify(input: ee345c5a..., output: 4b2e15af...) SUCCEEDED.
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:145: Block 5 VRF proof validated for proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f.
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:160: Block 5 Sig 1/3 verified from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:160: Block 5 Sig 2/3 verified from 0x7d91e5aa455ec652e2e155c838420373fb54eba4
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:160: Block 5 Sig 3/3 verified from 0x50e215ed47725a275ee3d135ade76867f99732b6
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:160: Block 5 Sig 4/3 verified from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:164: Block 5 Threshold Signature (4/3) validation passed.
+[32m[INFO] [0m2025/05/03 19:11:27 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:58: ApplyBlock 5: Applying 0 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:69: Successfully applied all state changes for block 5 (a8e819bf141f)
+[32m[INFO] [0m2025/05/03 19:11:27 blockchain.go:113: [Node-0xa1ee] === Appended Block 5 (a8e819bf141f) | Prev: 290cd2e03b95... | State: 1a0146088bd1... | Txs: 0 ===
+[34m[DEBUG] [0m2025/05/03 19:11:27 node.go:259: [0x7d91e5aa455ec652e2e155c838420373fb54eba4] Received Block 5 (a8e819bf141f7ae83f70f5d23e7f8e117d7fc790f04a833447786342a1af913a) from network proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:27 vrf.go:71: [VRF Sim] Verify(input: ee345c5a..., output: 4b2e15af...) SUCCEEDED.
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:145: Block 5 VRF proof validated for proposer 0xeab90647392c1e74abed4af4b08476655fed7d8f.
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:160: Block 5 Sig 1/3 verified from 0xc44a34eed26c307856dcad6a8ceedc11e3fea061
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:160: Block 5 Sig 2/3 verified from 0x7d91e5aa455ec652e2e155c838420373fb54eba4
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:160: Block 5 Sig 3/3 verified from 0x50e215ed47725a275ee3d135ade76867f99732b6
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:160: Block 5 Sig 4/3 verified from 0xeab90647392c1e74abed4af4b08476655fed7d8f
+[34m[DEBUG] [0m2025/05/03 19:11:27 simple_poa.go:164: Block 5 Threshold Signature (4/3) validation passed.
+[32m[INFO] [0m2025/05/03 19:11:27 merkle.go:36: Creating Merkle tree with transaction data
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:58: ApplyBlock 5: Applying 0 txs to committed state...
+[34m[DEBUG] [0m2025/05/03 19:11:27 manager.go:69: Successfully applied all state changes for block 5 (a8e819bf141f)
+[32m[INFO] [0m2025/05/03 19:11:27 blockchain.go:113: [0x7d91e5aa455ec652e2e155c838420373fb54eba4] === Appended Block 5 (a8e819bf141f) | Prev: 290cd2e03b95... | State: 1a0146088bd1... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:11:28 main.go:105: ==> [0xeab90647392c1e74abed4af4b08476655fed7d8f] Created Tx: b471696c... (To: 0xc44a34..., Nonce: 11, Shard: 2)
+[34m[DEBUG] [0m2025/05/03 19:11:28 network.go:76: Network: Broadcasting Tx b471696c from 0xeab90647392c1e74abed4af4b08476655fed7d8f...
+[33m[WARN] [0m2025/05/03 19:11:28 blockchain.go:72: [Node-0xa1ee] Tx b471696c... rejected from mempool: invalid nonce for pool admission: expected 1, got 11
+[33m[WARN] [0m2025/05/03 19:11:28 blockchain.go:72: [0xc44a34eed26c307856dcad6a8ceedc11e3fea061] Tx b471696c... rejected from mempool: invalid nonce for pool admission: expected 1, got 11
+[33m[WARN] [0m2025/05/03 19:11:28 blockchain.go:72: [0x50e215ed47725a275ee3d135ade76867f99732b6] Tx b471696c... rejected from mempool: invalid nonce for pool admission: expected 1, got 11
+[33m[WARN] [0m2025/05/03 19:11:28 blockchain.go:72: [0x7d91e5aa455ec652e2e155c838420373fb54eba4] Tx b471696c... rejected from mempool: invalid nonce for pool admission: expected 1, got 11
+[32m[INFO] [0m2025/05/03 19:11:28 main.go:117: --- Initiating Graceful Shutdown ---
+[32m[INFO] [0m2025/05/03 19:11:28 main.go:119: Stopping nodes...
+[32m[INFO] [0m2025/05/03 19:11:28 node.go:163: Node 0xc44a34eed26c307856dcad6a8ceedc11e3fea061 shutting down...
+[32m[INFO] [0m2025/05/03 19:11:28 main.go:98: Stopping transaction simulator.
+[32m[INFO] [0m2025/05/03 19:11:28 main.go:98: Transaction simulator loop exited.
+[32m[INFO] [0m2025/05/03 19:11:28 node.go:147: Node 0xc44a34eed26c307856dcad6a8ceedc11e3fea061 stopping proposal loop.
+[32m[INFO] [0m2025/05/03 19:11:28 node.go:173: Node 0xc44a34eed26c307856dcad6a8ceedc11e3fea061 shutdown complete.
+[32m[INFO] [0m2025/05/03 19:11:28 node.go:163: Node 0x7d91e5aa455ec652e2e155c838420373fb54eba4 shutting down...
+[32m[INFO] [0m2025/05/03 19:11:28 node.go:147: Node 0x7d91e5aa455ec652e2e155c838420373fb54eba4 stopping proposal loop.
+[32m[INFO] [0m2025/05/03 19:11:28 node.go:173: Node 0x7d91e5aa455ec652e2e155c838420373fb54eba4 shutdown complete.
+[32m[INFO] [0m2025/05/03 19:11:28 node.go:163: Node 0x50e215ed47725a275ee3d135ade76867f99732b6 shutting down...
+[32m[INFO] [0m2025/05/03 19:11:28 node.go:147: Node 0x50e215ed47725a275ee3d135ade76867f99732b6 stopping proposal loop.
+[32m[INFO] [0m2025/05/03 19:11:28 node.go:173: Node 0x50e215ed47725a275ee3d135ade76867f99732b6 shutdown complete.
+[32m[INFO] [0m2025/05/03 19:11:28 node.go:163: Node 0xeab90647392c1e74abed4af4b08476655fed7d8f shutting down...
+[32m[INFO] [0m2025/05/03 19:11:28 node.go:147: Node 0xeab90647392c1e74abed4af4b08476655fed7d8f stopping proposal loop.
+[32m[INFO] [0m2025/05/03 19:11:28 node.go:173: Node 0xeab90647392c1e74abed4af4b08476655fed7d8f shutdown complete.
+[32m[INFO] [0m2025/05/03 19:11:28 node.go:163: Node Node-0xa1ee shutting down...
+[32m[INFO] [0m2025/05/03 19:11:28 node.go:155: Node Node-0xa1ee stopping listener.
+[32m[INFO] [0m2025/05/03 19:11:28 node.go:173: Node Node-0xa1ee shutdown complete.
+[32m[INFO] [0m2025/05/03 19:11:28 main.go:121: Unregistering nodes...
+[32m[INFO] [0m2025/05/03 19:11:28 network.go:60: Network: Unregistered node 0xc44a34eed26c307856dcad6a8ceedc11e3fea061 (Total: 4)
+[32m[INFO] [0m2025/05/03 19:11:28 network.go:60: Network: Unregistered node 0x7d91e5aa455ec652e2e155c838420373fb54eba4 (Total: 3)
+[32m[INFO] [0m2025/05/03 19:11:28 network.go:60: Network: Unregistered node 0x50e215ed47725a275ee3d135ade76867f99732b6 (Total: 2)
+[32m[INFO] [0m2025/05/03 19:11:28 network.go:60: Network: Unregistered node 0xeab90647392c1e74abed4af4b08476655fed7d8f (Total: 1)
+[32m[INFO] [0m2025/05/03 19:11:28 network.go:60: Network: Unregistered node Node-0xa1ee (Total: 0)
+[32m[INFO] [0m2025/05/03 19:11:28 logger.go:100: Closing log file: blockchain.log
