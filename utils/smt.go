@@ -1,24 +1,21 @@
 package utils
 
 import (
-	"bytes"
+	"bytes" // Keep for bytes.Equal and potentially append([]byte(nil), ...)
 	"crypto/sha256"
-	"encoding/hex" // <-- ADDED for printing
+	"encoding/hex"
 	"errors"
-	"fmt"     // <-- ADDED for printing and errors
-	"strings" // <-- ADDED for printing
+	"fmt"
+	"strings"
 	"sync"
 )
 
 const (
-	// SMT_DEPTH defines the depth of the tree. SHA256 keys mean 256 levels.
 	SMT_DEPTH = 256
 )
 
 var (
-	// ErrKeyNotFound indicates a key doesn't exist in the SMT for Get operation.
 	ErrKeyNotFound = errors.New("key not found in SMT")
-	// Placeholder hash for empty nodes/subtrees (all zeros)
 	emptyNodeHash = make([]byte, sha256.Size)
 )
 
@@ -26,47 +23,44 @@ var (
 type smtNode struct {
 	Left  *smtNode
 	Right *smtNode
-	Hash  []byte // Hash(Left.Hash || Right.Hash) or Hash(value) for leaves
-	// TODO: Add 'value []byte' field here if storing values directly in leaves
+	Hash  []byte
+	Value []byte // Actual value stored only at leaf nodes
 }
 
-// SMT implements a simplified Sparse Merkle Tree.
+// SMT implements a simplified Sparse Merkle Tree with value storage at leaves.
 type SMT struct {
 	root  *smtNode
-	mutex sync.RWMutex
+	mutex sync.RWMutex // Protects direct access/swap of the root pointer
 }
 
 // NewSMT creates a new empty SMT.
 func NewSMT() *SMT {
-	return &SMT{
-		root: nil, // Represents empty tree (hash is emptyNodeHash)
-	}
+	return &SMT{root: nil} // Correctly returns *SMT
 }
 
-// hash combines two hashes. Handles nil inputs (representing empty subtrees).
+// hash combines two hashes.
 func hash(left, right []byte) []byte {
 	lHash := emptyNodeHash
 	if left != nil { lHash = left }
 	rHash := emptyNodeHash
 	if right != nil { rHash = right }
-	// Optimization: if both inputs are empty, result is empty hash
 	if bytes.Equal(lHash, emptyNodeHash) && bytes.Equal(rHash, emptyNodeHash) {
-		return emptyNodeHash
+		return emptyNodeHash // Return []byte
 	}
 	combined := append(lHash, rHash...)
 	h := sha256.Sum256(combined)
-	return h[:]
+	return h[:] // Return []byte
 }
 
-// hashLeaf calculates the hash of a leaf node containing a value.
-// Returns emptyNodeHash if value is nil (representing deletion/non-existence).
+// hashLeaf calculates the hash of a leaf node's value.
 func hashLeaf(value []byte) []byte {
 	if value == nil {
-		return emptyNodeHash
+		return emptyNodeHash // Return []byte
 	}
-	// Simple H(value). Could add domain separation later if needed H(domain || value).
-	h := sha256.Sum256(value)
-	return h[:]
+	leafPrefix := []byte{0x00}
+	dataToHash := append(leafPrefix, value...)
+	h := sha256.Sum256(dataToHash)
+	return h[:] // Return []byte
 }
 
 // Root returns the root hash of the SMT.
@@ -74,167 +68,123 @@ func (smt *SMT) Root() []byte {
 	smt.mutex.RLock()
 	defer smt.mutex.RUnlock()
 	if smt.root == nil {
-		return emptyNodeHash
+		return emptyNodeHash // Return []byte
 	}
-	// Return a copy to prevent external modification? Hashes are usually safe.
-	return smt.root.Hash
+	return smt.root.Hash // Return []byte
 }
 
-// Get retrieves the value associated with a key.
-// --- CURRENTLY A PLACEHOLDER - DOES NOT RETURN VALUE ---
-// It only checks if a non-empty leaf exists at the key's path.
+// --- SMT Copying Logic ---
+
+// copyRecursive performs a deep copy of an SMT node and its descendants.
+func copyRecursive(node *smtNode) *smtNode {
+	if node == nil {
+		return nil // Return *smtNode
+	}
+	newNode := &smtNode{
+		Hash:  append([]byte(nil), node.Hash...),
+		Value: append([]byte(nil), node.Value...),
+	}
+	newNode.Left = copyRecursive(node.Left)
+	newNode.Right = copyRecursive(node.Right)
+	return newNode // Return *smtNode
+}
+
+// Copy creates a deep copy of the entire SMT.
+func (smt *SMT) Copy() *SMT {
+	smt.mutex.RLock()
+	defer smt.mutex.RUnlock()
+	newSMT := NewSMT()
+	if smt.root != nil {
+		newSMT.root = copyRecursive(smt.root)
+	}
+	return newSMT // Return *SMT
+}
+
+
+// Get retrieves the value associated with a key by traversing the tree.
 func (smt *SMT) Get(key []byte) ([]byte, error) {
 	smt.mutex.RLock()
 	defer smt.mutex.RUnlock()
-
 	if smt.root == nil { return nil, ErrKeyNotFound }
-
-	keyHash := sha256.Sum256(key)
-	pathBits := bytesToBits(keyHash[:])
-
-	currentNode := smt.root
-	for i := 0; i < SMT_DEPTH; i++ {
-		if currentNode == nil { return nil, ErrKeyNotFound }
-
-		// --- Corrected bool comparison ---
-		if !pathBits[i] { // Go left if bit is 0 (false)
-			currentNode = currentNode.Left
-		} else { // Go right if bit is 1 (true)
-			currentNode = currentNode.Right
-		}
-	}
-
-	// At expected leaf position
-	if currentNode == nil || bytes.Equal(currentNode.Hash, emptyNodeHash) {
-		return nil, ErrKeyNotFound
-	}
-
-	// Cannot return actual value yet. Signal presence.
-	return nil, nil // Key exists (placeholder success)
+	keyHash := sha256.Sum256(key); pathBits := bytesToBits(keyHash[:])
+	value, found := smt.getRecursive(smt.root, pathBits, 0)
+	if !found { return nil, ErrKeyNotFound }
+	if value == nil { return nil, nil } // Key exists, value is nil
+	valueCopy := make([]byte, len(value)); copy(valueCopy, value)
+	return valueCopy, nil // Return []byte, error
 }
+
+// getRecursive is the helper for Get, traversing the tree.
+func (smt *SMT) getRecursive(node *smtNode, pathBits []bool, level int) ([]byte, bool) {
+	if node == nil { return nil, false } // Return []byte, bool
+	if level == SMT_DEPTH { return node.Value, true } // Leaf position exists, return its value and true
+	if !pathBits[level] { return smt.getRecursive(node.Left, pathBits, level+1) }
+	return smt.getRecursive(node.Right, pathBits, level+1) // Return results from recursive call
+}
+
 
 // Update inserts, updates, or deletes (value=nil) a key in the SMT.
 func (smt *SMT) Update(key, value []byte) error {
 	smt.mutex.Lock()
 	defer smt.mutex.Unlock()
-
-	keyHash := sha256.Sum256(key)
-	pathBits := bytesToBits(keyHash[:])
-	leafHash := hashLeaf(value) // Hash of value, or emptyNodeHash for nil
-
+	keyHash := sha256.Sum256(key); pathBits := bytesToBits(keyHash[:])
 	var err error
-	smt.root, err = smt.updateRecursive(smt.root, pathBits, 0, leafHash)
-	if err != nil {
-		return fmt.Errorf("SMT update failed: %w", err) // <-- Use fmt
-	}
-	return nil
+	smt.root, err = smt.updateRecursive(smt.root, pathBits, 0, value)
+	if err != nil { return fmt.Errorf("SMT update failed: %w", err) } // Return error
+	return nil // Return error (nil on success)
 }
 
-// updateRecursive is the core update logic.
-func (smt *SMT) updateRecursive(current *smtNode, pathBits []bool, level int, leafHash []byte) (*smtNode, error) {
-	// Base case: Reached the leaf level
-	if level == SMT_DEPTH {
-		// Return a new leaf node. If leafHash is emptyNodeHash, it's a deletion.
-		// If the hash is identical to existing hash, can optimize by returning current.
-		// For simplicity, always create/return new leaf representation.
-		return &smtNode{Hash: leafHash}, nil
-	}
-
-	// If current path requires a node but none exists, create one.
-	if current == nil {
-		current = &smtNode{} // Represents an empty subtree implicitly
-	}
-
-	var newChild *smtNode
-	var err error
-
-	// --- Corrected bool comparison ---
-	if !pathBits[level] { // Go left if bit is 0 (false)
-		newChild, err = smt.updateRecursive(current.Left, pathBits, level+1, leafHash)
-		if err != nil { return nil, err }
-		// Optimization: if returned child is identical to current, no need to update hash
-		// if current.Left == newChild { return current, nil } // Needs pointer comparison or deep compare
-		current.Left = newChild
-	} else { // Go right if bit is 1 (true)
-		newChild, err = smt.updateRecursive(current.Right, pathBits, level+1, leafHash)
-		if err != nil { return nil, err }
-		// if current.Right == newChild { return current, nil }
-		current.Right = newChild
-	}
-
-	// --- Recalculate Hash & Pruning ---
-	leftHash := emptyNodeHash
-	if current.Left != nil { leftHash = current.Left.Hash }
-	rightHash := emptyNodeHash
-	if current.Right != nil { rightHash = current.Right.Hash }
-
-	newHash := hash(leftHash, rightHash)
-	// Optimization: if hash hasn't changed, can return current node (requires storing old hash)
-	// if bytes.Equal(newHash, current.Hash) { return current, nil }
-
-	current.Hash = newHash
-
-	// Pruning: If the node's hash is the empty hash AND both children are nil,
-	// this node represents an empty subtree and can be represented by nil itself.
-	if bytes.Equal(current.Hash, emptyNodeHash) && current.Left == nil && current.Right == nil {
-		return nil, nil // Prune this node
-	}
-
-	return current, nil
+// updateRecursive now handles storing the value at the leaf.
+func (smt *SMT) updateRecursive(current *smtNode, pathBits []bool, level int, value []byte) (*smtNode, error) {
+	if level == SMT_DEPTH { newLeaf := &smtNode{ Hash: hashLeaf(value), Value: value }; return newLeaf, nil } // Return *smtNode, error
+	if current == nil { current = &smtNode{} }
+	var newChild *smtNode; var err error
+	if !pathBits[level] { newChild, err = smt.updateRecursive(current.Left, pathBits, level+1, value); if err != nil { return nil, err }; current.Left = newChild } else { newChild, err = smt.updateRecursive(current.Right, pathBits, level+1, value); if err != nil { return nil, err }; current.Right = newChild }
+	leftHash := emptyNodeHash; if current.Left != nil { leftHash = current.Left.Hash }
+	rightHash := emptyNodeHash; if current.Right != nil { rightHash = current.Right.Hash }
+	current.Hash = hash(leftHash, rightHash)
+	if current.Left == nil && current.Right == nil { if bytes.Equal(current.Hash, emptyNodeHash) { return nil, nil } } // Return *smtNode, error
+	return current, nil // Return *smtNode, error
 }
-
 
 // Delete sets the value for the key to nil.
 func (smt *SMT) Delete(key []byte) error {
-	return smt.Update(key, nil)
+	return smt.Update(key, nil) // Return error
 }
-
-// --- Utility Functions ---
 
 // bytesToBits converts a byte slice into a slice of bools (bits).
 func bytesToBits(b []byte) []bool {
 	bits := make([]bool, len(b)*8)
 	for i, B := range b {
 		for j := 0; j < 8; j++ {
-			if (B>>(7-j))&1 == 1 { bits[i*8+j] = true } // No else needed, defaults to false
+			if (B>>(7-j))&1 == 1 { bits[i*8+j] = true }
 		}
 	}
-	return bits
+	return bits // Return []bool
 }
 
-// --- TODO: Proof Generation and Verification ---
 
-// --- TODO: Value Retrieval for Get ---
+// --- Print Helper ---
 
-// Helper for debugging tree structure
+// printRecursive is a helper for debugging tree structure
 func (smt *SMT) printRecursive(node *smtNode, level int, path string) {
-	if node == nil {
-		// Optional: Print placeholder for nil nodes if needed for visualization
-		// indent := strings.Repeat("  ", level)
-		// fmt.Printf("%s%s <nil>\n", indent, path)
-		return
-	}
-	indent := strings.Repeat("  ", level) // <-- Use strings
-	nodeType := "I"
-	if level == SMT_DEPTH { nodeType = "L" }
-
-    // Check if hash is nil before trying to slice/encode
-    hashStr := "<nil>"
-    if node.Hash != nil {
-        hashStr = hex.EncodeToString(node.Hash[:4]) + "..." // <-- Use hex
-    }
-
-	fmt.Printf("%s%s [%s] H: %s\n", indent, path, nodeType, hashStr) // <-- Use fmt
-
+	if node == nil { return } // No return value
+	indent := strings.Repeat("  ", level); nodeType := "I"; valueStr := ""
+	if level == SMT_DEPTH { nodeType = "L"; if node.Value != nil { valueStr = fmt.Sprintf(" V: %x...", node.Value[:min(4, len(node.Value))]) } else { valueStr = " V: <nil>" } }
+    hashStr := "<nil>"; if node.Hash != nil { hashStr = hex.EncodeToString(node.Hash[:4]) + "..." }
+	fmt.Printf("%s%s [%s] H: %s%s\n", indent, path, nodeType, hashStr, valueStr)
 	smt.printRecursive(node.Left, level+1, path+"0")
 	smt.printRecursive(node.Right, level+1, path+"1")
+	// No return value
 }
 
 // Print outputs a simplified representation of the SMT structure to console.
 func (smt *SMT) Print() {
-	fmt.Println("--- SMT Structure ---") // <-- Use fmt
-	smt.mutex.RLock() // Read lock for printing
-	smt.printRecursive(smt.root, 0, "")
-	smt.mutex.RUnlock()
-	fmt.Println("---------------------") // <-- Use fmt
+	fmt.Println("--- SMT Structure ---")
+	smt.mutex.RLock(); smt.printRecursive(smt.root, 0, ""); smt.mutex.RUnlock()
+	fmt.Println("---------------------")
+	// No return value
 }
+
+// Helper for printing
+func min(a, b int) int { if a < b { return a }; return b } // Return int

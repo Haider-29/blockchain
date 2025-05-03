@@ -2,10 +2,11 @@ package p2p
 
 import (
 	"bytes"
-	"encoding/gob" // Needed for calculateTentativeStateRoot simulation
+	//"encoding/gob" // No longer needed directly here
+	"encoding/hex" // Needed for debug logs
 	"fmt"
+	"sync"
 	"time"
-    "sync"
 
 	"blockchain/consensus"
 	"blockchain/core"
@@ -19,52 +20,35 @@ type Node struct {
 	ID           string
 	Wallet       *crypto.Wallet
 	Blockchain   *core.Blockchain
-	StateManager *state.StateManager // Keep concrete type for simulation access
+	StateManager *state.StateManager
 	Consensus    consensus.ConsensusEngine
-	Broadcaster  NetworkBroadcaster // Use the interface type
+	Broadcaster  NetworkBroadcaster // Interface type
 	IsValidator  bool
-    stopChan     chan struct{}
-    wg           sync.WaitGroup
+
+	stopChan     chan struct{}
+	wg           sync.WaitGroup
 }
 
 // NewNode creates a new network node instance.
 func NewNode(
 	idPrefix string,
-	broadcaster NetworkBroadcaster, // Accept interface
+	broadcaster NetworkBroadcaster,
 	isValidator bool,
 	validators []string,
 	genesisBlock *core.Block,
 ) (*Node, error) {
-	// Validate inputs
 	if broadcaster == nil { return nil, fmt.Errorf("network broadcaster cannot be nil") }
 	if genesisBlock == nil { return nil, fmt.Errorf("genesis block cannot be nil") }
-
 	wallet := crypto.NewWallet()
 	nodeID := fmt.Sprintf("%s-%s", idPrefix, wallet.Address[:6])
-
 	stateMgr := state.NewStateManager()
     initialStateRoot := stateMgr.CalculateGlobalStateRoot()
-    if !bytes.Equal(genesisBlock.Header.StateRoot, initialStateRoot) {
-        return nil, fmt.Errorf("node %s: Genesis block state root (%x) does not match initial state manager root (%x)",
-            nodeID, genesisBlock.Header.StateRoot, initialStateRoot)
-    }
-
+    if !bytes.Equal(genesisBlock.Header.StateRoot, initialStateRoot) { return nil, fmt.Errorf("node %s: Genesis block state root (%x) does not match initial state manager root (%x)", nodeID, genesisBlock.Header.StateRoot, initialStateRoot) }
 	bc, err := core.NewBlockchain(stateMgr, genesisBlock, nodeID)
     if err != nil { return nil, fmt.Errorf("failed to create blockchain for node %s: %w", nodeID, err) }
-
 	consensusEngine, err := consensus.NewSimplePoA(validators, wallet, genesisBlock)
     if err != nil { return nil, fmt.Errorf("failed to create consensus engine for node %s: %w", nodeID, err) }
-
-	node := &Node{
-		ID:           nodeID,
-		Wallet:       wallet,
-		Blockchain:   bc,
-		StateManager: stateMgr,
-		Consensus:    consensusEngine,
-		Broadcaster:  broadcaster, // Store the provided broadcaster interface
-		IsValidator:  isValidator,
-        stopChan:     make(chan struct{}),
-	}
+	node := &Node{ ID: nodeID, Wallet: wallet, Blockchain: bc, StateManager: stateMgr, Consensus: consensusEngine, Broadcaster: broadcaster, IsValidator: isValidator, stopChan: make(chan struct{}) }
 	utils.InfoLogger.Printf("Created Node: %s (Validator: %v, Addr: %s)", node.ID, node.IsValidator, node.Wallet.Address)
 	return node, nil
 }
@@ -83,7 +67,8 @@ func (n *Node) AssignValidatorWallet(validatorWallet *crypto.Wallet, validators 
 func CreateGenesisBlock(validators []string) *core.Block {
 	txs := core.TxList{}; initialState := state.NewStateManager(); genesisStateRoot := initialState.CalculateGlobalStateRoot(); genesisValidator := "0xGENESIS"; genesisTimestamp := time.Date(2024, 1, 1, 0, 0, 0, 0, time.UTC).UnixNano()
     genesisBlock := core.NewBlock(0, []byte("genesis_prev_hash"), genesisStateRoot, txs, genesisValidator); genesisBlock.Header.Timestamp = genesisTimestamp; genesisBlock.Hash = genesisBlock.CalculateHash()
-    utils.InfoLogger.Printf("Created Genesis Block: Hash %x, StateRoot: %x", genesisBlock.Hash, genesisBlock.Header.StateRoot); return genesisBlock
+    utils.InfoLogger.Printf("Created Genesis Block: Hash %x, StateRoot: %x", genesisBlock.Hash, genesisBlock.Header.StateRoot);
+	return genesisBlock
 }
 
 // Start the node's main loop.
@@ -106,90 +91,82 @@ func (n *Node) Stop() {
     select { case <-n.stopChan: default: close(n.stopChan) }; n.wg.Wait(); /* Unregister called by main */ utils.InfoLogger.Printf("Node %s shutdown complete.", n.ID)
 }
 
-// tryProposeBlock attempts to create and broadcast a block.
+// tryProposeBlock uses SimulateApplyTransactions to get the expected state root.
 func (n *Node) tryProposeBlock() {
-	lastBlock := n.Blockchain.LastBlock(); if lastBlock == nil { utils.WarnLogger.Printf("[%s] Cannot propose: Last block is nil.", n.ID); return }
+	lastBlock := n.Blockchain.LastBlock();
+    if lastBlock == nil { utils.WarnLogger.Printf("[%s] Cannot propose: Last block is nil.", n.ID); return }
+
+    // 1. Get pending transactions - NOW filters by current nonce
 	pendingTxs := n.Blockchain.GetPendingTransactions(10)
-    expectedStateRoot, err := n.calculateTentativeStateRoot(pendingTxs)
-    if err != nil { utils.ErrorLogger.Printf("[%s] Failed to calculate tentative state root: %v. Skipping proposal.", n.ID, err); return }
-	proposedBlock, err := n.Consensus.Propose(pendingTxs, lastBlock, expectedStateRoot, n.Wallet)
-	if err != nil { if !bytes.Contains([]byte(err.Error()), []byte("not validator's turn")) { utils.WarnLogger.Printf("[%s] Consensus proposal failed: %v", n.ID, err) }; return }
-    err = n.Blockchain.AddBlock(proposedBlock)
-    if err != nil { utils.ErrorLogger.Printf("[%s] CRITICAL: Failed to add self-proposed block %d (%x) to own chain: %v", n.ID, proposedBlock.Header.Height, proposedBlock.Hash, err); return }
-	n.Broadcaster.BroadcastBlock(n, proposedBlock) // Use interface
-}
 
-// calculateTentativeStateRoot simulates applying transactions to predict the state root.
-func (n *Node) calculateTentativeStateRoot(txs core.TxList) ([]byte, error) {
-    if n.StateManager == nil { return nil, fmt.Errorf("[%s] Cannot calculate tentative root: Node's StateManager is nil", n.ID) }
-    originalValues := make(map[string][]byte); keysToRevert := make(map[string]bool)
-    utils.DebugLogger.Printf("[%s] Calculating tentative root: Applying %d txs using public methods...", n.ID, len(txs))
-    for _, tx := range txs {
-        key := tx.To; keysToRevert[key] = true
-        if _, stored := originalValues[key]; !stored { currentVal, _ := n.StateManager.Get(key); originalValues[key] = currentVal }
-        // Simulate using public Put/Get/Delete
-        var valueToStore []byte
-        if len(tx.Data) > 0 { valueToStore = tx.Data } else {
-            var valBuf bytes.Buffer
-            enc := gob.NewEncoder(&valBuf) // Need encoding/gob import here
-            if errEnc := enc.Encode(tx.Value); errEnc != nil {
-                 n.revertTentativeChanges(originalValues, keysToRevert)
-                 return nil, fmt.Errorf("[%s] failed simulating encode value for tx %x: %w", n.ID, tx.ID, errEnc)
-            }
-            valueToStore = valBuf.Bytes()
-        }
-        err := n.StateManager.Put(key, valueToStore) // Use PUBLIC Put
-        if err != nil {
-            utils.ErrorLogger.Printf("[%s] Error applying tx %x via Put to state for tentative root calculation: %v. Reverting attempted changes.", n.ID, tx.ID, err)
-            n.revertTentativeChanges(originalValues, keysToRevert)
-            return nil, fmt.Errorf("failed applying tx %x tentatively via Put: %w", tx.ID, err)
-        }
+    // --- Debug Log ---
+    if len(pendingTxs) > 0 {
+        txIDs := make([]string, len(pendingTxs))
+        for i, tx := range pendingTxs { txIDs[i] = hex.EncodeToString(tx.ID[:4]) + "..." }
+        utils.DebugLogger.Printf("[%s] tryProposeBlock: Got %d EXECUTA BLE pending txs for block %d: %v", n.ID, len(pendingTxs), lastBlock.Header.Height+1, txIDs)
+    } else {
+         utils.DebugLogger.Printf("[%s] tryProposeBlock: No executable pending txs found for block %d.", n.ID, lastBlock.Header.Height+1)
     }
-    tentativeRoot := n.StateManager.CalculateGlobalStateRoot()
-    utils.DebugLogger.Printf("[%s] Tentative root calculated: %x", n.ID, tentativeRoot)
-    n.revertTentativeChanges(originalValues, keysToRevert)
-    utils.DebugLogger.Printf("[%s] Reverted tentative state changes.", n.ID)
-    return tentativeRoot, nil
-}
 
-// revertTentativeChanges attempts to restore original values.
-func (n *Node) revertTentativeChanges(originalValues map[string][]byte, keysModified map[string]bool) {
-     if n.StateManager == nil { return }
-     for key := range keysModified {
-         originalValue, existed := originalValues[key]
-         if !existed { utils.ErrorLogger.Printf("[%s] Revert Warning: Key '%s' was modified but no original value was stored.", n.ID, key); continue }
-         var revertErr error
-         if originalValue == nil { revertErr = n.StateManager.Delete(key) } else { revertErr = n.StateManager.Put(key, originalValue) } // Use public methods
-         if revertErr != nil { utils.ErrorLogger.Printf("[%s] CRITICAL REVERT FAILED for key '%s': %v. State may be inconsistent.", n.ID, key, revertErr) }
-     }
+    // 2. Simulate applying these executable transactions
+    if n.StateManager == nil { utils.ErrorLogger.Printf("[%s] Cannot propose: StateManager is nil.", n.ID); return }
+    expectedStateRoot, simErr := n.StateManager.SimulateApplyTransactions(pendingTxs)
+    if simErr != nil {
+         utils.ErrorLogger.Printf("[%s] CRITICAL: Simulation failed for already validated txs (block %d): %v. Skipping proposal.", n.ID, lastBlock.Header.Height+1, simErr)
+         return
+    }
+    utils.DebugLogger.Printf("[%s] Simulation successful for block %d. Expected State Root: %x...", n.ID, lastBlock.Header.Height+1, expectedStateRoot[:4])
+
+
+	// 3. Call consensus engine to propose the block structure using the *predicted* state root
+	proposedBlock, err := n.Consensus.Propose(pendingTxs, lastBlock, expectedStateRoot, n.Wallet)
+	if err != nil {
+		if !bytes.Contains([]byte(err.Error()), []byte("not validator's turn")) {
+			utils.WarnLogger.Printf("[%s] Consensus proposal failed for height %d: %v", n.ID, lastBlock.Header.Height+1, err)
+		}
+		return
+	}
+    utils.DebugLogger.Printf("[%s] Proposed block %d (%x) with %d txs and header state root %x", n.ID, proposedBlock.Header.Height, proposedBlock.Hash[:4], len(proposedBlock.Transactions), proposedBlock.Header.StateRoot[:4])
+
+    // 4. Attempt to add the proposed block LOCALLY. AddBlock validates everything again.
+    err = n.Blockchain.AddBlock(proposedBlock)
+    if err != nil {
+        utils.ErrorLogger.Printf("[%s] CRITICAL: Self-proposed block %d (%x) REJECTED locally DESPITE successful simulation: %v", n.ID, proposedBlock.Header.Height, proposedBlock.Hash, err)
+        return
+    }
+
+    // 5. If AddBlock succeeded locally, the block IS valid.
+    utils.DebugLogger.Printf("[%s] Self-proposed block %d (%x) accepted locally.", n.ID, proposedBlock.Header.Height, proposedBlock.Hash[:4])
+
+	// 6. Broadcast the locally validated block
+    utils.DebugLogger.Printf("[%s] Broadcasting locally validated block %d (%x)...", n.ID, proposedBlock.Header.Height, proposedBlock.Hash[:4])
+	n.Broadcaster.BroadcastBlock(n, proposedBlock) // Use interface
 }
 
 // HandleTransaction processes an incoming transaction.
 func (n *Node) HandleTransaction(tx *core.Transaction) {
     if tx == nil { return }
-	err := n.Blockchain.AddTransaction(tx)
-	if err != nil { if !bytes.Contains([]byte(err.Error()), []byte("already in pool")) { utils.WarnLogger.Printf("[%s] Failed to add received Tx %x... to pool: %v", n.ID, tx.ID[:4], err) } }
+	err := n.Blockchain.AddTransaction(tx) // Add to local pool (now allows future nonces)
+	if err == nil {
+        // Optional: Re-broadcast via interface if logic requires it?
+    } else {
+        if !bytes.Contains([]byte(err.Error()), []byte("already in pool")) {
+             utils.WarnLogger.Printf("[%s] Failed to add received Tx %x... to pool: %v", n.ID, tx.ID[:4], err)
+        }
+    }
 }
 
 // HandleBlock processes an incoming block.
 func (n *Node) HandleBlock(block *core.Block) {
     if block == nil { return }
 	utils.DebugLogger.Printf("[%s] Received Block %d (%x) from network validator %s", n.ID, block.Header.Height, block.Hash, block.Header.Validator)
-    _, exists := n.Blockchain.GetBlockByHash(block.Hash); if exists { return }
+    _, exists := n.Blockchain.GetBlockByHash(block.Hash); if exists { utils.DebugLogger.Printf("[%s] Ignoring block %d (%x): Already have this block.", n.ID, block.Header.Height, block.Hash); return }
     lastBlock := n.Blockchain.LastBlock()
-    if lastBlock == nil { if block.Header.Height != 0 { return } } else { if block.Header.Height != lastBlock.Header.Height+1 { return }; if !bytes.Equal(block.Header.PrevBlockHash, lastBlock.Hash) { return } }
+    if lastBlock == nil { if block.Header.Height != 0 { utils.WarnLogger.Printf("[%s] Received block %d (%x) but local chain is empty (expecting genesis).", n.ID, block.Header.Height, block.Hash); return }
+    } else {
+        if block.Header.Height != lastBlock.Header.Height+1 { if block.Header.Height > lastBlock.Header.Height + 1 { utils.WarnLogger.Printf("[%s] Received block %d (%x) from future? Current height %d. Needs sync.", n.ID, block.Header.Height, block.Hash, lastBlock.Header.Height) } else { utils.DebugLogger.Printf("[%s] Ignoring block %d (%x): Height %d not sequential (current: %d).", n.ID, block.Header.Height, block.Hash, block.Header.Height, lastBlock.Header.Height) }; return }
+        if !bytes.Equal(block.Header.PrevBlockHash, lastBlock.Hash) { utils.WarnLogger.Printf("[%s] Ignoring block %d (%x): PrevHash %x does not match local last block hash %x.", n.ID, block.Header.Height, block.Hash, block.Header.PrevBlockHash, lastBlock.Hash); return }
+    }
 	err := n.Consensus.Validate(block, lastBlock); if err != nil { utils.WarnLogger.Printf("[%s] Block %d (%x) failed consensus validation: %v", n.ID, block.Header.Height, block.Hash, err); return }
 	err = n.Blockchain.AddBlock(block); if err != nil { utils.WarnLogger.Printf("[%s] Failed to add block %d (%x) to chain: %v", n.ID, block.Header.Height, block.Hash, err) }
 }
-
-// --- REMOVE ALL DUPLICATED CODE BELOW THIS LINE ---
-// // --- Implementation Details Copied (Ensure these match final working versions) ---
-// func NewNode(...) (*Node, error) { /* ... */ }
-// func (n *Node) AssignValidatorWallet(...) error { /* ... */ }
-// func CreateGenesisBlock(...) *core.Block { /* ... */ }
-// func (n *Node) Start(...) { /* ... */ }
-// func (n *Node) Stop() { /* ... */ }
-// func (n *Node) tryProposeBlock() { /* ... */ }
-// func (n *Node) revertTentativeChanges(...) { /* ... */ } // Note: This one was also duplicated
-// func (n *Node) HandleTransaction(...) { /* ... */ }
-// func (n *Node) HandleBlock(...) { /* ... */ }

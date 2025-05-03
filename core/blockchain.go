@@ -2,204 +2,163 @@ package core
 
 import (
 	"bytes"
-	"encoding/hex" // Keep for TxPool methods if used there
+	"encoding/gob"
+	"encoding/hex"
 	"fmt"
 	"sync"
 
-	// "blockchain/state" // REMOVED
 	"blockchain/utils"
-    // "blockchain/crypto" // REMOVE if not used (e.g., if state validation in AddTransaction is removed/commented out)
+	// StateManager interface defined in interfaces.go
 )
 
 // Blockchain manages the chain of blocks and state.
 type Blockchain struct {
 	Blocks       []*Block
-	state        StateManager     // Use the interface type defined in core/interfaces.go
+	state        StateManager // Interface type
 	Genesis      *Block
-	txPool       *TransactionPool // Use the TransactionPool defined below
+	txPool       *TransactionPool
 	lock         sync.RWMutex
 	nodeID       string
 }
 
 // NewBlockchain creates a new blockchain instance with a genesis block.
-// It now accepts the StateManager interface.
 func NewBlockchain(stateMgr StateManager, genesis *Block, nodeID string) (*Blockchain, error) {
-    // Validate inputs
-    if stateMgr == nil {
-        return nil, fmt.Errorf("state manager (interface) cannot be nil")
-    }
-    if genesis == nil {
-        return nil, fmt.Errorf("genesis block cannot be nil")
-    }
-    // Basic check: Ensure genesis state root matches the one calculated by the provided manager
-    initialStateRoot := stateMgr.CalculateGlobalStateRoot()
-    if !bytes.Equal(genesis.Header.StateRoot, initialStateRoot) {
-        utils.ErrorLogger.Printf("[%s] Genesis block state root (%x) does not match initial state manager root (%x)",
-            nodeID, genesis.Header.StateRoot, initialStateRoot)
-        return nil, fmt.Errorf("genesis state root mismatch (Header: %x, Calculated: %x). Ensure initial state is correct.",
-            genesis.Header.StateRoot, initialStateRoot)
-    }
-
-
-	bc := &Blockchain{
-		Blocks:       make([]*Block, 0, 100), // Pre-allocate capacity
-		state:        stateMgr,               // Assign the provided implementation
-		Genesis:      genesis,
-		txPool:       NewTransactionPool(), // Create a new TxPool instance
-		nodeID:       nodeID,
+	if stateMgr == nil { return nil, fmt.Errorf("state manager (interface) cannot be nil") }
+	if genesis == nil { return nil, fmt.Errorf("genesis block cannot be nil") }
+	initialStateRoot := stateMgr.CalculateGlobalStateRoot()
+	if !bytes.Equal(genesis.Header.StateRoot, initialStateRoot) {
+		utils.ErrorLogger.Printf("[%s] Genesis block state root (%x) does not match initial state manager root (%x)", nodeID, genesis.Header.StateRoot, initialStateRoot)
+		return nil, fmt.Errorf("genesis state root mismatch (Header: %x, Calculated: %x). Ensure initial state is correct.", genesis.Header.StateRoot, initialStateRoot)
 	}
-    bc.Blocks = append(bc.Blocks, genesis) // Add the genesis block
-
+	bc := &Blockchain{
+		Blocks:  make([]*Block, 0, 100),
+		state:   stateMgr,
+		Genesis: genesis,
+		txPool:  NewTransactionPool(),
+		nodeID:  nodeID,
+	}
+	bc.Blocks = append(bc.Blocks, genesis)
 	utils.InfoLogger.Printf("[%s] Blockchain initialized. Genesis: %x, Height: %d", nodeID, genesis.Hash, genesis.Header.Height)
 	return bc, nil
 }
 
-// AddTransaction adds a transaction to the memory pool after basic verification.
-func (bc *Blockchain) AddTransaction(tx *Transaction) error {
-    if tx == nil {
-        return fmt.Errorf("cannot add nil transaction to pool")
-    }
-	if !tx.Verify() {
-		return fmt.Errorf("invalid transaction signature or data integrity")
-	}
-
-	// Optional state validation (requires Get method in StateManager interface)
-	// Example:
-	// nonceBytes, found := bc.state.Get(tx.From + "_nonce") // Assuming Get exists on interface
-	// if found { ... compare nonce ... } else { ... handle new account ... }
-
-	err := bc.txPool.Add(tx) // Add to the blockchain's txPool instance
-	if err != nil {
-        // Log only if it's not a duplicate error (already handled by Add)
-		if !bytes.Contains([]byte(err.Error()), []byte("already in pool")) {
-             utils.WarnLogger.Printf("[%s] Failed to add Tx %x to pool: %v", bc.nodeID, tx.ID, err)
-        }
-		return err
-	}
-	utils.DebugLogger.Printf("[%s] Added Tx %x to mempool (Pool size: %d)", bc.nodeID, tx.ID, bc.txPool.Count())
+// validateTxPoolAdmission - REMOVED Nonce Check. Only performs basic static checks.
+func (bc *Blockchain) validateTxPoolAdmission(tx *Transaction) error {
+	if tx == nil { return fmt.Errorf("cannot validate nil tx") }
+	if tx.From == "" { return fmt.Errorf("transaction has empty 'From' address") }
+	// --- NONCE CHECK REMOVED FROM HERE ---
+	// --- Optional: Add other STATIC checks here ---
 	return nil
 }
 
-// GetPendingTransactions returns transactions from the pool for block creation.
+// AddTransaction adds a transaction to the memory pool after verification.
+// Nonce validation moved to GetPendingTransactions.
+func (bc *Blockchain) AddTransaction(tx *Transaction) error {
+	if tx == nil { return fmt.Errorf("cannot add nil transaction to pool") }
+
+	// 1. Basic cryptographic verification
+	if !tx.Verify() { return fmt.Errorf("invalid transaction signature or data integrity") }
+
+	// 2. Optional Static validation (signature format, etc.)
+	// err := bc.validateTxPoolAdmission(tx)
+	// if err != nil {
+	// 	 utils.WarnLogger.Printf("[%s] Tx %x... rejected from mempool (static validation): %v", bc.nodeID, tx.ID[:4], err)
+	// 	 return fmt.Errorf("transaction failed pool validation: %w", err)
+	// }
+
+	// 3. Add to pool (pool accepts potentially future nonces now)
+	err := bc.txPool.Add(tx)
+	if err != nil {
+		// Don't warn again for duplicates, Add handles that log
+		if !bytes.Contains([]byte(err.Error()), []byte("already in pool")) {
+			utils.WarnLogger.Printf("[%s] Failed to add Tx %x to pool: %v", bc.nodeID, tx.ID, err)
+		}
+		return err
+	}
+
+	utils.DebugLogger.Printf("[%s] Added Tx %x (Nonce %d) to mempool (Pool size: %d)", bc.nodeID, tx.ID[:4], tx.Nonce, bc.txPool.Count())
+	return nil
+}
+
+// GetPendingTransactions retrieves executable transactions from the pool.
+// Passes the state manager down to txPool's GetPending for nonce checking.
 func (bc *Blockchain) GetPendingTransactions(maxCount int) TxList {
-	return bc.txPool.GetPending(maxCount)
+	// Pass the state manager interface for nonce checking
+	if bc.state == nil {
+		utils.ErrorLogger.Printf("[%s] GetPendingTransactions: Blockchain has nil state manager!", bc.nodeID)
+		return make(TxList, 0)
+	}
+	return bc.txPool.GetPending(maxCount, bc.state) // Pass state
 }
 
 // AddBlock validates and adds a new block to the chain.
 func (bc *Blockchain) AddBlock(block *Block) error {
 	bc.lock.Lock()
 	defer bc.lock.Unlock()
-
-    if block == nil { return fmt.Errorf("cannot add nil block") }
-
+	if block == nil { return fmt.Errorf("cannot add nil block") }
 	lastBlock := bc.getLastBlockInternal()
-
-	// --- Basic Header & Structure Validations (remain the same) ---
-	if !bytes.Equal(block.Header.PrevBlockHash, lastBlock.Hash) {
-		return fmt.Errorf("[%s] Block %d (%x) links to invalid previous hash %x (expected %x)",
-			bc.nodeID, block.Header.Height, block.Hash, block.Header.PrevBlockHash, lastBlock.Hash)
+	if lastBlock == nil && block.Header.Height != 0 { return fmt.Errorf("cannot add block %d to empty chain (only genesis)", block.Header.Height) }
+	if lastBlock != nil {
+		if !bytes.Equal(block.Header.PrevBlockHash, lastBlock.Hash) { return fmt.Errorf("[%s] Block %d (%x) links to invalid previous hash %x (expected %x)", bc.nodeID, block.Header.Height, block.Hash, block.Header.PrevBlockHash, lastBlock.Hash) }
+		if block.Header.Height != lastBlock.Header.Height+1 { return fmt.Errorf("[%s] Block %d (%x) has invalid height (expected %d)", bc.nodeID, block.Header.Height, block.Hash, lastBlock.Header.Height+1) }
 	}
-	if block.Header.Height != lastBlock.Header.Height+1 {
-		return fmt.Errorf("[%s] Block %d (%x) has invalid height (expected %d)",
-			bc.nodeID, block.Header.Height, block.Hash, lastBlock.Header.Height+1)
-	}
-    calculatedHash := block.CalculateHash()
-    if !bytes.Equal(block.Hash, calculatedHash) {
-        return fmt.Errorf("[%s] Block %d (%x) has inconsistent hash (header hash calculates to: %x)",
-            bc.nodeID, block.Header.Height, block.Hash, calculatedHash)
-    }
-	if !block.VerifySignature() {
-        // Allow unsigned genesis block if it matches
-        if !(block.Header.Height == 0 && bytes.Equal(block.Hash, bc.Genesis.Hash)) {
-		    return fmt.Errorf("[%s] Block %d (%x) has invalid validator signature from %s",
-                bc.nodeID, block.Header.Height, block.Hash, block.Header.Validator)
-        }
-	}
-    if !block.VerifyStructure() {
-         return fmt.Errorf("[%s] Block %d (%x) has invalid structure (e.g., Merkle root mismatch)",
-            bc.nodeID, block.Header.Height, block.Hash)
-    }
-
-	// --- State Transition Validation (Using Interface) ---
-	err := bc.state.ApplyBlock(block) // Use the interface method
-	if err != nil {
-		return fmt.Errorf("[%s] Block %d (%x) failed state transition via state manager: %w", bc.nodeID, block.Header.Height, block.Hash, err)
-	}
-	newStateRoot := bc.state.CalculateGlobalStateRoot() // Use the interface method
+	calculatedHash := block.CalculateHash()
+	if !bytes.Equal(block.Hash, calculatedHash) { return fmt.Errorf("[%s] Block %d (%x) has inconsistent hash (header hash calculates to: %x)", bc.nodeID, block.Header.Height, block.Hash, calculatedHash) }
+	if !block.VerifySignature() { if !(block.Header.Height == 0 && bytes.Equal(block.Hash, bc.Genesis.Hash)) { return fmt.Errorf("[%s] Block %d (%x) has invalid validator signature from %s", bc.nodeID, block.Header.Height, block.Hash, block.Header.Validator) } }
+	if !block.VerifyStructure() { return fmt.Errorf("[%s] Block %d (%x) has invalid structure (e.g., Merkle root mismatch)", bc.nodeID, block.Header.Height, block.Hash) }
+	err := bc.state.ApplyBlock(block) // Apply block state changes
+	if err != nil { return fmt.Errorf("[%s] Block %d (%x) failed state transition via state manager: %w", bc.nodeID, block.Header.Height, block.Hash, err) }
+	newStateRoot := bc.state.CalculateGlobalStateRoot() // Verify resulting state root
 	if !bytes.Equal(block.Header.StateRoot, newStateRoot) {
-		utils.ErrorLogger.Printf("[%s] CRITICAL: Block %d (%x) State Root MISMATCH! Header: %x, Calculated After Apply: %x",
-			bc.nodeID, block.Header.Height, block.Hash, block.Header.StateRoot, newStateRoot)
-		return fmt.Errorf("[%s] Block %d state root mismatch (header: %x, calculated: %x) - STATE MAY BE CORRUPT",
-			bc.nodeID, block.Header.Height, block.Header.StateRoot, newStateRoot)
+		utils.ErrorLogger.Printf("[%s] CRITICAL: Block %d (%x) State Root MISMATCH! Header: %x, Calculated After Apply: %x", bc.nodeID, block.Header.Height, block.Hash, block.Header.StateRoot, newStateRoot)
+		return fmt.Errorf("[%s] Block %d state root mismatch (header: %x, calculated: %x) - STATE MAY BE CORRUPT", bc.nodeID, block.Header.Height, block.Header.StateRoot, newStateRoot)
 	}
-
-	// --- Block Accepted ---
-	bc.Blocks = append(bc.Blocks, block)
-	utils.InfoLogger.Printf("[%s] === Appended Block %d (%x) | Prev: %x... | State: %x... | Txs: %d ===",
-		bc.nodeID, block.Header.Height, block.Hash[:6], block.Header.PrevBlockHash[:6], block.Header.StateRoot[:6], len(block.Transactions))
-	bc.txPool.Remove(block.Transactions) // Remove from the blockchain's txPool
+	bc.Blocks = append(bc.Blocks, block) // Block accepted
+	utils.InfoLogger.Printf("[%s] === Appended Block %d (%x) | Prev: %x... | State: %x... | Txs: %d ===", bc.nodeID, block.Header.Height, block.Hash[:6], block.Header.PrevBlockHash[:6], block.Header.StateRoot[:6], len(block.Transactions))
+	bc.txPool.Remove(block.Transactions) // Remove from this blockchain's txPool
 	return nil
 }
 
-// LastBlock returns the most recent block in the chain (read-only access).
+// LastBlock returns the most recent block in the chain.
 func (bc *Blockchain) LastBlock() *Block {
 	bc.lock.RLock()
 	defer bc.lock.RUnlock()
-    if len(bc.Blocks) == 0 { return nil } // Handle empty chain case
+	if len(bc.Blocks) == 0 { return nil }
 	return bc.Blocks[len(bc.Blocks)-1]
 }
 
-// getLastBlockInternal is used internally when write lock is already held.
+// getLastBlockInternal gets the last block, assumes lock is held.
 func (bc *Blockchain) getLastBlockInternal() *Block {
-    if len(bc.Blocks) == 0 { return nil } // Handle empty chain case
-    return bc.Blocks[len(bc.Blocks)-1]
+	if len(bc.Blocks) == 0 { return nil }
+	return bc.Blocks[len(bc.Blocks)-1]
 }
 
 // GetBlockByHeight returns a block at a specific height.
 func (bc *Blockchain) GetBlockByHeight(height uint64) (*Block, bool) {
 	bc.lock.RLock()
 	defer bc.lock.RUnlock()
-	if height < uint64(len(bc.Blocks)) {
-		return bc.Blocks[height], true
-	}
+	if height < uint64(len(bc.Blocks)) { return bc.Blocks[height], true }
 	return nil, false
 }
 
 // GetBlockByHash returns a block with a specific hash.
 func (bc *Blockchain) GetBlockByHash(hash []byte) (*Block, bool) {
-    bc.lock.RLock()
-    defer bc.lock.RUnlock()
-    // Inefficient linear scan for simplicity. A map[string]*Block would be faster.
-    for i := len(bc.Blocks) - 1; i >= 0; i-- {
-        if bc.Blocks[i] != nil && bytes.Equal(bc.Blocks[i].Hash, hash) {
-            return bc.Blocks[i], true
-        }
-    }
-    return nil, false
+	bc.lock.RLock()
+	defer bc.lock.RUnlock()
+	for i := len(bc.Blocks) - 1; i >= 0; i-- { if bc.Blocks[i] != nil && bytes.Equal(bc.Blocks[i].Hash, hash) { return bc.Blocks[i], true } }; return nil, false
 }
 
-// GetHeight returns the height of the last block in the chain.
-func (bc *Blockchain) GetHeight() uint64 {
-    lastBlock := bc.LastBlock() // Use locking getter
-    if lastBlock == nil { return ^uint64(0) } // Return max uint64 if no blocks (or -1 conceptually)
-    return lastBlock.Header.Height
-}
+// GetHeight returns the height of the last block.
+func (bc *Blockchain) GetHeight() uint64 { lastBlock := bc.LastBlock(); if lastBlock == nil { return ^uint64(0) }; return lastBlock.Header.Height }
 
-// GetNumShards uses the interface method on the embedded state manager.
-func (bc *Blockchain) GetNumShards() uint32 {
-    if bc.state == nil {
-        utils.WarnLogger.Printf("[%s] GetNumShards called but state manager is nil", bc.nodeID)
-        return 0 // Or default shard count?
-    }
-    return bc.state.GetNumShards() // Call interface method
-}
+// GetNumShards returns the number of shards.
+func (bc *Blockchain) GetNumShards() uint32 { if bc.state == nil { return 0 }; return bc.state.GetNumShards() }
 
+// --- Transaction Pool (Mempool) ---
 
-// --- Transaction Pool (Mempool) --- (Single Definition)
-
-// TransactionPool holds pending transactions. Needs to be thread-safe.
+// TransactionPool holds pending transactions.
 type TransactionPool struct {
-	pending map[string]*Transaction // Map tx ID (hex) -> Transaction
+	pending map[string]*Transaction
 	lock    sync.RWMutex
 }
 
@@ -210,74 +169,97 @@ func NewTransactionPool() *TransactionPool {
 	}
 }
 
-// Add adds a transaction to the pool if it's not already present.
+// Add adds a transaction to the pool.
 func (tp *TransactionPool) Add(tx *Transaction) error {
 	tp.lock.Lock()
 	defer tp.lock.Unlock()
-    if tx == nil || tx.ID == nil { return fmt.Errorf("cannot add nil transaction or transaction with nil ID") }
+	if tx == nil || tx.ID == nil { return fmt.Errorf("cannot add nil transaction or transaction with nil ID") }
 	txID := hex.EncodeToString(tx.ID)
 	if _, exists := tp.pending[txID]; exists { return fmt.Errorf("transaction %s already in pool", txID) }
-	// TODO: Implement pool size limits, eviction policies (e.g., based on fees/nonce)
 	tp.pending[txID] = tx
-	// utils.DebugLogger.Printf("TxPool: Added %s", txID)
+	utils.DebugLogger.Printf("TxPool Add: Added %s... (Nonce %d) Pool size now %d", txID[:8], tx.Nonce, len(tp.pending))
 	return nil
 }
 
-// Remove removes confirmed transactions (those included in a block) from the pool.
+// Remove removes confirmed transactions from the pool.
 func (tp *TransactionPool) Remove(txs TxList) {
 	tp.lock.Lock()
 	defer tp.lock.Unlock()
 	count := 0
+	if len(txs) == 0 { return } // No transactions to remove
 	for _, tx := range txs {
-        if tx == nil || tx.ID == nil { continue } // Skip nil transactions/IDs
+		if tx == nil || tx.ID == nil { continue }
 		txID := hex.EncodeToString(tx.ID)
-		if _, exists := tp.pending[txID]; exists {
-			delete(tp.pending, txID)
-			count++
-		}
+		if _, exists := tp.pending[txID]; exists { delete(tp.pending, txID); count++ }
 	}
-	if count > 0 {
-		utils.DebugLogger.Printf("TxPool: Removed %d confirmed transactions (Pool size: %d)", count, len(tp.pending))
-	}
+	if count > 0 { utils.DebugLogger.Printf("TxPool: Removed %d confirmed transactions (Pool size: %d)", count, len(tp.pending)) }
 }
 
-// GetPending returns a list of transactions ready for block creation.
-// A real pool would apply ordering logic (e.g., by fee, nonce).
-func (tp *TransactionPool) GetPending(maxCount int) TxList {
+// GetPending selects executable transactions based on current state nonce.
+func (tp *TransactionPool) GetPending(maxCount int, state StateManager) TxList {
 	tp.lock.RLock()
 	defer tp.lock.RUnlock()
 
-    if maxCount <= 0 || len(tp.pending) == 0 {
-        return make(TxList, 0) // Return empty slice
-    }
-
-	// Simple iteration (no specific ordering).
-    // Allocate slice with appropriate capacity.
-    capacity := maxCount
-    if len(tp.pending) < maxCount {
-        capacity = len(tp.pending)
-    }
-	txs := make(TxList, 0, capacity)
-
-	count := 0
-	for _, tx := range tp.pending {
-		// TODO: Add validation here? Ensure tx is still valid w.r.t current state?
-        // Usually done by proposer just before including in a block.
-		txs = append(txs, tx)
-		count++
-        if count >= maxCount {
-			break
-		}
+	if state == nil {
+		utils.ErrorLogger.Println("TxPool GetPending: Called without state manager, cannot check nonces.")
+		return make(TxList, 0)
 	}
-	// utils.DebugLogger.Printf("TxPool: Retrieved %d pending transactions (max %d)", len(txs), maxCount)
-	return txs
+
+	poolSize := len(tp.pending)
+	utils.DebugLogger.Printf("TxPool GetPending: Called. Pool size: %d. Max count: %d. Checking nonces...", poolSize, maxCount)
+
+	if maxCount <= 0 || poolSize == 0 { return make(TxList, 0) }
+
+	executableTxs := make(TxList, 0, maxCount)
+	senderNextNonce := make(map[string]uint64) // Cache expected nonce
+
+	// It's better to iterate in a somewhat deterministic order if possible,
+	// although map iteration isn't guaranteed. For simulation, this is okay.
+	// A real pool might use multiple lists (e.g., ordered by fee).
+	for _, tx := range tp.pending {
+		if tx == nil || tx.From == "" { continue }
+		if len(executableTxs) >= maxCount { break } // Stop if we have enough
+
+		expectedNonce, known := senderNextNonce[tx.From]
+		if !known {
+			// Fetch nonce from state for this sender
+			nonceKey := tx.From + "_nonce"
+			nonceBytes, found := state.Get(nonceKey)
+			currentNonce := uint64(0)
+			if found {
+				decoder := gob.NewDecoder(bytes.NewReader(nonceBytes))
+				err := decoder.Decode(&currentNonce)
+				if err != nil {
+					utils.ErrorLogger.Printf("TxPool GetPending: Failed decode nonce for %s, skipping sender's txs: %v", tx.From, err)
+					senderNextNonce[tx.From] = ^uint64(0) // Mark as invalid
+					continue
+				}
+			}
+			expectedNonce = currentNonce
+			senderNextNonce[tx.From] = expectedNonce
+		} else if expectedNonce == ^uint64(0) { // Skip if nonce decode failed previously
+            continue
+        }
+
+
+		if tx.Nonce == expectedNonce {
+			executableTxs = append(executableTxs, tx)
+			senderNextNonce[tx.From] = expectedNonce + 1 // Expect next nonce for this sender
+			utils.DebugLogger.Printf("TxPool GetPending: Including Tx %s... (Nonce %d)", hex.EncodeToString(tx.ID[:4]), tx.Nonce)
+		} else {
+             utils.DebugLogger.Printf("TxPool GetPending: Skipping Tx %s... (Nonce %d != Expected %d)", hex.EncodeToString(tx.ID[:4]), tx.Nonce, expectedNonce)
+        }
+	}
+
+	// TODO: Sort executableTxs by nonce (primary) and maybe fee (secondary)?
+
+	utils.DebugLogger.Printf("TxPool GetPending: Returning %d executable transactions.", len(executableTxs))
+	return executableTxs
 }
 
 // Count returns the number of pending transactions.
 func (tp *TransactionPool) Count() int {
-    tp.lock.RLock()
-    defer tp.lock.RUnlock()
-    return len(tp.pending)
+	tp.lock.RLock()
+	defer tp.lock.RUnlock()
+	return len(tp.pending)
 }
-
-// --- REMOVE THE DUPLICATED CODE THAT WAS HERE ---
