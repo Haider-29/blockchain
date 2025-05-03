@@ -1,0 +1,308 @@
+[32m[INFO] [0m2025/05/03 16:31:11 logger.go:75: Logging initialized. Level: INFO. Output to console and file 'blockchain.log'
+[32m[INFO] [0m2025/05/03 16:31:11 main.go:22: --- Starting Simplified Blockchain Simulation ---
+[32m[INFO] [0m2025/05/03 16:31:11 main.go:35: Creating 3 Validator Wallets...
+[32m[INFO] [0m2025/05/03 16:31:11 crypto.go:111: Created new wallet: 0x70ed377ef76abcb5a2c64826a046338b6ba2ff1e
+[32m[INFO] [0m2025/05/03 16:31:11 crypto.go:111: Created new wallet: 0x70d6406c440ab0a4abfa175fcf90aff85a24f1e4
+[32m[INFO] [0m2025/05/03 16:31:11 crypto.go:111: Created new wallet: 0x9a8318a9fbca594661b081a3ae9ce318fd7d54ad
+[32m[INFO] [0m2025/05/03 16:31:11 main.go:37: Validator Set Addresses: [0x70ed377ef76abcb5a2c64826a046338b6ba2ff1e 0x70d6406c440ab0a4abfa175fcf90aff85a24f1e4 0x9a8318a9fbca594661b081a3ae9ce318fd7d54ad]
+[32m[INFO] [0m2025/05/03 16:31:11 manager.go:35: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 16:31:11 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:11 node.go:86: Created Genesis Block: Hash ceeac5e1d1174aee01c73851accc921cb4e52c0de3a9f44e7089fa5f657341dd, StateRoot: 1223349a40d2ee10bd1bebb5889ef8018c8bc13359ed94b387810af96c6e4268
+[32m[INFO] [0m2025/05/03 16:31:11 main.go:45: Creating 5 Network Nodes (3 Validators)...
+[32m[INFO] [0m2025/05/03 16:31:11 crypto.go:111: Created new wallet: 0x16e9e831b5d68b5776d8bc1a85b3e557a00f0dda
+[32m[INFO] [0m2025/05/03 16:31:11 manager.go:35: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 16:31:11 blockchain.go:53: [Validator-0x16e9] Blockchain initialized. Genesis: ceeac5e1d1174aee01c73851accc921cb4e52c0de3a9f44e7089fa5f657341dd, Height: 0
+[33m[WARN] [0m2025/05/03 16:31:11 simple_poa.go:46: Node 0x16e9e831b5d68b5776d8bc1a85b3e557a00f0dda is not in the validator set for SimplePoA.
+[32m[INFO] [0m2025/05/03 16:31:11 node.go:68: Created Node: Validator-0x16e9 (Validator: true, Addr: 0x16e9e831b5d68b5776d8bc1a85b3e557a00f0dda)
+[32m[INFO] [0m2025/05/03 16:31:11 blockchain.go:53: [0x70ed377ef76abcb5a2c64826a046338b6ba2ff1e] Blockchain initialized. Genesis: ceeac5e1d1174aee01c73851accc921cb4e52c0de3a9f44e7089fa5f657341dd, Height: 0
+[32m[INFO] [0m2025/05/03 16:31:11 node.go:78: Assigned validator wallet 0x70ed377ef76abcb5a2c64826a046338b6ba2ff1e to node (previously Validator-0x16e9)
+[32m[INFO] [0m2025/05/03 16:31:11 network.go:50: Network: Registered node 0x70ed377ef76abcb5a2c64826a046338b6ba2ff1e (Total: 1)
+[32m[INFO] [0m2025/05/03 16:31:11 crypto.go:111: Created new wallet: 0xb60880545ae7c00d0314aeca6f5e4546eb354549
+[32m[INFO] [0m2025/05/03 16:31:11 manager.go:35: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 16:31:11 blockchain.go:53: [Validator-0xb608] Blockchain initialized. Genesis: ceeac5e1d1174aee01c73851accc921cb4e52c0de3a9f44e7089fa5f657341dd, Height: 0
+[33m[WARN] [0m2025/05/03 16:31:11 simple_poa.go:46: Node 0xb60880545ae7c00d0314aeca6f5e4546eb354549 is not in the validator set for SimplePoA.
+[32m[INFO] [0m2025/05/03 16:31:11 node.go:68: Created Node: Validator-0xb608 (Validator: true, Addr: 0xb60880545ae7c00d0314aeca6f5e4546eb354549)
+[32m[INFO] [0m2025/05/03 16:31:11 blockchain.go:53: [0x70d6406c440ab0a4abfa175fcf90aff85a24f1e4] Blockchain initialized. Genesis: ceeac5e1d1174aee01c73851accc921cb4e52c0de3a9f44e7089fa5f657341dd, Height: 0
+[32m[INFO] [0m2025/05/03 16:31:11 node.go:78: Assigned validator wallet 0x70d6406c440ab0a4abfa175fcf90aff85a24f1e4 to node (previously Validator-0xb608)
+[32m[INFO] [0m2025/05/03 16:31:11 network.go:50: Network: Registered node 0x70d6406c440ab0a4abfa175fcf90aff85a24f1e4 (Total: 2)
+[32m[INFO] [0m2025/05/03 16:31:11 crypto.go:111: Created new wallet: 0xe2ba52399e1a3baffbfc0f721cf8a92d13aaee32
+[32m[INFO] [0m2025/05/03 16:31:11 manager.go:35: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 16:31:11 blockchain.go:53: [Validator-0xe2ba] Blockchain initialized. Genesis: ceeac5e1d1174aee01c73851accc921cb4e52c0de3a9f44e7089fa5f657341dd, Height: 0
+[33m[WARN] [0m2025/05/03 16:31:11 simple_poa.go:46: Node 0xe2ba52399e1a3baffbfc0f721cf8a92d13aaee32 is not in the validator set for SimplePoA.
+[32m[INFO] [0m2025/05/03 16:31:11 node.go:68: Created Node: Validator-0xe2ba (Validator: true, Addr: 0xe2ba52399e1a3baffbfc0f721cf8a92d13aaee32)
+[32m[INFO] [0m2025/05/03 16:31:11 blockchain.go:53: [0x9a8318a9fbca594661b081a3ae9ce318fd7d54ad] Blockchain initialized. Genesis: ceeac5e1d1174aee01c73851accc921cb4e52c0de3a9f44e7089fa5f657341dd, Height: 0
+[32m[INFO] [0m2025/05/03 16:31:11 node.go:78: Assigned validator wallet 0x9a8318a9fbca594661b081a3ae9ce318fd7d54ad to node (previously Validator-0xe2ba)
+[32m[INFO] [0m2025/05/03 16:31:11 network.go:50: Network: Registered node 0x9a8318a9fbca594661b081a3ae9ce318fd7d54ad (Total: 3)
+[32m[INFO] [0m2025/05/03 16:31:11 crypto.go:111: Created new wallet: 0x497348bb2059fb7f70de984ffb931bc8feb158bb
+[32m[INFO] [0m2025/05/03 16:31:11 manager.go:35: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 16:31:11 blockchain.go:53: [Node-0x4973] Blockchain initialized. Genesis: ceeac5e1d1174aee01c73851accc921cb4e52c0de3a9f44e7089fa5f657341dd, Height: 0
+[33m[WARN] [0m2025/05/03 16:31:11 simple_poa.go:46: Node 0x497348bb2059fb7f70de984ffb931bc8feb158bb is not in the validator set for SimplePoA.
+[32m[INFO] [0m2025/05/03 16:31:11 node.go:68: Created Node: Node-0x4973 (Validator: false, Addr: 0x497348bb2059fb7f70de984ffb931bc8feb158bb)
+[32m[INFO] [0m2025/05/03 16:31:11 network.go:50: Network: Registered node Node-0x4973 (Total: 4)
+[32m[INFO] [0m2025/05/03 16:31:11 crypto.go:111: Created new wallet: 0xb7cc78932f5913352569d472b3a03212caa12d54
+[32m[INFO] [0m2025/05/03 16:31:11 manager.go:35: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 16:31:11 blockchain.go:53: [Node-0xb7cc] Blockchain initialized. Genesis: ceeac5e1d1174aee01c73851accc921cb4e52c0de3a9f44e7089fa5f657341dd, Height: 0
+[33m[WARN] [0m2025/05/03 16:31:11 simple_poa.go:46: Node 0xb7cc78932f5913352569d472b3a03212caa12d54 is not in the validator set for SimplePoA.
+[32m[INFO] [0m2025/05/03 16:31:11 node.go:68: Created Node: Node-0xb7cc (Validator: false, Addr: 0xb7cc78932f5913352569d472b3a03212caa12d54)
+[32m[INFO] [0m2025/05/03 16:31:11 network.go:50: Network: Registered node Node-0xb7cc (Total: 5)
+[32m[INFO] [0m2025/05/03 16:31:11 main.go:66: Starting all nodes...
+[32m[INFO] [0m2025/05/03 16:31:11 node.go:91: Node 0x70ed377ef76abcb5a2c64826a046338b6ba2ff1e starting...
+[32m[INFO] [0m2025/05/03 16:31:11 node.go:91: Node 0x70d6406c440ab0a4abfa175fcf90aff85a24f1e4 starting...
+[32m[INFO] [0m2025/05/03 16:31:11 node.go:91: Node 0x9a8318a9fbca594661b081a3ae9ce318fd7d54ad starting...
+[32m[INFO] [0m2025/05/03 16:31:11 node.go:91: Node Node-0x4973 starting...
+[32m[INFO] [0m2025/05/03 16:31:11 node.go:91: Node Node-0xb7cc starting...
+[32m[INFO] [0m2025/05/03 16:31:11 main.go:70: Starting transaction simulator...
+[32m[INFO] [0m2025/05/03 16:31:11 main.go:104: Simulation running... Press Ctrl+C to stop.
+[32m[INFO] [0m2025/05/03 16:31:11 node.go:95: Node 0x70ed377ef76abcb5a2c64826a046338b6ba2ff1e (Validator) starting proposal loop (Block Time: 3s)...
+[32m[INFO] [0m2025/05/03 16:31:11 node.go:95: Node 0x70d6406c440ab0a4abfa175fcf90aff85a24f1e4 (Validator) starting proposal loop (Block Time: 3s)...
+[32m[INFO] [0m2025/05/03 16:31:11 node.go:95: Node 0x9a8318a9fbca594661b081a3ae9ce318fd7d54ad (Validator) starting proposal loop (Block Time: 3s)...
+[32m[INFO] [0m2025/05/03 16:31:11 node.go:98: Node Node-0xb7cc (Non-validator) started. Listening for network messages.
+[32m[INFO] [0m2025/05/03 16:31:11 node.go:98: Node Node-0x4973 (Non-validator) started. Listening for network messages.
+[32m[INFO] [0m2025/05/03 16:31:11 main.go:76: Transaction simulator using sender: Node-0xb7cc (0xb7cc78932f5913352569d472b3a03212caa12d54)
+[32m[INFO] [0m2025/05/03 16:31:11 main.go:86: Transaction simulator using Number of Shards: 4
+[32m[INFO] [0m2025/05/03 16:31:14 main.go:96: ==> [Node-0xb7cc] Created Tx: b642e7fa... (To: 0x9a8318..., Nonce: 0, Shard: 1)
+[32m[INFO] [0m2025/05/03 16:31:14 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:14 simple_poa.go:102: [0x70d6406c440ab0a4abfa175fcf90aff85a24f1e4] Proposing Block 1 (672175a700b20b80dfabdfaa43332025e6ee84e64c441f8c23f27134838a6e20)
+[32m[INFO] [0m2025/05/03 16:31:14 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:14 blockchain.go:138: [0x70d6406c440ab0a4abfa175fcf90aff85a24f1e4] === Appended Block 1 (672175a700b2) | Prev: ceeac5e1d117... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:14 network.go:101: Network: Broadcasting Block 1 (672175a700b2...) from 0x70d6406c440ab0a4abfa175fcf90aff85a24f1e4
+[32m[INFO] [0m2025/05/03 16:31:14 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:14 blockchain.go:138: [0x70ed377ef76abcb5a2c64826a046338b6ba2ff1e] === Appended Block 1 (672175a700b2) | Prev: ceeac5e1d117... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:14 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:14 blockchain.go:138: [Node-0x4973] === Appended Block 1 (672175a700b2) | Prev: ceeac5e1d117... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:14 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:14 blockchain.go:138: [0x9a8318a9fbca594661b081a3ae9ce318fd7d54ad] === Appended Block 1 (672175a700b2) | Prev: ceeac5e1d117... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:14 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:14 blockchain.go:138: [Node-0xb7cc] === Appended Block 1 (672175a700b2) | Prev: ceeac5e1d117... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:15 main.go:96: ==> [Node-0xb7cc] Created Tx: b8eb29c7... (To: 0x70ed37..., Nonce: 1, Shard: 0)
+[32m[INFO] [0m2025/05/03 16:31:16 main.go:96: ==> [Node-0xb7cc] Created Tx: 95c60c24... (To: 0x70ed37..., Nonce: 2, Shard: 0)
+[32m[INFO] [0m2025/05/03 16:31:17 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:17 simple_poa.go:102: [0x9a8318a9fbca594661b081a3ae9ce318fd7d54ad] Proposing Block 2 (816774eab8d24330a6166d1545b66da2dc3d4e462e2c30b8536810814e06f24f)
+[32m[INFO] [0m2025/05/03 16:31:17 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:17 blockchain.go:138: [0x9a8318a9fbca594661b081a3ae9ce318fd7d54ad] === Appended Block 2 (816774eab8d2) | Prev: 672175a700b2... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:17 network.go:101: Network: Broadcasting Block 2 (816774eab8d2...) from 0x9a8318a9fbca594661b081a3ae9ce318fd7d54ad
+[32m[INFO] [0m2025/05/03 16:31:17 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:17 blockchain.go:138: [Node-0x4973] === Appended Block 2 (816774eab8d2) | Prev: 672175a700b2... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:17 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:17 blockchain.go:138: [0x70ed377ef76abcb5a2c64826a046338b6ba2ff1e] === Appended Block 2 (816774eab8d2) | Prev: 672175a700b2... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:17 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:17 blockchain.go:138: [Node-0xb7cc] === Appended Block 2 (816774eab8d2) | Prev: 672175a700b2... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:17 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:17 blockchain.go:138: [0x70d6406c440ab0a4abfa175fcf90aff85a24f1e4] === Appended Block 2 (816774eab8d2) | Prev: 672175a700b2... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:19 main.go:96: ==> [Node-0xb7cc] Created Tx: e21282e1... (To: 0x497348..., Nonce: 3, Shard: 0)
+[32m[INFO] [0m2025/05/03 16:31:20 main.go:96: ==> [Node-0xb7cc] Created Tx: 59a046c6... (To: 0x497348..., Nonce: 4, Shard: 0)
+[32m[INFO] [0m2025/05/03 16:31:20 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:20 simple_poa.go:102: [0x70ed377ef76abcb5a2c64826a046338b6ba2ff1e] Proposing Block 3 (7188f36c11bbff20f378c0da65b8b8f65500b5371e2a3ab205e04e7c9069a5de)
+[32m[INFO] [0m2025/05/03 16:31:20 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:20 blockchain.go:138: [0x70ed377ef76abcb5a2c64826a046338b6ba2ff1e] === Appended Block 3 (7188f36c11bb) | Prev: 816774eab8d2... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:20 network.go:101: Network: Broadcasting Block 3 (7188f36c11bb...) from 0x70ed377ef76abcb5a2c64826a046338b6ba2ff1e
+[32m[INFO] [0m2025/05/03 16:31:20 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:20 blockchain.go:138: [0x70d6406c440ab0a4abfa175fcf90aff85a24f1e4] === Appended Block 3 (7188f36c11bb) | Prev: 816774eab8d2... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:20 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:20 blockchain.go:138: [0x9a8318a9fbca594661b081a3ae9ce318fd7d54ad] === Appended Block 3 (7188f36c11bb) | Prev: 816774eab8d2... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:20 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:20 blockchain.go:138: [Node-0x4973] === Appended Block 3 (7188f36c11bb) | Prev: 816774eab8d2... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:20 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:20 blockchain.go:138: [Node-0xb7cc] === Appended Block 3 (7188f36c11bb) | Prev: 816774eab8d2... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:21 main.go:96: ==> [Node-0xb7cc] Created Tx: 1f89f75c... (To: 0x497348..., Nonce: 5, Shard: 0)
+[32m[INFO] [0m2025/05/03 16:31:23 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:23 simple_poa.go:102: [0x70d6406c440ab0a4abfa175fcf90aff85a24f1e4] Proposing Block 4 (c0e7083ee73b2c609c40a18a5dc6d323fb5dd4a9fb9fcf591b316c266797a401)
+[32m[INFO] [0m2025/05/03 16:31:23 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:23 blockchain.go:138: [0x70d6406c440ab0a4abfa175fcf90aff85a24f1e4] === Appended Block 4 (c0e7083ee73b) | Prev: 7188f36c11bb... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:23 network.go:101: Network: Broadcasting Block 4 (c0e7083ee73b...) from 0x70d6406c440ab0a4abfa175fcf90aff85a24f1e4
+[32m[INFO] [0m2025/05/03 16:31:23 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:23 blockchain.go:138: [0x9a8318a9fbca594661b081a3ae9ce318fd7d54ad] === Appended Block 4 (c0e7083ee73b) | Prev: 7188f36c11bb... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:23 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:23 blockchain.go:138: [Node-0xb7cc] === Appended Block 4 (c0e7083ee73b) | Prev: 7188f36c11bb... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:23 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:23 blockchain.go:138: [0x70ed377ef76abcb5a2c64826a046338b6ba2ff1e] === Appended Block 4 (c0e7083ee73b) | Prev: 7188f36c11bb... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:23 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:23 blockchain.go:138: [Node-0x4973] === Appended Block 4 (c0e7083ee73b) | Prev: 7188f36c11bb... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:23 main.go:96: ==> [Node-0xb7cc] Created Tx: 90f0a365... (To: 0x70ed37..., Nonce: 6, Shard: 0)
+[32m[INFO] [0m2025/05/03 16:31:25 main.go:96: ==> [Node-0xb7cc] Created Tx: 39c9ab48... (To: 0x9a8318..., Nonce: 7, Shard: 1)
+[32m[INFO] [0m2025/05/03 16:31:26 main.go:96: ==> [Node-0xb7cc] Created Tx: c46a44ac... (To: 0x497348..., Nonce: 8, Shard: 0)
+[32m[INFO] [0m2025/05/03 16:31:26 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:26 simple_poa.go:102: [0x9a8318a9fbca594661b081a3ae9ce318fd7d54ad] Proposing Block 5 (4b003a76212aad3c05ce3223f18357d8c808cea4125a424b4af50bd5a02c6827)
+[32m[INFO] [0m2025/05/03 16:31:26 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:26 blockchain.go:138: [0x9a8318a9fbca594661b081a3ae9ce318fd7d54ad] === Appended Block 5 (4b003a76212a) | Prev: c0e7083ee73b... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:26 network.go:101: Network: Broadcasting Block 5 (4b003a76212a...) from 0x9a8318a9fbca594661b081a3ae9ce318fd7d54ad
+[32m[INFO] [0m2025/05/03 16:31:26 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:26 blockchain.go:138: [Node-0x4973] === Appended Block 5 (4b003a76212a) | Prev: c0e7083ee73b... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:26 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:26 blockchain.go:138: [Node-0xb7cc] === Appended Block 5 (4b003a76212a) | Prev: c0e7083ee73b... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:26 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:26 blockchain.go:138: [0x70ed377ef76abcb5a2c64826a046338b6ba2ff1e] === Appended Block 5 (4b003a76212a) | Prev: c0e7083ee73b... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:26 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:26 blockchain.go:138: [0x70d6406c440ab0a4abfa175fcf90aff85a24f1e4] === Appended Block 5 (4b003a76212a) | Prev: c0e7083ee73b... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:27 main.go:96: ==> [Node-0xb7cc] Created Tx: 72198b32... (To: 0x70d640..., Nonce: 9, Shard: 2)
+[32m[INFO] [0m2025/05/03 16:31:28 main.go:96: ==> [Node-0xb7cc] Created Tx: 7118f259... (To: 0x70ed37..., Nonce: 10, Shard: 0)
+[32m[INFO] [0m2025/05/03 16:31:29 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:29 simple_poa.go:102: [0x70ed377ef76abcb5a2c64826a046338b6ba2ff1e] Proposing Block 6 (35a32c5661351f05b9500e3e2ed0c2c3b6dd7249f4ba01ad41ba6e9a57f09a0f)
+[32m[INFO] [0m2025/05/03 16:31:29 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:29 blockchain.go:138: [0x70ed377ef76abcb5a2c64826a046338b6ba2ff1e] === Appended Block 6 (35a32c566135) | Prev: 4b003a76212a... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:29 network.go:101: Network: Broadcasting Block 6 (35a32c566135...) from 0x70ed377ef76abcb5a2c64826a046338b6ba2ff1e
+[32m[INFO] [0m2025/05/03 16:31:29 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:29 blockchain.go:138: [Node-0xb7cc] === Appended Block 6 (35a32c566135) | Prev: 4b003a76212a... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:29 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:29 blockchain.go:138: [0x9a8318a9fbca594661b081a3ae9ce318fd7d54ad] === Appended Block 6 (35a32c566135) | Prev: 4b003a76212a... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:29 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:29 blockchain.go:138: [0x70d6406c440ab0a4abfa175fcf90aff85a24f1e4] === Appended Block 6 (35a32c566135) | Prev: 4b003a76212a... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:29 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:31:29 blockchain.go:138: [Node-0x4973] === Appended Block 6 (35a32c566135) | Prev: 4b003a76212a... | State: 1223349a40d2... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 16:31:29 main.go:96: ==> [Node-0xb7cc] Created Tx: 2f601999... (To: 0x70d640..., Nonce: 11, Shard: 2)
+[32m[INFO] [0m2025/05/03 16:31:30 main.go:109: --- Initiating Graceful Shutdown ---
+[32m[INFO] [0m2025/05/03 16:31:30 main.go:111: Stopping nodes...
+[32m[INFO] [0m2025/05/03 16:31:30 node.go:105: Node 0x70ed377ef76abcb5a2c64826a046338b6ba2ff1e shutting down...
+[32m[INFO] [0m2025/05/03 16:31:30 node.go:96: Node 0x70ed377ef76abcb5a2c64826a046338b6ba2ff1e stopping proposal loop.
+[32m[INFO] [0m2025/05/03 16:31:30 node.go:106: Node 0x70ed377ef76abcb5a2c64826a046338b6ba2ff1e shutdown complete.
+[32m[INFO] [0m2025/05/03 16:31:30 node.go:105: Node 0x70d6406c440ab0a4abfa175fcf90aff85a24f1e4 shutting down...
+[32m[INFO] [0m2025/05/03 16:31:30 node.go:96: Node 0x70d6406c440ab0a4abfa175fcf90aff85a24f1e4 stopping proposal loop.
+[32m[INFO] [0m2025/05/03 16:31:30 main.go:89: Stopping transaction simulator.
+[32m[INFO] [0m2025/05/03 16:31:30 main.go:89: Transaction simulator loop exited.
+[32m[INFO] [0m2025/05/03 16:31:30 node.go:106: Node 0x70d6406c440ab0a4abfa175fcf90aff85a24f1e4 shutdown complete.
+[32m[INFO] [0m2025/05/03 16:31:30 node.go:105: Node 0x9a8318a9fbca594661b081a3ae9ce318fd7d54ad shutting down...
+[32m[INFO] [0m2025/05/03 16:31:30 node.go:96: Node 0x9a8318a9fbca594661b081a3ae9ce318fd7d54ad stopping proposal loop.
+[32m[INFO] [0m2025/05/03 16:31:30 node.go:106: Node 0x9a8318a9fbca594661b081a3ae9ce318fd7d54ad shutdown complete.
+[32m[INFO] [0m2025/05/03 16:31:30 node.go:105: Node Node-0x4973 shutting down...
+[32m[INFO] [0m2025/05/03 16:31:30 node.go:98: Node Node-0x4973 stopping listener.
+[32m[INFO] [0m2025/05/03 16:31:30 node.go:106: Node Node-0x4973 shutdown complete.
+[32m[INFO] [0m2025/05/03 16:31:30 node.go:105: Node Node-0xb7cc shutting down...
+[32m[INFO] [0m2025/05/03 16:31:30 node.go:98: Node Node-0xb7cc stopping listener.
+[32m[INFO] [0m2025/05/03 16:31:30 node.go:106: Node Node-0xb7cc shutdown complete.
+[32m[INFO] [0m2025/05/03 16:31:30 main.go:116: Unregistering nodes...
+[32m[INFO] [0m2025/05/03 16:31:30 network.go:60: Network: Unregistered node 0x70ed377ef76abcb5a2c64826a046338b6ba2ff1e (Total: 4)
+[32m[INFO] [0m2025/05/03 16:31:30 network.go:60: Network: Unregistered node 0x70d6406c440ab0a4abfa175fcf90aff85a24f1e4 (Total: 3)
+[32m[INFO] [0m2025/05/03 16:31:30 network.go:60: Network: Unregistered node 0x9a8318a9fbca594661b081a3ae9ce318fd7d54ad (Total: 2)
+[32m[INFO] [0m2025/05/03 16:31:30 network.go:60: Network: Unregistered node Node-0x4973 (Total: 1)
+[32m[INFO] [0m2025/05/03 16:31:30 network.go:60: Network: Unregistered node Node-0xb7cc (Total: 0)
+[32m[INFO] [0m2025/05/03 16:31:30 logger.go:100: Closing log file: blockchain.log
+[32m[INFO] [0m2025/05/03 16:33:43 logger.go:75: Logging initialized. Level: INFO. Output to console and file 'blockchain.log'
+[32m[INFO] [0m2025/05/03 16:33:43 main.go:24: --- Starting Simplified Blockchain Simulation ---
+[32m[INFO] [0m2025/05/03 16:33:43 main.go:44: Creating 3 Validator Wallets...
+[32m[INFO] [0m2025/05/03 16:33:43 crypto.go:111: Created new wallet: 0x8368f44b95f6a0fe8ed9584ea5fc3f953da35a43
+[32m[INFO] [0m2025/05/03 16:33:43 crypto.go:111: Created new wallet: 0x00202ee9f3e462a96244a16b6acb7ec2d33d2f60
+[32m[INFO] [0m2025/05/03 16:33:43 crypto.go:111: Created new wallet: 0x389f1bf7321b8e94c8af204ef4e15aafc8a30c05
+[32m[INFO] [0m2025/05/03 16:33:43 main.go:50: Validator Set Addresses: [0x8368f44b95f6a0fe8ed9584ea5fc3f953da35a43 0x00202ee9f3e462a96244a16b6acb7ec2d33d2f60 0x389f1bf7321b8e94c8af204ef4e15aafc8a30c05]
+[32m[INFO] [0m2025/05/03 16:33:43 manager.go:35: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 16:33:43 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 16:33:43 node.go:86: Created Genesis Block: Hash ceeac5e1d1174aee01c73851accc921cb4e52c0de3a9f44e7089fa5f657341dd, StateRoot: 1223349a40d2ee10bd1bebb5889ef8018c8bc13359ed94b387810af96c6e4268
+[32m[INFO] [0m2025/05/03 16:33:43 main.go:59: Creating 5 Network Nodes (3 Validators)...
+[32m[INFO] [0m2025/05/03 16:33:43 crypto.go:111: Created new wallet: 0x2d202a9115445d1b624ab103e75652432700cb42
+[32m[INFO] [0m2025/05/03 16:33:43 manager.go:35: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 16:33:43 blockchain.go:53: [Validator-0x2d20] Blockchain initialized. Genesis: ceeac5e1d1174aee01c73851accc921cb4e52c0de3a9f44e7089fa5f657341dd, Height: 0
+[33m[WARN] [0m2025/05/03 16:33:43 simple_poa.go:46: Node 0x2d202a9115445d1b624ab103e75652432700cb42 is not in the validator set for SimplePoA.
+[32m[INFO] [0m2025/05/03 16:33:43 node.go:68: Created Node: Validator-0x2d20 (Validator: true, Addr: 0x2d202a9115445d1b624ab103e75652432700cb42)
+[32m[INFO] [0m2025/05/03 16:33:43 blockchain.go:53: [0x8368f44b95f6a0fe8ed9584ea5fc3f953da35a43] Blockchain initialized. Genesis: ceeac5e1d1174aee01c73851accc921cb4e52c0de3a9f44e7089fa5f657341dd, Height: 0
+[32m[INFO] [0m2025/05/03 16:33:43 node.go:78: Assigned validator wallet 0x8368f44b95f6a0fe8ed9584ea5fc3f953da35a43 to node (previously Validator-0x2d20)
+[32m[INFO] [0m2025/05/03 16:33:43 network.go:50: Network: Registered node 0x8368f44b95f6a0fe8ed9584ea5fc3f953da35a43 (Total: 1)
+[32m[INFO] [0m2025/05/03 16:33:43 crypto.go:111: Created new wallet: 0xa8496f1ebe55450e2baf4335574c484b684a6fa8
+[32m[INFO] [0m2025/05/03 16:33:43 manager.go:35: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 16:33:43 blockchain.go:53: [Validator-0xa849] Blockchain initialized. Genesis: ceeac5e1d1174aee01c73851accc921cb4e52c0de3a9f44e7089fa5f657341dd, Height: 0
+[33m[WARN] [0m2025/05/03 16:33:43 simple_poa.go:46: Node 0xa8496f1ebe55450e2baf4335574c484b684a6fa8 is not in the validator set for SimplePoA.
+[32m[INFO] [0m2025/05/03 16:33:43 node.go:68: Created Node: Validator-0xa849 (Validator: true, Addr: 0xa8496f1ebe55450e2baf4335574c484b684a6fa8)
+[32m[INFO] [0m2025/05/03 16:33:43 blockchain.go:53: [0x00202ee9f3e462a96244a16b6acb7ec2d33d2f60] Blockchain initialized. Genesis: ceeac5e1d1174aee01c73851accc921cb4e52c0de3a9f44e7089fa5f657341dd, Height: 0
+[32m[INFO] [0m2025/05/03 16:33:43 node.go:78: Assigned validator wallet 0x00202ee9f3e462a96244a16b6acb7ec2d33d2f60 to node (previously Validator-0xa849)
+[32m[INFO] [0m2025/05/03 16:33:43 network.go:50: Network: Registered node 0x00202ee9f3e462a96244a16b6acb7ec2d33d2f60 (Total: 2)
+[32m[INFO] [0m2025/05/03 16:33:43 crypto.go:111: Created new wallet: 0x1cc12b7aeb7e2babd841fc0f5439a9618f322d52
+[32m[INFO] [0m2025/05/03 16:33:43 manager.go:35: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 16:33:43 blockchain.go:53: [Validator-0x1cc1] Blockchain initialized. Genesis: ceeac5e1d1174aee01c73851accc921cb4e52c0de3a9f44e7089fa5f657341dd, Height: 0
+[33m[WARN] [0m2025/05/03 16:33:43 simple_poa.go:46: Node 0x1cc12b7aeb7e2babd841fc0f5439a9618f322d52 is not in the validator set for SimplePoA.
+[32m[INFO] [0m2025/05/03 16:33:43 node.go:68: Created Node: Validator-0x1cc1 (Validator: true, Addr: 0x1cc12b7aeb7e2babd841fc0f5439a9618f322d52)
+[32m[INFO] [0m2025/05/03 16:33:43 blockchain.go:53: [0x389f1bf7321b8e94c8af204ef4e15aafc8a30c05] Blockchain initialized. Genesis: ceeac5e1d1174aee01c73851accc921cb4e52c0de3a9f44e7089fa5f657341dd, Height: 0
+[32m[INFO] [0m2025/05/03 16:33:43 node.go:78: Assigned validator wallet 0x389f1bf7321b8e94c8af204ef4e15aafc8a30c05 to node (previously Validator-0x1cc1)
+[32m[INFO] [0m2025/05/03 16:33:43 network.go:50: Network: Registered node 0x389f1bf7321b8e94c8af204ef4e15aafc8a30c05 (Total: 3)
+[32m[INFO] [0m2025/05/03 16:33:43 crypto.go:111: Created new wallet: 0x4bf3750512d562408d0e287df1bd819db8d591b1
+[32m[INFO] [0m2025/05/03 16:33:43 manager.go:35: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 16:33:43 blockchain.go:53: [Node-0x4bf3] Blockchain initialized. Genesis: ceeac5e1d1174aee01c73851accc921cb4e52c0de3a9f44e7089fa5f657341dd, Height: 0
+[33m[WARN] [0m2025/05/03 16:33:43 simple_poa.go:46: Node 0x4bf3750512d562408d0e287df1bd819db8d591b1 is not in the validator set for SimplePoA.
+[32m[INFO] [0m2025/05/03 16:33:43 node.go:68: Created Node: Node-0x4bf3 (Validator: false, Addr: 0x4bf3750512d562408d0e287df1bd819db8d591b1)
+[32m[INFO] [0m2025/05/03 16:33:43 network.go:50: Network: Registered node Node-0x4bf3 (Total: 4)
+[32m[INFO] [0m2025/05/03 16:33:43 crypto.go:111: Created new wallet: 0xff9a23f0a80adb6ae93497207ce773544f68308e
+[32m[INFO] [0m2025/05/03 16:33:43 manager.go:35: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 16:33:43 blockchain.go:53: [Node-0xff9a] Blockchain initialized. Genesis: ceeac5e1d1174aee01c73851accc921cb4e52c0de3a9f44e7089fa5f657341dd, Height: 0
+[33m[WARN] [0m2025/05/03 16:33:43 simple_poa.go:46: Node 0xff9a23f0a80adb6ae93497207ce773544f68308e is not in the validator set for SimplePoA.
+[32m[INFO] [0m2025/05/03 16:33:43 node.go:68: Created Node: Node-0xff9a (Validator: false, Addr: 0xff9a23f0a80adb6ae93497207ce773544f68308e)
+[32m[INFO] [0m2025/05/03 16:33:43 network.go:50: Network: Registered node Node-0xff9a (Total: 5)
+[32m[INFO] [0m2025/05/03 16:33:43 main.go:95: Starting all nodes...
+[32m[INFO] [0m2025/05/03 16:33:43 node.go:91: Node 0x8368f44b95f6a0fe8ed9584ea5fc3f953da35a43 starting...
+[32m[INFO] [0m2025/05/03 16:33:43 node.go:91: Node 0x00202ee9f3e462a96244a16b6acb7ec2d33d2f60 starting...
+[32m[INFO] [0m2025/05/03 16:33:43 node.go:95: Node 0x8368f44b95f6a0fe8ed9584ea5fc3f953da35a43 (Validator) starting proposal loop (Block Time: 3s)...
+[32m[INFO] [0m2025/05/03 16:33:43 node.go:91: Node 0x389f1bf7321b8e94c8af204ef4e15aafc8a30c05 starting...
+[32m[INFO] [0m2025/05/03 16:33:43 node.go:95: Node 0x00202ee9f3e462a96244a16b6acb7ec2d33d2f60 (Validator) starting proposal loop (Block Time: 3s)...
+[32m[INFO] [0m2025/05/03 16:33:43 node.go:91: Node Node-0x4bf3 starting...
+[32m[INFO] [0m2025/05/03 16:33:43 node.go:91: Node Node-0xff9a starting...
+[32m[INFO] [0m2025/05/03 16:33:43 main.go:101: Starting transaction simulator...
+[32m[INFO] [0m2025/05/03 16:33:43 node.go:95: Node 0x389f1bf7321b8e94c8af204ef4e15aafc8a30c05 (Validator) starting proposal loop (Block Time: 3s)...
+[32m[INFO] [0m2025/05/03 16:33:43 node.go:98: Node Node-0x4bf3 (Non-validator) started. Listening for network messages.
+[32m[INFO] [0m2025/05/03 16:33:43 node.go:98: Node Node-0xff9a (Non-validator) started. Listening for network messages.
+[32m[INFO] [0m2025/05/03 16:33:43 main.go:193: Simulation running... Press Ctrl+C to stop.
+[32m[INFO] [0m2025/05/03 16:33:43 main.go:115: Transaction simulator using sender: Node-0xff9a (0xff9a23f0a80adb6ae93497207ce773544f68308e)
+[32m[INFO] [0m2025/05/03 16:33:43 main.go:142: Transaction simulator using Number of Shards: 4
+[32m[INFO] [0m2025/05/03 16:33:44 main.go:173: ==> [Node-0xff9a] Created Tx: 1f08c427... (To: 0xff9a23..., Nonce: 0, Shard: 1)
+[32m[INFO] [0m2025/05/03 16:33:44 main.go:173: ==> [Node-0xff9a] Created Tx: a703c755... (To: 0x4bf375..., Nonce: 1, Shard: 2)
+[32m[INFO] [0m2025/05/03 16:33:46 simple_poa.go:102: [0x00202ee9f3e462a96244a16b6acb7ec2d33d2f60] Proposing Block 1 (9927151ccfb2ad72a01ffebf4a4f8c5f87f1c67d8336a4bb195a5992f9d2d21a)
+[32m[INFO] [0m2025/05/03 16:33:46 blockchain.go:138: [0x00202ee9f3e462a96244a16b6acb7ec2d33d2f60] === Appended Block 1 (9927151ccfb2) | Prev: ceeac5e1d117... | State: 5d811f7c0ae5... | Txs: 2 ===
+[32m[INFO] [0m2025/05/03 16:33:46 network.go:101: Network: Broadcasting Block 1 (9927151ccfb2...) from 0x00202ee9f3e462a96244a16b6acb7ec2d33d2f60
+[32m[INFO] [0m2025/05/03 16:33:46 blockchain.go:138: [0x389f1bf7321b8e94c8af204ef4e15aafc8a30c05] === Appended Block 1 (9927151ccfb2) | Prev: ceeac5e1d117... | State: 5d811f7c0ae5... | Txs: 2 ===
+[32m[INFO] [0m2025/05/03 16:33:46 blockchain.go:138: [0x8368f44b95f6a0fe8ed9584ea5fc3f953da35a43] === Appended Block 1 (9927151ccfb2) | Prev: ceeac5e1d117... | State: 5d811f7c0ae5... | Txs: 2 ===
+[32m[INFO] [0m2025/05/03 16:33:46 blockchain.go:138: [Node-0xff9a] === Appended Block 1 (9927151ccfb2) | Prev: ceeac5e1d117... | State: 5d811f7c0ae5... | Txs: 2 ===
+[32m[INFO] [0m2025/05/03 16:33:46 blockchain.go:138: [Node-0x4bf3] === Appended Block 1 (9927151ccfb2) | Prev: ceeac5e1d117... | State: 5d811f7c0ae5... | Txs: 2 ===
+[32m[INFO] [0m2025/05/03 16:33:46 main.go:173: ==> [Node-0xff9a] Created Tx: 6a4dd58b... (To: 0x4bf375..., Nonce: 2, Shard: 2)
+[32m[INFO] [0m2025/05/03 16:33:47 main.go:173: ==> [Node-0xff9a] Created Tx: 3740befa... (To: 0xff9a23..., Nonce: 3, Shard: 1)
+[32m[INFO] [0m2025/05/03 16:33:49 main.go:173: ==> [Node-0xff9a] Created Tx: edbfe32c... (To: 0x389f1b..., Nonce: 4, Shard: 3)
+[33m[WARN] [0m2025/05/03 16:33:49 shard.go:57: Shard 2: SMT Get found key '0x4bf3750512d562408d0e287df1bd819db8d591b1', but cannot return value (implementation limitation).
+[33m[WARN] [0m2025/05/03 16:33:49 shard.go:57: Shard 2: SMT Get found key '0x4bf3750512d562408d0e287df1bd819db8d591b1', but cannot return value (implementation limitation).
+[33m[WARN] [0m2025/05/03 16:33:49 shard.go:57: Shard 2: SMT Get found key '0x4bf3750512d562408d0e287df1bd819db8d591b1', but cannot return value (implementation limitation).
+[33m[WARN] [0m2025/05/03 16:33:49 shard.go:57: Shard 1: SMT Get found key '0xff9a23f0a80adb6ae93497207ce773544f68308e', but cannot return value (implementation limitation).
+[33m[WARN] [0m2025/05/03 16:33:49 shard.go:57: Shard 1: SMT Get found key '0xff9a23f0a80adb6ae93497207ce773544f68308e', but cannot return value (implementation limitation).
+[33m[WARN] [0m2025/05/03 16:33:49 shard.go:57: Shard 1: SMT Get found key '0xff9a23f0a80adb6ae93497207ce773544f68308e', but cannot return value (implementation limitation).
+[32m[INFO] [0m2025/05/03 16:33:49 simple_poa.go:102: [0x389f1bf7321b8e94c8af204ef4e15aafc8a30c05] Proposing Block 2 (991fd69da01540b1f81bc5ff728a581047d8e96d9e2816ce27bfe154ca18ff1e)
+[32m[INFO] [0m2025/05/03 16:33:49 blockchain.go:138: [0x389f1bf7321b8e94c8af204ef4e15aafc8a30c05] === Appended Block 2 (991fd69da015) | Prev: 9927151ccfb2... | State: 567cb6952d0f... | Txs: 3 ===
+[32m[INFO] [0m2025/05/03 16:33:49 network.go:101: Network: Broadcasting Block 2 (991fd69da015...) from 0x389f1bf7321b8e94c8af204ef4e15aafc8a30c05
+[32m[INFO] [0m2025/05/03 16:33:49 blockchain.go:138: [Node-0xff9a] === Appended Block 2 (991fd69da015) | Prev: 9927151ccfb2... | State: 567cb6952d0f... | Txs: 3 ===
+[32m[INFO] [0m2025/05/03 16:33:49 blockchain.go:138: [Node-0x4bf3] === Appended Block 2 (991fd69da015) | Prev: 9927151ccfb2... | State: 567cb6952d0f... | Txs: 3 ===
+[32m[INFO] [0m2025/05/03 16:33:49 blockchain.go:138: [0x8368f44b95f6a0fe8ed9584ea5fc3f953da35a43] === Appended Block 2 (991fd69da015) | Prev: 9927151ccfb2... | State: 567cb6952d0f... | Txs: 3 ===
+[32m[INFO] [0m2025/05/03 16:33:49 blockchain.go:138: [0x00202ee9f3e462a96244a16b6acb7ec2d33d2f60] === Appended Block 2 (991fd69da015) | Prev: 9927151ccfb2... | State: 567cb6952d0f... | Txs: 3 ===
+[32m[INFO] [0m2025/05/03 16:33:50 main.go:173: ==> [Node-0xff9a] Created Tx: 6181848d... (To: 0x4bf375..., Nonce: 5, Shard: 2)
+[32m[INFO] [0m2025/05/03 16:33:51 main.go:173: ==> [Node-0xff9a] Created Tx: 06899786... (To: 0xff9a23..., Nonce: 6, Shard: 1)
+[32m[INFO] [0m2025/05/03 16:33:52 main.go:173: ==> [Node-0xff9a] Created Tx: 7ee73564... (To: 0x8368f4..., Nonce: 7, Shard: 0)
+[33m[WARN] [0m2025/05/03 16:33:52 shard.go:57: Shard 2: SMT Get found key '0x4bf3750512d562408d0e287df1bd819db8d591b1', but cannot return value (implementation limitation).
+[33m[WARN] [0m2025/05/03 16:33:52 shard.go:57: Shard 2: SMT Get found key '0x4bf3750512d562408d0e287df1bd819db8d591b1', but cannot return value (implementation limitation).
+[33m[WARN] [0m2025/05/03 16:33:52 shard.go:57: Shard 1: SMT Get found key '0xff9a23f0a80adb6ae93497207ce773544f68308e', but cannot return value (implementation limitation).
+[33m[WARN] [0m2025/05/03 16:33:52 shard.go:57: Shard 2: SMT Get found key '0x4bf3750512d562408d0e287df1bd819db8d591b1', but cannot return value (implementation limitation).
+[33m[WARN] [0m2025/05/03 16:33:52 shard.go:57: Shard 1: SMT Get found key '0xff9a23f0a80adb6ae93497207ce773544f68308e', but cannot return value (implementation limitation).
+[33m[WARN] [0m2025/05/03 16:33:52 shard.go:57: Shard 1: SMT Get found key '0xff9a23f0a80adb6ae93497207ce773544f68308e', but cannot return value (implementation limitation).
+[32m[INFO] [0m2025/05/03 16:33:52 simple_poa.go:102: [0x8368f44b95f6a0fe8ed9584ea5fc3f953da35a43] Proposing Block 3 (400a4d40126d8338de95e9569c8f637cf5b1968fd50d441d8900da9f339147c5)
+[32m[INFO] [0m2025/05/03 16:33:52 blockchain.go:138: [0x8368f44b95f6a0fe8ed9584ea5fc3f953da35a43] === Appended Block 3 (400a4d40126d) | Prev: 991fd69da015... | State: d0771150efeb... | Txs: 3 ===
+[32m[INFO] [0m2025/05/03 16:33:52 network.go:101: Network: Broadcasting Block 3 (400a4d40126d...) from 0x8368f44b95f6a0fe8ed9584ea5fc3f953da35a43
+[32m[INFO] [0m2025/05/03 16:33:52 blockchain.go:138: [Node-0x4bf3] === Appended Block 3 (400a4d40126d) | Prev: 991fd69da015... | State: d0771150efeb... | Txs: 3 ===
+[32m[INFO] [0m2025/05/03 16:33:52 blockchain.go:138: [0x389f1bf7321b8e94c8af204ef4e15aafc8a30c05] === Appended Block 3 (400a4d40126d) | Prev: 991fd69da015... | State: d0771150efeb... | Txs: 3 ===
+[32m[INFO] [0m2025/05/03 16:33:52 blockchain.go:138: [Node-0xff9a] === Appended Block 3 (400a4d40126d) | Prev: 991fd69da015... | State: d0771150efeb... | Txs: 3 ===
+[32m[INFO] [0m2025/05/03 16:33:52 blockchain.go:138: [0x00202ee9f3e462a96244a16b6acb7ec2d33d2f60] === Appended Block 3 (400a4d40126d) | Prev: 991fd69da015... | State: d0771150efeb... | Txs: 3 ===
+[32m[INFO] [0m2025/05/03 16:33:54 main.go:173: ==> [Node-0xff9a] Created Tx: 0dfcf8fe... (To: 0xff9a23..., Nonce: 8, Shard: 1)
+[32m[INFO] [0m2025/05/03 16:33:54 main.go:202: --- Initiating Graceful Shutdown ---
+[32m[INFO] [0m2025/05/03 16:33:54 main.go:208: Stopping nodes...
+[32m[INFO] [0m2025/05/03 16:33:54 node.go:105: Node 0x8368f44b95f6a0fe8ed9584ea5fc3f953da35a43 shutting down...
+[32m[INFO] [0m2025/05/03 16:33:54 node.go:96: Node 0x8368f44b95f6a0fe8ed9584ea5fc3f953da35a43 stopping proposal loop.
+[32m[INFO] [0m2025/05/03 16:33:54 node.go:106: Node 0x8368f44b95f6a0fe8ed9584ea5fc3f953da35a43 shutdown complete.
+[32m[INFO] [0m2025/05/03 16:33:54 node.go:105: Node 0x00202ee9f3e462a96244a16b6acb7ec2d33d2f60 shutting down...
+[32m[INFO] [0m2025/05/03 16:33:54 node.go:96: Node 0x00202ee9f3e462a96244a16b6acb7ec2d33d2f60 stopping proposal loop.
+[32m[INFO] [0m2025/05/03 16:33:54 node.go:106: Node 0x00202ee9f3e462a96244a16b6acb7ec2d33d2f60 shutdown complete.
+[32m[INFO] [0m2025/05/03 16:33:54 node.go:105: Node 0x389f1bf7321b8e94c8af204ef4e15aafc8a30c05 shutting down...
+[32m[INFO] [0m2025/05/03 16:33:54 node.go:96: Node 0x389f1bf7321b8e94c8af204ef4e15aafc8a30c05 stopping proposal loop.
+[32m[INFO] [0m2025/05/03 16:33:54 node.go:106: Node 0x389f1bf7321b8e94c8af204ef4e15aafc8a30c05 shutdown complete.
+[32m[INFO] [0m2025/05/03 16:33:54 node.go:105: Node Node-0x4bf3 shutting down...
+[32m[INFO] [0m2025/05/03 16:33:54 main.go:149: Stopping transaction simulator.
+[32m[INFO] [0m2025/05/03 16:33:54 main.go:150: Transaction simulator loop exited.
+[32m[INFO] [0m2025/05/03 16:33:54 node.go:98: Node Node-0x4bf3 stopping listener.
+[32m[INFO] [0m2025/05/03 16:33:54 node.go:106: Node Node-0x4bf3 shutdown complete.
+[32m[INFO] [0m2025/05/03 16:33:54 node.go:105: Node Node-0xff9a shutting down...
+[32m[INFO] [0m2025/05/03 16:33:54 node.go:98: Node Node-0xff9a stopping listener.
+[32m[INFO] [0m2025/05/03 16:33:54 node.go:106: Node Node-0xff9a shutdown complete.
+[32m[INFO] [0m2025/05/03 16:33:54 main.go:215: Unregistering nodes...
+[32m[INFO] [0m2025/05/03 16:33:54 network.go:60: Network: Unregistered node 0x8368f44b95f6a0fe8ed9584ea5fc3f953da35a43 (Total: 4)
+[32m[INFO] [0m2025/05/03 16:33:54 network.go:60: Network: Unregistered node 0x00202ee9f3e462a96244a16b6acb7ec2d33d2f60 (Total: 3)
+[32m[INFO] [0m2025/05/03 16:33:54 network.go:60: Network: Unregistered node 0x389f1bf7321b8e94c8af204ef4e15aafc8a30c05 (Total: 2)
+[32m[INFO] [0m2025/05/03 16:33:54 network.go:60: Network: Unregistered node Node-0x4bf3 (Total: 1)
+[32m[INFO] [0m2025/05/03 16:33:54 network.go:60: Network: Unregistered node Node-0xff9a (Total: 0)
+[32m[INFO] [0m2025/05/03 16:33:54 logger.go:100: Closing log file: blockchain.log
