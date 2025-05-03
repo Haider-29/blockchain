@@ -2,7 +2,7 @@ package p2p
 
 import (
 	"bytes"
-	//"encoding/gob" // No longer needed directly here
+	//"encoding/gob" // No longer needed here
 	"encoding/hex" // Needed for debug logs
 	"fmt"
 	"sync"
@@ -35,7 +35,7 @@ func NewNode(
 	broadcaster NetworkBroadcaster,
 	isValidator bool,
 	validators []string,
-	genesisBlock *core.Block,
+	genesisBlock *core.Block, // Pass genesis block
 ) (*Node, error) {
 	if broadcaster == nil { return nil, fmt.Errorf("network broadcaster cannot be nil") }
 	if genesisBlock == nil { return nil, fmt.Errorf("genesis block cannot be nil") }
@@ -46,19 +46,31 @@ func NewNode(
     if !bytes.Equal(genesisBlock.Header.StateRoot, initialStateRoot) { return nil, fmt.Errorf("node %s: Genesis block state root (%x) does not match initial state manager root (%x)", nodeID, genesisBlock.Header.StateRoot, initialStateRoot) }
 	bc, err := core.NewBlockchain(stateMgr, genesisBlock, nodeID)
     if err != nil { return nil, fmt.Errorf("failed to create blockchain for node %s: %w", nodeID, err) }
-	consensusEngine, err := consensus.NewSimplePoA(validators, wallet, genesisBlock)
+
+	// Pass genesisBlock to NewSimplePoA
+	consensusEngine, err := consensus.NewSimplePoA(validators, wallet, genesisBlock) // Pass genesis
     if err != nil { return nil, fmt.Errorf("failed to create consensus engine for node %s: %w", nodeID, err) }
+
 	node := &Node{ ID: nodeID, Wallet: wallet, Blockchain: bc, StateManager: stateMgr, Consensus: consensusEngine, Broadcaster: broadcaster, IsValidator: isValidator, stopChan: make(chan struct{}) }
 	utils.InfoLogger.Printf("Created Node: %s (Validator: %v, Addr: %s)", node.ID, node.IsValidator, node.Wallet.Address)
 	return node, nil
 }
 
 // AssignValidatorWallet updates node identity for validators.
-func (n *Node) AssignValidatorWallet(validatorWallet *crypto.Wallet, validators []string, genesisBlock *core.Block) error {
+func (n *Node) AssignValidatorWallet(validatorWallet *crypto.Wallet, validators []string, genesisBlock *core.Block) error { // Pass genesis block
      if !n.IsValidator { return fmt.Errorf("cannot assign validator wallet to non-validator node %s", n.ID) }; if validatorWallet == nil { return fmt.Errorf("provided validator wallet is nil for node %s", n.ID) }
      oldID := n.ID; n.Wallet = validatorWallet; n.ID = n.Wallet.Address
-     newConsensus, err := consensus.NewSimplePoA(validators, n.Wallet, genesisBlock); if err != nil { return fmt.Errorf("failed to re-initialize consensus for node %s with new wallet: %w", n.ID, err) }; n.Consensus = newConsensus
-     newBC, err := core.NewBlockchain(n.StateManager, genesisBlock, n.ID); if err != nil { return fmt.Errorf("failed to re-initialize blockchain for node %s with new wallet: %w", n.ID, err) }; n.Blockchain = newBC
+
+     // Pass genesisBlock to NewSimplePoA
+     newConsensus, err := consensus.NewSimplePoA(validators, n.Wallet, genesisBlock) // Pass genesis
+     if err != nil { return fmt.Errorf("failed to re-initialize consensus for node %s with new wallet: %w", n.ID, err) };
+     n.Consensus = newConsensus
+
+     // Pass genesisBlock to NewBlockchain
+     newBC, err := core.NewBlockchain(n.StateManager, genesisBlock, n.ID) // Pass genesis
+     if err != nil { return fmt.Errorf("failed to re-initialize blockchain for node %s with new wallet: %w", n.ID, err) };
+     n.Blockchain = newBC
+
      utils.InfoLogger.Printf("Assigned validator wallet %s to node (previously %s)", n.ID, oldID)
      return nil
 }
@@ -96,43 +108,43 @@ func (n *Node) tryProposeBlock() {
 	lastBlock := n.Blockchain.LastBlock();
     if lastBlock == nil { utils.WarnLogger.Printf("[%s] Cannot propose: Last block is nil.", n.ID); return }
 
-    // 1. Get pending transactions - NOW filters by current nonce
+    // 1. Get pending executable transactions
 	pendingTxs := n.Blockchain.GetPendingTransactions(10)
-
-    // --- Debug Log ---
     if len(pendingTxs) > 0 {
-        txIDs := make([]string, len(pendingTxs))
-        for i, tx := range pendingTxs { txIDs[i] = hex.EncodeToString(tx.ID[:4]) + "..." }
+        txIDs := make([]string, len(pendingTxs)); for i, tx := range pendingTxs { txIDs[i] = hex.EncodeToString(tx.ID[:4]) + "..." }
         utils.DebugLogger.Printf("[%s] tryProposeBlock: Got %d EXECUTA BLE pending txs for block %d: %v", n.ID, len(pendingTxs), lastBlock.Header.Height+1, txIDs)
     } else {
          utils.DebugLogger.Printf("[%s] tryProposeBlock: No executable pending txs found for block %d.", n.ID, lastBlock.Header.Height+1)
     }
 
-    // 2. Simulate applying these executable transactions
+    // 2. Simulate applying these transactions
     if n.StateManager == nil { utils.ErrorLogger.Printf("[%s] Cannot propose: StateManager is nil.", n.ID); return }
     expectedStateRoot, simErr := n.StateManager.SimulateApplyTransactions(pendingTxs)
     if simErr != nil {
          utils.ErrorLogger.Printf("[%s] CRITICAL: Simulation failed for already validated txs (block %d): %v. Skipping proposal.", n.ID, lastBlock.Header.Height+1, simErr)
-         return
+         return // Don't propose if simulation fails
     }
     utils.DebugLogger.Printf("[%s] Simulation successful for block %d. Expected State Root: %x...", n.ID, lastBlock.Header.Height+1, expectedStateRoot[:4])
 
 
-	// 3. Call consensus engine to propose the block structure using the *predicted* state root
+	// 3. Call consensus engine to propose the block structure (includes leader check)
 	proposedBlock, err := n.Consensus.Propose(pendingTxs, lastBlock, expectedStateRoot, n.Wallet)
 	if err != nil {
-		if !bytes.Contains([]byte(err.Error()), []byte("not validator's turn")) {
+		// Log only if it's not the expected "not my turn" error
+		if !bytes.Contains([]byte(err.Error()), []byte("not validator's turn")) && !bytes.Contains([]byte(err.Error()), []byte("failed to determine VRF leader")) {
 			utils.WarnLogger.Printf("[%s] Consensus proposal failed for height %d: %v", n.ID, lastBlock.Header.Height+1, err)
 		}
-		return
+		return // Not our turn or another proposal error
 	}
+    // If Propose returns nil error, we are the leader and have a signed block proposal
     utils.DebugLogger.Printf("[%s] Proposed block %d (%x) with %d txs and header state root %x", n.ID, proposedBlock.Header.Height, proposedBlock.Hash[:4], len(proposedBlock.Transactions), proposedBlock.Header.StateRoot[:4])
 
     // 4. Attempt to add the proposed block LOCALLY. AddBlock validates everything again.
     err = n.Blockchain.AddBlock(proposedBlock)
     if err != nil {
-        utils.ErrorLogger.Printf("[%s] CRITICAL: Self-proposed block %d (%x) REJECTED locally DESPITE successful simulation: %v", n.ID, proposedBlock.Header.Height, proposedBlock.Hash, err)
-        return
+        // This should be rare now if simulation is accurate.
+        utils.ErrorLogger.Printf("[%s] CRITICAL: Self-proposed block %d (%x) REJECTED locally DESPITE successful simulation & proposal: %v", n.ID, proposedBlock.Header.Height, proposedBlock.Hash, err)
+        return // Do not broadcast if local add fails
     }
 
     // 5. If AddBlock succeeded locally, the block IS valid.
@@ -146,14 +158,9 @@ func (n *Node) tryProposeBlock() {
 // HandleTransaction processes an incoming transaction.
 func (n *Node) HandleTransaction(tx *core.Transaction) {
     if tx == nil { return }
-	err := n.Blockchain.AddTransaction(tx) // Add to local pool (now allows future nonces)
-	if err == nil {
-        // Optional: Re-broadcast via interface if logic requires it?
-    } else {
-        if !bytes.Contains([]byte(err.Error()), []byte("already in pool")) {
-             utils.WarnLogger.Printf("[%s] Failed to add received Tx %x... to pool: %v", n.ID, tx.ID[:4], err)
-        }
-    }
+	err := n.Blockchain.AddTransaction(tx) // Add to local pool (allows future nonces)
+	if err != nil { if !bytes.Contains([]byte(err.Error()), []byte("already in pool")) { utils.WarnLogger.Printf("[%s] Failed to add received Tx %x... to pool: %v", n.ID, tx.ID[:4], err) } }
+    // Optional re-broadcast logic could go here using n.Broadcaster
 }
 
 // HandleBlock processes an incoming block.
@@ -167,6 +174,10 @@ func (n *Node) HandleBlock(block *core.Block) {
         if block.Header.Height != lastBlock.Header.Height+1 { if block.Header.Height > lastBlock.Header.Height + 1 { utils.WarnLogger.Printf("[%s] Received block %d (%x) from future? Current height %d. Needs sync.", n.ID, block.Header.Height, block.Hash, lastBlock.Header.Height) } else { utils.DebugLogger.Printf("[%s] Ignoring block %d (%x): Height %d not sequential (current: %d).", n.ID, block.Header.Height, block.Hash, block.Header.Height, lastBlock.Header.Height) }; return }
         if !bytes.Equal(block.Header.PrevBlockHash, lastBlock.Hash) { utils.WarnLogger.Printf("[%s] Ignoring block %d (%x): PrevHash %x does not match local last block hash %x.", n.ID, block.Header.Height, block.Hash, block.Header.PrevBlockHash, lastBlock.Hash); return }
     }
-	err := n.Consensus.Validate(block, lastBlock); if err != nil { utils.WarnLogger.Printf("[%s] Block %d (%x) failed consensus validation: %v", n.ID, block.Header.Height, block.Hash, err); return }
-	err = n.Blockchain.AddBlock(block); if err != nil { utils.WarnLogger.Printf("[%s] Failed to add block %d (%x) to chain: %v", n.ID, block.Header.Height, block.Hash, err) }
+	// Consensus validation now includes VRF check
+	err := n.Consensus.Validate(block, lastBlock)
+	if err != nil { utils.WarnLogger.Printf("[%s] Block %d (%x) failed consensus validation: %v", n.ID, block.Header.Height, block.Hash, err); return }
+	// Full block validation and state commit
+	err = n.Blockchain.AddBlock(block);
+	if err != nil { utils.WarnLogger.Printf("[%s] Failed to add block %d (%x) to chain: %v", n.ID, block.Header.Height, block.Hash, err) }
 }

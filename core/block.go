@@ -3,11 +3,11 @@ package core
 import (
 	"bytes"
 	"encoding/gob"
-	"time"
-    "fmt"
+	"fmt"
+	"time" // Keep time import
 
-	"blockchain/crypto" // Updated import path
-	"blockchain/utils"  // Updated import path
+	"blockchain/crypto" // Keep crypto import
+	"blockchain/utils"
 )
 
 // BlockHeader contains metadata for the block.
@@ -16,8 +16,12 @@ type BlockHeader struct {
 	Timestamp     int64
 	PrevBlockHash []byte
 	MerkleRoot    []byte // Merkle root of transactions in this block
-	StateRoot     []byte // Global state root (e.g., hash of shard roots)
+	StateRoot     []byte // Global state root after applying txs in this block
 	Validator     string // Address of the validator/proposer
+
+	// --- ADDED VRF Fields ---
+	VrfOutput     []byte // Output of the VRF proving leadership eligibility
+	VrfProof      []byte // Proof associated with the VRF output
 }
 
 // Block represents a block in the blockchain.
@@ -28,107 +32,87 @@ type Block struct {
 	Signature    []byte // Signature of the block hash by the validator
 }
 
-// NewBlock creates a new block. State root comes from the state manager *after* applying txs.
-// Validator signature is added after creation and consensus.
+// NewBlock creates a new block instance.
+// VRF fields are set *after* this by the consensus engine before signing.
 func NewBlock(height uint64, prevHash, stateRoot []byte, txs TxList, validatorAddr string) *Block {
 	header := BlockHeader{
 		Height:        height,
 		Timestamp:     time.Now().UnixNano(),
 		PrevBlockHash: prevHash,
-		StateRoot:     stateRoot, // This MUST be the state root AFTER applying txs in this block
+		StateRoot:     stateRoot,
 		Validator:     validatorAddr,
+		// VrfOutput and VrfProof are nil initially
 	}
-
-	// Calculate Merkle root for transactions
-    merkleTree := utils.NewMerkleTree(txs.Hashes())
-    if merkleTree == nil {
-         // This should only happen if txs.Hashes() returns an empty list AND NewMerkleTree handles it by returning nil.
-         // We modified NewMerkleTree to return a default hash node, so this branch might be unreachable.
-         utils.ErrorLogger.Printf("Merkle tree construction failed for block %d, using empty hash.", height)
-         header.MerkleRoot = utils.CalculateHash([]byte{}) // Default empty hash
-    } else {
-         header.MerkleRoot = merkleTree.Hash
-    }
+	merkleTree := utils.NewMerkleTree(txs.Hashes())
+    if merkleTree == nil { header.MerkleRoot = utils.CalculateHash([]byte{}) } else { header.MerkleRoot = merkleTree.Hash }
 
 	block := &Block{
 		Header:       header,
 		Transactions: txs,
+		// Hash and Signature are set after header population (including VRF)
 	}
-	block.Hash = block.CalculateHash() // Calculate hash after header is populated
-
+	// Initial hash calculation before VRF/Sig might be useful but hash MUST be recalculated after final header state.
+	// block.Hash = block.CalculateHash() // Calculate hash here or after VRF is set? Let's calculate AFTER VRF/Sig.
 	return block
 }
 
 // CalculateHash computes the hash of the block header.
+// IMPORTANT: This should be called AFTER all header fields, including VRF fields and potentially signature placeholders, are set.
 func (b *Block) CalculateHash() []byte {
 	var buf bytes.Buffer
 	encoder := gob.NewEncoder(&buf)
-	// Ensure consistent encoding
+	// Ensure consistent encoding order if gob isn't guaranteed (e.g., use custom marshalling)
 	err := encoder.Encode(b.Header)
 	if err != nil {
 		utils.ErrorLogger.Panicf("Failed to encode block header for hashing: %v", err)
-		return nil
+		return nil // Unreachable
 	}
 	return utils.CalculateHash(buf.Bytes())
 }
 
 // Sign the block hash using the validator's private key.
+// Assumes block.Hash has been calculated based on the *final* header state.
 func (b *Block) Sign(validatorWallet *crypto.Wallet) error {
-    if validatorWallet == nil || validatorWallet.PrivateKey == nil {
-        return fmt.Errorf("invalid validator wallet provided for signing")
-    }
-    if validatorWallet.Address != b.Header.Validator {
-        return fmt.Errorf("block validator mismatch: expected %s, signing as %s", b.Header.Validator, validatorWallet.Address)
-    }
-    if b.Hash == nil {
-        return fmt.Errorf("cannot sign block with nil hash")
-    }
-	sig, err := validatorWallet.PrivateKey.Sign(b.Hash)
-	if err != nil {
-		return err
+	if validatorWallet == nil || validatorWallet.PrivateKey == nil { return fmt.Errorf("invalid validator wallet provided for signing") }
+	if validatorWallet.Address != b.Header.Validator { return fmt.Errorf("block validator mismatch: expected %s, signing as %s", b.Header.Validator, validatorWallet.Address) }
+	if b.Hash == nil { // Ensure hash is calculated before signing
+		// This suggests an issue in the calling code (consensus propose)
+		return fmt.Errorf("cannot sign block with nil hash - call CalculateHash after setting VRF fields")
 	}
+	sig, err := validatorWallet.PrivateKey.Sign(b.Hash)
+	if err != nil { return err }
 	b.Signature = sig
 	return nil
 }
 
-
-// VerifySignature checks the block's validator signature.
+// VerifySignature checks the block's validator signature against the block hash.
 func (b *Block) VerifySignature() bool {
-	if b.Signature == nil || b.Header.Validator == "" || b.Hash == nil {
-		// utils.WarnLogger.Printf("Block %x verify failed: Missing signature, validator address, or hash", b.Hash)
+	if b.Signature == nil || b.Header.Validator == "" || b.Hash == nil { return false }
+	// Re-calculate hash based on received header to ensure integrity
+	// This is crucial to prevent verifying a signature against a hash that doesn't match the header content.
+	currentHeaderHash := b.CalculateHash()
+	if !bytes.Equal(b.Hash, currentHeaderHash) {
+		utils.WarnLogger.Printf("Block %d (%x) VerifySignature failed: Provided hash %x does not match calculated header hash %x", b.Header.Height, b.Hash, b.Hash, currentHeaderHash)
 		return false
 	}
 
-	// Find the validator's public key (assuming wallet store access or public key registry)
-	// In a real P2P network, the public key might be part of the validator's identity data.
-	validatorWallet := crypto.GetWallet(b.Header.Validator) // Simplified access
+	validatorWallet := crypto.GetWallet(b.Header.Validator)
 	if validatorWallet == nil || validatorWallet.PublicKey == nil {
 		utils.ErrorLogger.Printf("Block %x verify failed: Validator %s public key not found", b.Hash, b.Header.Validator)
-		// TODO: Need a way to get validator public keys, maybe store them in state or a registry?
-		return false // Cannot verify without public key
+		return false
 	}
-
+	// Verify the signature against the confirmed block hash
 	return validatorWallet.PublicKey.Verify(b.Hash, b.Signature)
 }
 
-// VerifyStructure checks basic structural integrity (e.g., Merkle root calculation).
+// VerifyStructure checks basic structural integrity like the Merkle root.
 func (b *Block) VerifyStructure() bool {
-    // Recalculate Merkle root from transactions and compare
-    expectedMerkleRootNode := utils.NewMerkleTree(b.Transactions.Hashes())
-    var expectedMerkleRoot []byte
-    if expectedMerkleRootNode == nil {
-        // Consistent with NewMerkleTree behavior for empty data
-        expectedMerkleRoot = utils.CalculateHash([]byte{})
-    } else {
-        expectedMerkleRoot = expectedMerkleRootNode.Hash
-    }
-
-
+    expectedMerkleRootNode := utils.NewMerkleTree(b.Transactions.Hashes()); var expectedMerkleRoot []byte
+    if expectedMerkleRootNode == nil { expectedMerkleRoot = utils.CalculateHash([]byte{}) } else { expectedMerkleRoot = expectedMerkleRootNode.Hash }
     if !bytes.Equal(b.Header.MerkleRoot, expectedMerkleRoot) {
-        utils.WarnLogger.Printf("Block %d (%x) verify failed: Merkle root mismatch (Header: %x, Calculated: %x)",
-            b.Header.Height, b.Hash, b.Header.MerkleRoot, expectedMerkleRoot)
-        return false
-    }
-    // Add more checks if needed (e.g., timestamp sanity relative to previous block - done in consensus)
-    return true
+		utils.WarnLogger.Printf("Block %d (%x) verify failed: Merkle root mismatch (Header: %x, Calculated: %x)", b.Header.Height, b.Hash, b.Header.MerkleRoot, expectedMerkleRoot)
+		return false
+	}
+	// We don't check VRF presence here; that's consensus validation's job.
+	return true
 }

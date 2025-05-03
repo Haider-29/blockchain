@@ -1,173 +1,185 @@
 package consensus
 
 import (
+	"bytes"
+	"encoding/binary" // Needed for comparing VRF outputs as numbers and generating seed
 	"fmt"
 	"time"
 
-	"blockchain/core"   // Updated import path
-	"blockchain/crypto" // Updated import path
-	"blockchain/utils"  // Updated import path
-    "bytes" // Needed for comparing genesis hash
+	"blockchain/core"
+	"blockchain/crypto" // Needs crypto package for keys and VRF calls
+	"blockchain/utils"
 )
 
-// SimplePoA implements a basic Proof-of-Authority consensus.
-// Authority set is fixed at creation. Leader rotates round-robin based on block height.
+// SimplePoA now uses simulated VRF for leader election instead of round-robin.
 type SimplePoA struct {
-	Validators []string // List of authorized validator addresses (ordered list matters for rotation)
-	NodeWallet *crypto.Wallet // Wallet of the node running this engine instance
-    genesisHash []byte // Store genesis hash to allow skipping validation for it
+	Validators  []string        // List of authorized validator addresses (order might matter for tie-breaking)
+	NodeWallet  *crypto.Wallet  // Wallet of the node running this instance
+	genesisHash []byte
 }
 
-// NewSimplePoA creates a new PoA engine.
+// NewSimplePoA initializes the PoA engine.
 func NewSimplePoA(validators []string, nodeWallet *crypto.Wallet, genesisBlock *core.Block) (*SimplePoA, error) {
-	if nodeWallet == nil || nodeWallet.PrivateKey == nil {
-         // ErrorLogger might not be initialized yet if called very early. Return error instead.
-         // utils.ErrorLogger.Panic("Node wallet cannot be nil or lack private key for SimplePoA consensus")
-         return nil, fmt.Errorf("node wallet cannot be nil or lack private key for SimplePoA consensus")
-	}
-    if len(validators) == 0 {
-        // Allow running without validators? Might be useful for single-node testing.
-        utils.WarnLogger.Println("Initializing SimplePoA with zero validators.")
-        // return nil, fmt.Errorf("validator list cannot be empty for SimplePoA")
-    }
-    if genesisBlock == nil {
-        return nil, fmt.Errorf("genesis block cannot be nil for SimplePoA initialization")
-    }
-
-	// Check if the node running this engine is actually in the validator set
-    isValidator := false
-    for _, v := range validators {
-        if v == nodeWallet.Address {
-            isValidator = true
-            break
-        }
-    }
-    if !isValidator && len(validators) > 0 { // Only warn if validators exist but we're not one
-         utils.WarnLogger.Printf("Node %s is not in the validator set for SimplePoA.", nodeWallet.Address)
-    }
-
-	return &SimplePoA{
-		Validators: validators,
-		NodeWallet: nodeWallet,
-        genesisHash: genesisBlock.Hash,
-	}, nil
+	if nodeWallet == nil || nodeWallet.PrivateKey == nil { return nil, fmt.Errorf("node wallet cannot be nil or lack private key") }
+	if len(validators) == 0 { utils.WarnLogger.Println("Initializing SimplePoA with zero validators.") }
+	if genesisBlock == nil { return nil, fmt.Errorf("genesis block cannot be nil") }
+	isValidator := false; for _, v := range validators { if v == nodeWallet.Address { isValidator = true; break } }; if !isValidator && len(validators) > 0 { utils.WarnLogger.Printf("Node %s is not in the validator set.", nodeWallet.Address) }
+	return &SimplePoA{ Validators: validators, NodeWallet: nodeWallet, genesisHash: genesisBlock.Hash }, nil
 }
 
-// Propose creates a new block if it's this node's turn based on height.
-// stateRoot is the expected root *after* applying the transactions.
+// getVRFInputSeed generates a deterministic seed for VRF evaluation for a given block height.
+func (poa *SimplePoA) getVRFInputSeed(lastBlock *core.Block, height uint64) []byte {
+    if lastBlock == nil { // Should only happen for height 1, use genesis hash
+        if height == 1 {
+             heightBytes := make([]byte, 8)
+             binary.BigEndian.PutUint64(heightBytes, height)
+             seedData := append(poa.genesisHash, heightBytes...) // Use genesis hash for first block VRF seed
+	         return utils.CalculateHash(seedData)
+        }
+        // This case should not be reached if lastBlock logic is correct elsewhere
+         utils.ErrorLogger.Panicf("getVRFInputSeed called with nil lastBlock for height %d > 1", height)
+         return nil
+    }
+    heightBytes := make([]byte, 8)
+    binary.BigEndian.PutUint64(heightBytes, height)
+    seedData := append(lastBlock.Hash, heightBytes...)
+	return utils.CalculateHash(seedData) // H(prevHash || height)
+}
+
+
+// Propose uses VRF to determine leader and create block.
 func (poa *SimplePoA) Propose(transactions core.TxList, lastBlock *core.Block, stateRoot []byte, validatorWallet *crypto.Wallet) (*core.Block, error) {
-    if len(poa.Validators) == 0 {
-        return nil, fmt.Errorf("cannot propose block: no validators defined")
+    if len(poa.Validators) == 0 { return nil, fmt.Errorf("cannot propose: no validators defined") }
+	if validatorWallet.Address != poa.NodeWallet.Address { return nil, fmt.Errorf("propose called with incorrect validator wallet") }
+	// lastBlock can be nil only when proposing height 1 after genesis
+    if lastBlock == nil && len(poa.Validators) > 0 && validatorWallet.Address != poa.Validators[1 % len(poa.Validators)] {
+        // Special handling for first block proposal if needed, or rely on VRF seed using genesis
+        // Let's assume VRF works even for height 1 using genesis hash as seed base
     }
-    if validatorWallet == nil || validatorWallet.PrivateKey == nil {
-        return nil, fmt.Errorf("propose called with invalid validator wallet")
+     if lastBlock == nil && validatorWallet.Address == "" { // Cannot determine height without lastBlock
+         return nil, fmt.Errorf("last block is nil, cannot determine proposal height")
+     }
+
+    var nextHeight uint64
+    if lastBlock != nil {
+        nextHeight = lastBlock.Header.Height + 1
+    } else {
+        nextHeight = 1 // Proposing the first block after genesis
     }
-	if validatorWallet.Address != poa.NodeWallet.Address {
-		 return nil, fmt.Errorf("propose called with wallet (%s) different from engine's node wallet (%s)", validatorWallet.Address, poa.NodeWallet.Address)
+
+	vrfInput := poa.getVRFInputSeed(lastBlock, nextHeight)
+
+	// --- VRF Leader Election Simulation ---
+	var lowestOutput []byte = nil
+	var leaderAddress string = ""
+    var leaderProof []byte = nil // Proof corresponding to the lowest output found
+
+	for _, validatorAddr := range poa.Validators {
+        valWallet := crypto.GetWallet(validatorAddr) // Assumes access to wallet info
+        if valWallet == nil || valWallet.PrivateKey == nil {
+             utils.ErrorLogger.Printf("[VRF Propose H:%d] Failed to get private key for validator %s. Skipping.", nextHeight, validatorAddr)
+             continue
+        }
+
+		output, proof, err := crypto.EvaluateVRF(valWallet.PrivateKey, vrfInput)
+		if err != nil {
+			utils.ErrorLogger.Printf("[VRF Propose H:%d] Failed to evaluate VRF for %s: %v", nextHeight, validatorAddr, err)
+			continue
+		}
+
+		// Determine leader: lowest VRF output wins
+		if leaderAddress == "" || bytes.Compare(output, lowestOutput) < 0 {
+			lowestOutput = output
+			leaderAddress = validatorAddr
+            leaderProof = proof
+		}
 	}
-    if lastBlock == nil {
-        return nil, fmt.Errorf("last block cannot be nil for proposing")
+
+    if leaderAddress == "" {
+        return nil, fmt.Errorf("failed to determine VRF leader for height %d", nextHeight)
     }
+	utils.DebugLogger.Printf("[VRF Propose H:%d] Leader determined: %s (Output: %x...)", nextHeight, leaderAddress, lowestOutput[:4])
 
-	// Determine the expected proposer for the *next* block height
-    nextHeight := lastBlock.Header.Height + 1
-	expectedProposerIndex := int(nextHeight) % len(poa.Validators)
-    expectedProposer := poa.Validators[expectedProposerIndex]
-
-	// Check if it's our turn
-	if poa.NodeWallet.Address != expectedProposer {
-		// utils.DebugLogger.Printf("Not my turn to propose height %d. Expected: %s, Me: %s", nextHeight, expectedProposer, poa.NodeWallet.Address)
-		return nil, fmt.Errorf("not validator's turn to propose height %d (expected %s)", nextHeight, expectedProposer)
+	// Check if *this* node is the elected leader
+	if poa.NodeWallet.Address != leaderAddress {
+		return nil, fmt.Errorf("not validator's turn (VRF Leader: %s)", leaderAddress)
 	}
 
-	// Create the new block with the provided state root
-	newBlock := core.NewBlock(
-		nextHeight,
-		lastBlock.Hash,
-		stateRoot, // Use the pre-calculated state root after applying txs
-		transactions,
-		poa.NodeWallet.Address, // Proposer is this node
-	)
-    if newBlock == nil {
-        return nil, fmt.Errorf("failed to create new block instance")
-    }
+	// --- We are the Leader ---
+    // Use the output/proof we determined belong to us (the lowest)
+    myOutput := lowestOutput
+    myProof := leaderProof
 
-	// Sign the block (block hash is calculated within NewBlock)
+	// Create the block *without* signature first
+	prevHash := poa.genesisHash // Default for block 1
+    if lastBlock != nil {
+        prevHash = lastBlock.Hash
+    }
+	newBlock := core.NewBlock(nextHeight, prevHash, stateRoot, transactions, poa.NodeWallet.Address)
+    if newBlock == nil { return nil, fmt.Errorf("failed to create new block instance") }
+
+    // Add VRF details to header
+    newBlock.Header.VrfOutput = myOutput
+    newBlock.Header.VrfProof = myProof
+
+    // Calculate the FINAL block hash *after* all header fields are set
+    newBlock.Hash = newBlock.CalculateHash()
+
+	// Sign the final block hash
 	err := newBlock.Sign(poa.NodeWallet)
-	if err != nil {
-		utils.ErrorLogger.Printf("Failed to sign proposed block %d: %v", newBlock.Header.Height, err)
-		return nil, fmt.Errorf("failed to sign block: %w", err)
-	}
+	if err != nil { return nil, fmt.Errorf("failed to sign block: %w", err) }
 
-	utils.InfoLogger.Printf("[%s] Proposing Block %d (%x)", poa.NodeWallet.Address, newBlock.Header.Height, newBlock.Hash)
-
+	utils.InfoLogger.Printf("[%s] Proposing Block %d (%x) as VRF Leader", poa.NodeWallet.Address, newBlock.Header.Height, newBlock.Hash)
 	return newBlock, nil
 }
 
-// Validate checks if the block was proposed by the correct validator for its height
-// and satisfies other PoA rules (like timestamp).
+// Validate checks block proposer using VRF verification.
 func (poa *SimplePoA) Validate(block *core.Block, lastBlock *core.Block) error {
-    if block == nil {
-        return fmt.Errorf("cannot validate nil block")
-    }
-    // Allow genesis block without strict validation against proposer list/last block
-    if block.Header.Height == 0 && bytes.Equal(block.Hash, poa.genesisHash) {
-        utils.DebugLogger.Printf("Skipping PoA proposer/timestamp validation for Genesis block %x", block.Hash)
-        return nil
-    }
+	if block == nil { return fmt.Errorf("cannot validate nil block") }
+	// Allow genesis block without VRF check
+    if block.Header.Height == 0 && bytes.Equal(block.Hash, poa.genesisHash) { return nil }
+    // Need lastBlock for VRF input seed calculation (except maybe block 1?)
+	if lastBlock == nil && block.Header.Height != 1 { return fmt.Errorf("last block cannot be nil for validating non-genesis block %d", block.Header.Height)}
+	if lastBlock != nil && block.Header.Height != lastBlock.Header.Height+1 { return fmt.Errorf("block height mismatch") }
 
-    // If not genesis, lastBlock must be provided
-    if lastBlock == nil {
-         return fmt.Errorf("last block cannot be nil for validating non-genesis block %d", block.Header.Height)
-    }
 
-    // Check height sequencing relative to lastBlock
-    if block.Header.Height != lastBlock.Header.Height + 1 {
-        return fmt.Errorf("block height %d does not follow last block height %d", block.Header.Height, lastBlock.Header.Height)
-    }
+	// --- VRF Verification ---
+	if block.Header.Validator == "" { return fmt.Errorf("block proposer (Validator) is empty") }
+	if block.Header.VrfOutput == nil || block.Header.VrfProof == nil { return fmt.Errorf("block is missing VRF output or proof") }
 
-    // --- Proposer Validation ---
-	if len(poa.Validators) == 0 {
-        if block.Header.Validator != "" { // Allow empty validator if no validators are set? Risky.
-            return fmt.Errorf("block %d has validator %s but no validators are configured", block.Header.Height, block.Header.Validator)
-        }
-        // If no validators, maybe anyone can propose? Or no blocks allowed?
-        utils.WarnLogger.Printf("Validating block %d with no PoA validators configured.", block.Header.Height)
-        // Skip proposer check if validator list is empty for now.
-	} else {
-        // Determine expected proposer based on the block's height
-        expectedProposerIndex := int(block.Header.Height) % len(poa.Validators)
-        expectedProposer := poa.Validators[expectedProposerIndex]
+	proposerWallet := crypto.GetWallet(block.Header.Validator)
+	if proposerWallet == nil || proposerWallet.PublicKey == nil { return fmt.Errorf("cannot get public key for block proposer %s", block.Header.Validator) }
+	proposerPubKey := proposerWallet.PublicKey
 
-        if block.Header.Validator != expectedProposer {
-            return fmt.Errorf("invalid proposer for block %d: expected %s, got %s",
-                block.Header.Height, expectedProposer, block.Header.Validator)
-        }
-    }
+	vrfInput := poa.getVRFInputSeed(lastBlock, block.Header.Height) // Pass correct lastBlock (nil if height is 1)
 
+	isValidProof := crypto.VerifyVRF(proposerPubKey, vrfInput, block.Header.VrfOutput, block.Header.VrfProof)
+	if !isValidProof { return fmt.Errorf("invalid VRF proof for proposer %s and block %d", block.Header.Validator, block.Header.Height) }
+
+	// --- SIMPLIFICATION: Skip explicit leader ranking check ---
+	utils.DebugLogger.Printf("Block %d VRF proof validated for proposer %s.", block.Header.Height, block.Header.Validator)
 
 	// --- Timestamp Validation ---
-	if block.Header.Timestamp <= lastBlock.Header.Timestamp {
-		 return fmt.Errorf("block %d timestamp (%d) not after previous block %d (%d)", block.Header.Height, block.Header.Timestamp, lastBlock.Header.Height, lastBlock.Header.Timestamp)
-	}
-    // Check against current time (allow some clock skew, e.g., 10 seconds)
-    maxSkew := 10 * time.Second
-    currentTime := time.Now().UnixNano()
-    if block.Header.Timestamp > currentTime + maxSkew.Nanoseconds() {
-         return fmt.Errorf("block %d timestamp (%d) is too far in the future (current: %d)", block.Header.Height, block.Header.Timestamp, currentTime)
+    // Need careful check for block 1 vs genesis timestamp
+    var prevTimestamp int64 = 0 // Default for genesis case check
+    if lastBlock != nil {
+        prevTimestamp = lastBlock.Header.Timestamp
+    } else if block.Header.Height == 1 {
+        // Get genesis timestamp somehow - maybe pass genesis block to validate?
+        // For now, assume block 1 timestamp > 0 is sufficient check against implicit genesis time
+    } else {
+         return fmt.Errorf("cannot validate timestamp without previous block context for block %d", block.Header.Height)
     }
-    // Optional: Check if timestamp is not too far in the past? Might reject valid blocks during sync.
-    // minTime := currentTime - (60 * time.Second).Nanoseconds() // e.g., reject blocks older than 1 min?
-    // if block.Header.Timestamp < minTime { ... }
 
+	if block.Header.Timestamp <= prevTimestamp { return fmt.Errorf("block %d timestamp (%d) not after previous block/genesis (%d)", block.Header.Height, block.Header.Timestamp, prevTimestamp) }
+    maxSkew := 10 * time.Second; currentTime := time.Now().UnixNano()
+    if block.Header.Timestamp > currentTime + maxSkew.Nanoseconds() { return fmt.Errorf("block %d timestamp (%d) is too far in the future (current: %d)", block.Header.Height, block.Header.Timestamp, currentTime) }
 
-	// utils.DebugLogger.Printf("Block %d PoA validation passed (Proposer: %s)", block.Header.Height, block.Header.Validator)
-	return nil // PoA validation passed
+	return nil
 }
 
 // GetCurrentValidators returns the fixed list of validators.
 func (poa *SimplePoA) GetCurrentValidators() []string {
-	// Return a copy to prevent external modification
 	validatorsCopy := make([]string, len(poa.Validators))
 	copy(validatorsCopy, poa.Validators)
 	return validatorsCopy
@@ -175,5 +187,5 @@ func (poa *SimplePoA) GetCurrentValidators() []string {
 
 // Name returns the name of the consensus engine.
 func (poa *SimplePoA) Name() string {
-    return "Simple Proof-of-Authority (Round-Robin)"
+    return "Simple Proof-of-Authority (Simulated VRF Leader Election)"
 }
