@@ -867,3 +867,1074 @@
 [32m[INFO] [0m2025/05/03 19:11:28 network.go:60: Network: Unregistered node 0xeab90647392c1e74abed4af4b08476655fed7d8f (Total: 1)
 [32m[INFO] [0m2025/05/03 19:11:28 network.go:60: Network: Unregistered node Node-0xa1ee (Total: 0)
 [32m[INFO] [0m2025/05/03 19:11:28 logger.go:100: Closing log file: blockchain.log
+[32m[INFO] [0m2025/05/03 19:43:45 logger.go:75: Logging initialized. Level: INFO. Output to console and file 'blockchain.log'
+[32m[INFO] [0m2025/05/03 19:43:45 main.go:21: --- Starting Simplified Blockchain Simulation ---
+[32m[INFO] [0m2025/05/03 19:43:45 main.go:40: Creating 4 Validator Wallets...
+[32m[INFO] [0m2025/05/03 19:43:45 crypto.go:111: Created new wallet: 0x296d919a16ed40ee9ba954e67941215698907b48
+[32m[INFO] [0m2025/05/03 19:43:45 crypto.go:111: Created new wallet: 0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa
+[32m[INFO] [0m2025/05/03 19:43:45 crypto.go:111: Created new wallet: 0xb9b35f76679c940012f5b8f2493c1dac6f164a54
+[32m[INFO] [0m2025/05/03 19:43:45 crypto.go:111: Created new wallet: 0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0
+[32m[INFO] [0m2025/05/03 19:43:45 main.go:46: Validator Set Addresses: [0x296d919a16ed40ee9ba954e67941215698907b48 0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa 0xb9b35f76679c940012f5b8f2493c1dac6f164a54 0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0]
+[32m[INFO] [0m2025/05/03 19:43:45 manager.go:27: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 19:43:45 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:43:45 node.go:127: Created Genesis Block: Hash f96c1e174d4a0931dfb7b0a7e85e8da41d28cd87cb65616e8ffca632258b0c2b, StateRoot: 1223349a40d2ee10bd1bebb5889ef8018c8bc13359ed94b387810af96c6e4268
+[32m[INFO] [0m2025/05/03 19:43:45 main.go:54: Creating 5 Network Nodes (4 Validators)...
+[32m[INFO] [0m2025/05/03 19:43:45 crypto.go:111: Created new wallet: 0x592dac821f9b1e70ad748cf096b902d386de344e
+[32m[INFO] [0m2025/05/03 19:43:45 manager.go:27: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 19:43:45 blockchain.go:43: [Validator-0x592d] Blockchain initialized. Genesis: f96c1e174d4a0931dfb7b0a7e85e8da41d28cd87cb65616e8ffca632258b0c2b, Height: 0
+[32m[INFO] [0m2025/05/03 19:43:45 node.go:79: Created Node: Validator-0x592d (Validator: true, Addr: 0x592dac821f9b1e70ad748cf096b902d386de344e)
+[32m[INFO] [0m2025/05/03 19:43:45 blockchain.go:43: [0x296d919a16ed40ee9ba954e67941215698907b48] Blockchain initialized. Genesis: f96c1e174d4a0931dfb7b0a7e85e8da41d28cd87cb65616e8ffca632258b0c2b, Height: 0
+[32m[INFO] [0m2025/05/03 19:43:45 node.go:110: Assigned validator wallet 0x296d919a16ed40ee9ba954e67941215698907b48 to node (previously Validator-0x592d)
+[32m[INFO] [0m2025/05/03 19:43:45 network.go:50: Network: Registered node 0x296d919a16ed40ee9ba954e67941215698907b48 (Total: 1)
+[32m[INFO] [0m2025/05/03 19:43:45 crypto.go:111: Created new wallet: 0xcde4352bceeb8f4a9b9c018743459c9ab407cc5a
+[32m[INFO] [0m2025/05/03 19:43:45 manager.go:27: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 19:43:45 blockchain.go:43: [Validator-0xcde4] Blockchain initialized. Genesis: f96c1e174d4a0931dfb7b0a7e85e8da41d28cd87cb65616e8ffca632258b0c2b, Height: 0
+[32m[INFO] [0m2025/05/03 19:43:45 node.go:79: Created Node: Validator-0xcde4 (Validator: true, Addr: 0xcde4352bceeb8f4a9b9c018743459c9ab407cc5a)
+[32m[INFO] [0m2025/05/03 19:43:45 blockchain.go:43: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Blockchain initialized. Genesis: f96c1e174d4a0931dfb7b0a7e85e8da41d28cd87cb65616e8ffca632258b0c2b, Height: 0
+[32m[INFO] [0m2025/05/03 19:43:45 node.go:110: Assigned validator wallet 0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa to node (previously Validator-0xcde4)
+[32m[INFO] [0m2025/05/03 19:43:45 network.go:50: Network: Registered node 0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa (Total: 2)
+[32m[INFO] [0m2025/05/03 19:43:45 crypto.go:111: Created new wallet: 0x978e438d10c3739f22e0d6b5800d9f0aabe8c09e
+[32m[INFO] [0m2025/05/03 19:43:45 manager.go:27: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 19:43:45 blockchain.go:43: [Validator-0x978e] Blockchain initialized. Genesis: f96c1e174d4a0931dfb7b0a7e85e8da41d28cd87cb65616e8ffca632258b0c2b, Height: 0
+[32m[INFO] [0m2025/05/03 19:43:45 node.go:79: Created Node: Validator-0x978e (Validator: true, Addr: 0x978e438d10c3739f22e0d6b5800d9f0aabe8c09e)
+[32m[INFO] [0m2025/05/03 19:43:45 blockchain.go:43: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Blockchain initialized. Genesis: f96c1e174d4a0931dfb7b0a7e85e8da41d28cd87cb65616e8ffca632258b0c2b, Height: 0
+[32m[INFO] [0m2025/05/03 19:43:45 node.go:110: Assigned validator wallet 0xb9b35f76679c940012f5b8f2493c1dac6f164a54 to node (previously Validator-0x978e)
+[32m[INFO] [0m2025/05/03 19:43:45 network.go:50: Network: Registered node 0xb9b35f76679c940012f5b8f2493c1dac6f164a54 (Total: 3)
+[32m[INFO] [0m2025/05/03 19:43:45 crypto.go:111: Created new wallet: 0x615c042bffa30d554972759e65cff4b616c0d212
+[32m[INFO] [0m2025/05/03 19:43:45 manager.go:27: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 19:43:45 blockchain.go:43: [Validator-0x615c] Blockchain initialized. Genesis: f96c1e174d4a0931dfb7b0a7e85e8da41d28cd87cb65616e8ffca632258b0c2b, Height: 0
+[32m[INFO] [0m2025/05/03 19:43:45 node.go:79: Created Node: Validator-0x615c (Validator: true, Addr: 0x615c042bffa30d554972759e65cff4b616c0d212)
+[32m[INFO] [0m2025/05/03 19:43:45 blockchain.go:43: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Blockchain initialized. Genesis: f96c1e174d4a0931dfb7b0a7e85e8da41d28cd87cb65616e8ffca632258b0c2b, Height: 0
+[32m[INFO] [0m2025/05/03 19:43:45 node.go:110: Assigned validator wallet 0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0 to node (previously Validator-0x615c)
+[32m[INFO] [0m2025/05/03 19:43:45 network.go:50: Network: Registered node 0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0 (Total: 4)
+[32m[INFO] [0m2025/05/03 19:43:45 crypto.go:111: Created new wallet: 0x2c077990fe715dd620e5222a8f79d37b58483c4b
+[32m[INFO] [0m2025/05/03 19:43:45 manager.go:27: Initialized State Manager with 4 shards
+[32m[INFO] [0m2025/05/03 19:43:45 blockchain.go:43: [Node-0x2c07] Blockchain initialized. Genesis: f96c1e174d4a0931dfb7b0a7e85e8da41d28cd87cb65616e8ffca632258b0c2b, Height: 0
+[32m[INFO] [0m2025/05/03 19:43:45 node.go:79: Created Node: Node-0x2c07 (Validator: false, Addr: 0x2c077990fe715dd620e5222a8f79d37b58483c4b)
+[32m[INFO] [0m2025/05/03 19:43:45 network.go:50: Network: Registered node Node-0x2c07 (Total: 5)
+[32m[INFO] [0m2025/05/03 19:43:45 main.go:71: Starting all nodes...
+[32m[INFO] [0m2025/05/03 19:43:45 node.go:133: Node 0x296d919a16ed40ee9ba954e67941215698907b48 starting...
+[32m[INFO] [0m2025/05/03 19:43:45 node.go:133: Node 0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa starting...
+[32m[INFO] [0m2025/05/03 19:43:45 node.go:139: Node 0x296d919a16ed40ee9ba954e67941215698907b48 (Validator) starting proposal loop (Block Time: 3s)...
+[32m[INFO] [0m2025/05/03 19:43:45 node.go:133: Node 0xb9b35f76679c940012f5b8f2493c1dac6f164a54 starting...
+[32m[INFO] [0m2025/05/03 19:43:45 node.go:133: Node 0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0 starting...
+[32m[INFO] [0m2025/05/03 19:43:45 node.go:139: Node 0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa (Validator) starting proposal loop (Block Time: 3s)...
+[32m[INFO] [0m2025/05/03 19:43:45 node.go:133: Node Node-0x2c07 starting...
+[32m[INFO] [0m2025/05/03 19:43:45 node.go:139: Node 0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0 (Validator) starting proposal loop (Block Time: 3s)...
+[32m[INFO] [0m2025/05/03 19:43:45 node.go:139: Node 0xb9b35f76679c940012f5b8f2493c1dac6f164a54 (Validator) starting proposal loop (Block Time: 3s)...
+[32m[INFO] [0m2025/05/03 19:43:45 main.go:75: Starting transaction simulator...
+[32m[INFO] [0m2025/05/03 19:43:45 node.go:153: Node Node-0x2c07 (Non-validator) started. Listening for network messages.
+[32m[INFO] [0m2025/05/03 19:43:45 main.go:113: Simulation running... Press Ctrl+C to stop.
+[32m[INFO] [0m2025/05/03 19:43:45 main.go:83: Transaction simulator using sender: 0x296d919a16ed40ee9ba954e67941215698907b48 (0x296d919a16ed40ee9ba954e67941215698907b48)
+[32m[INFO] [0m2025/05/03 19:43:45 main.go:95: Transaction simulator using Number of Shards: 4
+[32m[INFO] [0m2025/05/03 19:43:47 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 99d7db89... (To: 0x681c77..., Nonce: 0, Shard: 0)
+[32m[INFO] [0m2025/05/03 19:43:48 simple_poa.go:126: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Proposing Block 1 (6ad9c7a8eba27de73f3c2d9d4197dd2c22c32dc89fb8e8def65663e51e75d717) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:43:48 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 1 (6ad9c7a8eba2) | Prev: f96c1e174d4a... | State: 520179866421... | Txs: 1 ===
+[32m[INFO] [0m2025/05/03 19:43:48 network.go:101: Network: Broadcasting Block 1 (6ad9c7a8eba2...) from 0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa
+[32m[INFO] [0m2025/05/03 19:43:48 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 1 (6ad9c7a8eba2) | Prev: f96c1e174d4a... | State: 520179866421... | Txs: 1 ===
+[32m[INFO] [0m2025/05/03 19:43:48 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 1 (6ad9c7a8eba2) | Prev: f96c1e174d4a... | State: 520179866421... | Txs: 1 ===
+[32m[INFO] [0m2025/05/03 19:43:48 blockchain.go:113: [Node-0x2c07] === Appended Block 1 (6ad9c7a8eba2) | Prev: f96c1e174d4a... | State: 520179866421... | Txs: 1 ===
+[32m[INFO] [0m2025/05/03 19:43:48 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 1 (6ad9c7a8eba2) | Prev: f96c1e174d4a... | State: 520179866421... | Txs: 1 ===
+[32m[INFO] [0m2025/05/03 19:43:49 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 163576fc... (To: 0xb9b35f..., Nonce: 1, Shard: 0)
+[32m[INFO] [0m2025/05/03 19:43:51 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: d4a622f8... (To: 0x296d91..., Nonce: 2, Shard: 1)
+[33m[WARN] [0m2025/05/03 19:43:51 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx d4a622f8... rejected from mempool: invalid nonce for pool admission: expected 1, got 2
+[33m[WARN] [0m2025/05/03 19:43:51 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx d4a622f8... rejected from mempool: invalid nonce for pool admission: expected 1, got 2
+[33m[WARN] [0m2025/05/03 19:43:51 blockchain.go:72: [Node-0x2c07] Tx d4a622f8... rejected from mempool: invalid nonce for pool admission: expected 1, got 2
+[33m[WARN] [0m2025/05/03 19:43:51 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx d4a622f8... rejected from mempool: invalid nonce for pool admission: expected 1, got 2
+[32m[INFO] [0m2025/05/03 19:43:51 simple_poa.go:126: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Proposing Block 2 (8a216cb39c96f6fbce3e6288864b81e918b8b07afa540791f5bf666327c4ef9c) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:43:51 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 2 (8a216cb39c96) | Prev: 6ad9c7a8eba2... | State: b9deb6920684... | Txs: 1 ===
+[32m[INFO] [0m2025/05/03 19:43:51 network.go:101: Network: Broadcasting Block 2 (8a216cb39c96...) from 0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa
+[32m[INFO] [0m2025/05/03 19:43:51 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 2 (8a216cb39c96) | Prev: 6ad9c7a8eba2... | State: b9deb6920684... | Txs: 1 ===
+[32m[INFO] [0m2025/05/03 19:43:51 blockchain.go:113: [Node-0x2c07] === Appended Block 2 (8a216cb39c96) | Prev: 6ad9c7a8eba2... | State: b9deb6920684... | Txs: 1 ===
+[32m[INFO] [0m2025/05/03 19:43:51 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 2 (8a216cb39c96) | Prev: 6ad9c7a8eba2... | State: b9deb6920684... | Txs: 1 ===
+[32m[INFO] [0m2025/05/03 19:43:51 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 2 (8a216cb39c96) | Prev: 6ad9c7a8eba2... | State: b9deb6920684... | Txs: 1 ===
+[32m[INFO] [0m2025/05/03 19:43:52 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 6ef3a21c... (To: 0xb9b35f..., Nonce: 3, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:43:52 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 6ef3a21c... rejected from mempool: invalid nonce for pool admission: expected 2, got 3
+[33m[WARN] [0m2025/05/03 19:43:52 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 6ef3a21c... rejected from mempool: invalid nonce for pool admission: expected 2, got 3
+[33m[WARN] [0m2025/05/03 19:43:52 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 6ef3a21c... rejected from mempool: invalid nonce for pool admission: expected 2, got 3
+[33m[WARN] [0m2025/05/03 19:43:52 blockchain.go:72: [Node-0x2c07] Tx 6ef3a21c... rejected from mempool: invalid nonce for pool admission: expected 2, got 3
+[32m[INFO] [0m2025/05/03 19:43:53 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: f52dbc0f... (To: 0xb9b35f..., Nonce: 4, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:43:53 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx f52dbc0f... rejected from mempool: invalid nonce for pool admission: expected 2, got 4
+[33m[WARN] [0m2025/05/03 19:43:53 blockchain.go:72: [Node-0x2c07] Tx f52dbc0f... rejected from mempool: invalid nonce for pool admission: expected 2, got 4
+[33m[WARN] [0m2025/05/03 19:43:53 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx f52dbc0f... rejected from mempool: invalid nonce for pool admission: expected 2, got 4
+[33m[WARN] [0m2025/05/03 19:43:53 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx f52dbc0f... rejected from mempool: invalid nonce for pool admission: expected 2, got 4
+[32m[INFO] [0m2025/05/03 19:43:54 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 0f1dbf74... (To: 0x296d91..., Nonce: 5, Shard: 1)
+[33m[WARN] [0m2025/05/03 19:43:54 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 0f1dbf74... rejected from mempool: invalid nonce for pool admission: expected 2, got 5
+[33m[WARN] [0m2025/05/03 19:43:54 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 0f1dbf74... rejected from mempool: invalid nonce for pool admission: expected 2, got 5
+[33m[WARN] [0m2025/05/03 19:43:54 blockchain.go:72: [Node-0x2c07] Tx 0f1dbf74... rejected from mempool: invalid nonce for pool admission: expected 2, got 5
+[33m[WARN] [0m2025/05/03 19:43:54 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 0f1dbf74... rejected from mempool: invalid nonce for pool admission: expected 2, got 5
+[32m[INFO] [0m2025/05/03 19:43:54 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:43:54 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:43:54 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:43:54 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:43:54 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:43:54 simple_poa.go:126: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Proposing Block 3 (833a4685197da1088634069832858a4e072ab93e60770a623db8c61d87264607) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:43:54 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:43:54 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 3 (833a4685197d) | Prev: 8a216cb39c96... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:43:54 network.go:101: Network: Broadcasting Block 3 (833a4685197d...) from 0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0
+[32m[INFO] [0m2025/05/03 19:43:54 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:43:54 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 3 (833a4685197d) | Prev: 8a216cb39c96... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:43:54 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:43:54 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 3 (833a4685197d) | Prev: 8a216cb39c96... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:43:54 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:43:54 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 3 (833a4685197d) | Prev: 8a216cb39c96... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:43:54 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:43:54 blockchain.go:113: [Node-0x2c07] === Appended Block 3 (833a4685197d) | Prev: 8a216cb39c96... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:43:55 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 4b0de445... (To: 0x296d91..., Nonce: 6, Shard: 1)
+[33m[WARN] [0m2025/05/03 19:43:55 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 4b0de445... rejected from mempool: invalid nonce for pool admission: expected 2, got 6
+[33m[WARN] [0m2025/05/03 19:43:55 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 4b0de445... rejected from mempool: invalid nonce for pool admission: expected 2, got 6
+[33m[WARN] [0m2025/05/03 19:43:55 blockchain.go:72: [Node-0x2c07] Tx 4b0de445... rejected from mempool: invalid nonce for pool admission: expected 2, got 6
+[33m[WARN] [0m2025/05/03 19:43:55 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 4b0de445... rejected from mempool: invalid nonce for pool admission: expected 2, got 6
+[32m[INFO] [0m2025/05/03 19:43:57 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: c7c756d2... (To: 0x2c0779..., Nonce: 7, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:43:57 blockchain.go:72: [Node-0x2c07] Tx c7c756d2... rejected from mempool: invalid nonce for pool admission: expected 2, got 7
+[33m[WARN] [0m2025/05/03 19:43:57 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx c7c756d2... rejected from mempool: invalid nonce for pool admission: expected 2, got 7
+[33m[WARN] [0m2025/05/03 19:43:57 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx c7c756d2... rejected from mempool: invalid nonce for pool admission: expected 2, got 7
+[33m[WARN] [0m2025/05/03 19:43:57 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx c7c756d2... rejected from mempool: invalid nonce for pool admission: expected 2, got 7
+[32m[INFO] [0m2025/05/03 19:43:57 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:43:57 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:43:57 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:43:57 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:43:57 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:43:57 simple_poa.go:126: [0x296d919a16ed40ee9ba954e67941215698907b48] Proposing Block 4 (96d9a50d42dbdaa7358cb0a9c50311349b2396d7426e9d20e0d0a4b45c735fa8) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:43:57 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:43:57 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 4 (96d9a50d42db) | Prev: 833a4685197d... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:43:57 network.go:101: Network: Broadcasting Block 4 (96d9a50d42db...) from 0x296d919a16ed40ee9ba954e67941215698907b48
+[32m[INFO] [0m2025/05/03 19:43:57 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:43:57 blockchain.go:113: [Node-0x2c07] === Appended Block 4 (96d9a50d42db) | Prev: 833a4685197d... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:43:57 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:43:57 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 4 (96d9a50d42db) | Prev: 833a4685197d... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:43:57 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:43:57 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 4 (96d9a50d42db) | Prev: 833a4685197d... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:43:57 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:43:57 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 4 (96d9a50d42db) | Prev: 833a4685197d... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:43:58 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 3b56bbe7... (To: 0x681c77..., Nonce: 8, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:43:58 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 3b56bbe7... rejected from mempool: invalid nonce for pool admission: expected 2, got 8
+[33m[WARN] [0m2025/05/03 19:43:58 blockchain.go:72: [Node-0x2c07] Tx 3b56bbe7... rejected from mempool: invalid nonce for pool admission: expected 2, got 8
+[33m[WARN] [0m2025/05/03 19:43:58 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 3b56bbe7... rejected from mempool: invalid nonce for pool admission: expected 2, got 8
+[33m[WARN] [0m2025/05/03 19:43:58 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 3b56bbe7... rejected from mempool: invalid nonce for pool admission: expected 2, got 8
+[32m[INFO] [0m2025/05/03 19:43:59 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 781f6f78... (To: 0x681c77..., Nonce: 9, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:43:59 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 781f6f78... rejected from mempool: invalid nonce for pool admission: expected 2, got 9
+[33m[WARN] [0m2025/05/03 19:43:59 blockchain.go:72: [Node-0x2c07] Tx 781f6f78... rejected from mempool: invalid nonce for pool admission: expected 2, got 9
+[33m[WARN] [0m2025/05/03 19:43:59 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 781f6f78... rejected from mempool: invalid nonce for pool admission: expected 2, got 9
+[33m[WARN] [0m2025/05/03 19:43:59 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 781f6f78... rejected from mempool: invalid nonce for pool admission: expected 2, got 9
+[32m[INFO] [0m2025/05/03 19:44:00 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:00 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:00 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:00 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:00 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:00 simple_poa.go:126: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Proposing Block 5 (97002753ba10e80b805547a13180d3dc303dd738d03f4b1fe7c157c381079914) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:44:00 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:00 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 5 (97002753ba10) | Prev: 96d9a50d42db... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:00 network.go:101: Network: Broadcasting Block 5 (97002753ba10...) from 0xb9b35f76679c940012f5b8f2493c1dac6f164a54
+[32m[INFO] [0m2025/05/03 19:44:00 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:00 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 5 (97002753ba10) | Prev: 96d9a50d42db... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:00 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:00 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 5 (97002753ba10) | Prev: 96d9a50d42db... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:00 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:00 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 5 (97002753ba10) | Prev: 96d9a50d42db... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:00 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:00 blockchain.go:113: [Node-0x2c07] === Appended Block 5 (97002753ba10) | Prev: 96d9a50d42db... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:01 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 34e69493... (To: 0x2c0779..., Nonce: 10, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:01 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 34e69493... rejected from mempool: invalid nonce for pool admission: expected 2, got 10
+[33m[WARN] [0m2025/05/03 19:44:01 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 34e69493... rejected from mempool: invalid nonce for pool admission: expected 2, got 10
+[33m[WARN] [0m2025/05/03 19:44:01 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 34e69493... rejected from mempool: invalid nonce for pool admission: expected 2, got 10
+[33m[WARN] [0m2025/05/03 19:44:01 blockchain.go:72: [Node-0x2c07] Tx 34e69493... rejected from mempool: invalid nonce for pool admission: expected 2, got 10
+[32m[INFO] [0m2025/05/03 19:44:02 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 37a6ff8a... (To: 0x681c77..., Nonce: 11, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:02 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 37a6ff8a... rejected from mempool: invalid nonce for pool admission: expected 2, got 11
+[33m[WARN] [0m2025/05/03 19:44:02 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 37a6ff8a... rejected from mempool: invalid nonce for pool admission: expected 2, got 11
+[33m[WARN] [0m2025/05/03 19:44:02 blockchain.go:72: [Node-0x2c07] Tx 37a6ff8a... rejected from mempool: invalid nonce for pool admission: expected 2, got 11
+[33m[WARN] [0m2025/05/03 19:44:02 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 37a6ff8a... rejected from mempool: invalid nonce for pool admission: expected 2, got 11
+[32m[INFO] [0m2025/05/03 19:44:03 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:03 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:03 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:03 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:03 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:03 simple_poa.go:126: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Proposing Block 6 (97fbe815f9333c5f103f57d9adfb62f92f484a738e39d210f0e30380cdcf2206) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:44:03 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:03 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 6 (97fbe815f933) | Prev: 97002753ba10... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:03 network.go:101: Network: Broadcasting Block 6 (97fbe815f933...) from 0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0
+[32m[INFO] [0m2025/05/03 19:44:03 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:03 blockchain.go:113: [Node-0x2c07] === Appended Block 6 (97fbe815f933) | Prev: 97002753ba10... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:03 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:03 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 6 (97fbe815f933) | Prev: 97002753ba10... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:03 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:03 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 6 (97fbe815f933) | Prev: 97002753ba10... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:03 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:03 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 6 (97fbe815f933) | Prev: 97002753ba10... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:04 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 85ebd74a... (To: 0x2c0779..., Nonce: 12, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:04 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 85ebd74a... rejected from mempool: invalid nonce for pool admission: expected 2, got 12
+[33m[WARN] [0m2025/05/03 19:44:04 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 85ebd74a... rejected from mempool: invalid nonce for pool admission: expected 2, got 12
+[33m[WARN] [0m2025/05/03 19:44:04 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 85ebd74a... rejected from mempool: invalid nonce for pool admission: expected 2, got 12
+[33m[WARN] [0m2025/05/03 19:44:04 blockchain.go:72: [Node-0x2c07] Tx 85ebd74a... rejected from mempool: invalid nonce for pool admission: expected 2, got 12
+[32m[INFO] [0m2025/05/03 19:44:05 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 08c1a1dd... (To: 0x2c0779..., Nonce: 13, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:05 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 08c1a1dd... rejected from mempool: invalid nonce for pool admission: expected 2, got 13
+[33m[WARN] [0m2025/05/03 19:44:05 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 08c1a1dd... rejected from mempool: invalid nonce for pool admission: expected 2, got 13
+[33m[WARN] [0m2025/05/03 19:44:05 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 08c1a1dd... rejected from mempool: invalid nonce for pool admission: expected 2, got 13
+[33m[WARN] [0m2025/05/03 19:44:05 blockchain.go:72: [Node-0x2c07] Tx 08c1a1dd... rejected from mempool: invalid nonce for pool admission: expected 2, got 13
+[32m[INFO] [0m2025/05/03 19:44:06 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 6971a60c... (To: 0xb9b35f..., Nonce: 14, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:06 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 6971a60c... rejected from mempool: invalid nonce for pool admission: expected 2, got 14
+[33m[WARN] [0m2025/05/03 19:44:06 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 6971a60c... rejected from mempool: invalid nonce for pool admission: expected 2, got 14
+[33m[WARN] [0m2025/05/03 19:44:06 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 6971a60c... rejected from mempool: invalid nonce for pool admission: expected 2, got 14
+[33m[WARN] [0m2025/05/03 19:44:06 blockchain.go:72: [Node-0x2c07] Tx 6971a60c... rejected from mempool: invalid nonce for pool admission: expected 2, got 14
+[32m[INFO] [0m2025/05/03 19:44:06 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:06 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:06 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:06 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:06 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:06 simple_poa.go:126: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Proposing Block 7 (97b1980da6b949c740b74457472e3651bea8616c05e2f74bc6329eb1815763e6) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:44:06 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:06 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 7 (97b1980da6b9) | Prev: 97fbe815f933... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:06 network.go:101: Network: Broadcasting Block 7 (97b1980da6b9...) from 0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0
+[32m[INFO] [0m2025/05/03 19:44:06 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:06 blockchain.go:113: [Node-0x2c07] === Appended Block 7 (97b1980da6b9) | Prev: 97fbe815f933... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:06 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:06 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 7 (97b1980da6b9) | Prev: 97fbe815f933... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:06 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:06 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 7 (97b1980da6b9) | Prev: 97fbe815f933... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:06 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:06 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 7 (97b1980da6b9) | Prev: 97fbe815f933... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:07 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 779d7576... (To: 0xb9b35f..., Nonce: 15, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:07 blockchain.go:72: [Node-0x2c07] Tx 779d7576... rejected from mempool: invalid nonce for pool admission: expected 2, got 15
+[33m[WARN] [0m2025/05/03 19:44:07 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 779d7576... rejected from mempool: invalid nonce for pool admission: expected 2, got 15
+[33m[WARN] [0m2025/05/03 19:44:07 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 779d7576... rejected from mempool: invalid nonce for pool admission: expected 2, got 15
+[33m[WARN] [0m2025/05/03 19:44:07 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 779d7576... rejected from mempool: invalid nonce for pool admission: expected 2, got 15
+[32m[INFO] [0m2025/05/03 19:44:09 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: c7503d55... (To: 0x296d91..., Nonce: 16, Shard: 1)
+[33m[WARN] [0m2025/05/03 19:44:09 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx c7503d55... rejected from mempool: invalid nonce for pool admission: expected 2, got 16
+[33m[WARN] [0m2025/05/03 19:44:09 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx c7503d55... rejected from mempool: invalid nonce for pool admission: expected 2, got 16
+[33m[WARN] [0m2025/05/03 19:44:09 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx c7503d55... rejected from mempool: invalid nonce for pool admission: expected 2, got 16
+[33m[WARN] [0m2025/05/03 19:44:09 blockchain.go:72: [Node-0x2c07] Tx c7503d55... rejected from mempool: invalid nonce for pool admission: expected 2, got 16
+[32m[INFO] [0m2025/05/03 19:44:09 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:09 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:09 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:09 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:09 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:09 simple_poa.go:126: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Proposing Block 8 (19ff0f54ecc47e0a7d4cbb67d10e56d6f540d56bd83ffa93aef1879361ccdedc) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:44:09 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:09 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 8 (19ff0f54ecc4) | Prev: 97b1980da6b9... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:09 network.go:101: Network: Broadcasting Block 8 (19ff0f54ecc4...) from 0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0
+[32m[INFO] [0m2025/05/03 19:44:09 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:09 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 8 (19ff0f54ecc4) | Prev: 97b1980da6b9... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:09 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:09 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 8 (19ff0f54ecc4) | Prev: 97b1980da6b9... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:09 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:09 blockchain.go:113: [Node-0x2c07] === Appended Block 8 (19ff0f54ecc4) | Prev: 97b1980da6b9... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:09 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:09 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 8 (19ff0f54ecc4) | Prev: 97b1980da6b9... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:10 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 9cae1be9... (To: 0x296d91..., Nonce: 17, Shard: 1)
+[33m[WARN] [0m2025/05/03 19:44:10 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 9cae1be9... rejected from mempool: invalid nonce for pool admission: expected 2, got 17
+[33m[WARN] [0m2025/05/03 19:44:10 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 9cae1be9... rejected from mempool: invalid nonce for pool admission: expected 2, got 17
+[33m[WARN] [0m2025/05/03 19:44:10 blockchain.go:72: [Node-0x2c07] Tx 9cae1be9... rejected from mempool: invalid nonce for pool admission: expected 2, got 17
+[33m[WARN] [0m2025/05/03 19:44:10 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 9cae1be9... rejected from mempool: invalid nonce for pool admission: expected 2, got 17
+[32m[INFO] [0m2025/05/03 19:44:10 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 0cae07cc... (To: 0x681c77..., Nonce: 18, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:10 blockchain.go:72: [Node-0x2c07] Tx 0cae07cc... rejected from mempool: invalid nonce for pool admission: expected 2, got 18
+[33m[WARN] [0m2025/05/03 19:44:10 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 0cae07cc... rejected from mempool: invalid nonce for pool admission: expected 2, got 18
+[33m[WARN] [0m2025/05/03 19:44:10 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 0cae07cc... rejected from mempool: invalid nonce for pool admission: expected 2, got 18
+[33m[WARN] [0m2025/05/03 19:44:10 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 0cae07cc... rejected from mempool: invalid nonce for pool admission: expected 2, got 18
+[32m[INFO] [0m2025/05/03 19:44:11 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: c5243f7e... (To: 0xb9b35f..., Nonce: 19, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:11 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx c5243f7e... rejected from mempool: invalid nonce for pool admission: expected 2, got 19
+[33m[WARN] [0m2025/05/03 19:44:11 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx c5243f7e... rejected from mempool: invalid nonce for pool admission: expected 2, got 19
+[33m[WARN] [0m2025/05/03 19:44:11 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx c5243f7e... rejected from mempool: invalid nonce for pool admission: expected 2, got 19
+[33m[WARN] [0m2025/05/03 19:44:11 blockchain.go:72: [Node-0x2c07] Tx c5243f7e... rejected from mempool: invalid nonce for pool admission: expected 2, got 19
+[32m[INFO] [0m2025/05/03 19:44:12 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:12 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:12 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:12 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:12 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:12 simple_poa.go:126: [0x296d919a16ed40ee9ba954e67941215698907b48] Proposing Block 9 (3da4072089b8fb3bdcf88b0774c90c13c96d5f36b1e12a7b98c49f513ee61941) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:44:12 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:12 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 9 (3da4072089b8) | Prev: 19ff0f54ecc4... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:12 network.go:101: Network: Broadcasting Block 9 (3da4072089b8...) from 0x296d919a16ed40ee9ba954e67941215698907b48
+[32m[INFO] [0m2025/05/03 19:44:12 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:12 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 9 (3da4072089b8) | Prev: 19ff0f54ecc4... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:12 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:12 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 9 (3da4072089b8) | Prev: 19ff0f54ecc4... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:12 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:12 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 9 (3da4072089b8) | Prev: 19ff0f54ecc4... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:12 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:12 blockchain.go:113: [Node-0x2c07] === Appended Block 9 (3da4072089b8) | Prev: 19ff0f54ecc4... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:13 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: bb866291... (To: 0xb9b35f..., Nonce: 20, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:13 blockchain.go:72: [Node-0x2c07] Tx bb866291... rejected from mempool: invalid nonce for pool admission: expected 2, got 20
+[33m[WARN] [0m2025/05/03 19:44:13 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx bb866291... rejected from mempool: invalid nonce for pool admission: expected 2, got 20
+[33m[WARN] [0m2025/05/03 19:44:13 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx bb866291... rejected from mempool: invalid nonce for pool admission: expected 2, got 20
+[33m[WARN] [0m2025/05/03 19:44:13 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx bb866291... rejected from mempool: invalid nonce for pool admission: expected 2, got 20
+[32m[INFO] [0m2025/05/03 19:44:14 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: b0a7cb4e... (To: 0x681c77..., Nonce: 21, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:14 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx b0a7cb4e... rejected from mempool: invalid nonce for pool admission: expected 2, got 21
+[33m[WARN] [0m2025/05/03 19:44:14 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx b0a7cb4e... rejected from mempool: invalid nonce for pool admission: expected 2, got 21
+[33m[WARN] [0m2025/05/03 19:44:14 blockchain.go:72: [Node-0x2c07] Tx b0a7cb4e... rejected from mempool: invalid nonce for pool admission: expected 2, got 21
+[33m[WARN] [0m2025/05/03 19:44:14 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx b0a7cb4e... rejected from mempool: invalid nonce for pool admission: expected 2, got 21
+[32m[INFO] [0m2025/05/03 19:44:15 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:15 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:15 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:15 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:15 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:15 simple_poa.go:126: [0x296d919a16ed40ee9ba954e67941215698907b48] Proposing Block 10 (5ee53ef0c4444876595516af1317c69562bcdbcbcab0666fc5027aaac8d8480e) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:44:15 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:15 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 10 (5ee53ef0c444) | Prev: 3da4072089b8... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:15 network.go:101: Network: Broadcasting Block 10 (5ee53ef0c444...) from 0x296d919a16ed40ee9ba954e67941215698907b48
+[32m[INFO] [0m2025/05/03 19:44:15 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:15 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 10 (5ee53ef0c444) | Prev: 3da4072089b8... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:15 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:15 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 10 (5ee53ef0c444) | Prev: 3da4072089b8... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:15 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:15 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 10 (5ee53ef0c444) | Prev: 3da4072089b8... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:15 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:15 blockchain.go:113: [Node-0x2c07] === Appended Block 10 (5ee53ef0c444) | Prev: 3da4072089b8... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:16 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: e091a7f8... (To: 0x296d91..., Nonce: 22, Shard: 1)
+[33m[WARN] [0m2025/05/03 19:44:16 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx e091a7f8... rejected from mempool: invalid nonce for pool admission: expected 2, got 22
+[33m[WARN] [0m2025/05/03 19:44:16 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx e091a7f8... rejected from mempool: invalid nonce for pool admission: expected 2, got 22
+[33m[WARN] [0m2025/05/03 19:44:16 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx e091a7f8... rejected from mempool: invalid nonce for pool admission: expected 2, got 22
+[33m[WARN] [0m2025/05/03 19:44:16 blockchain.go:72: [Node-0x2c07] Tx e091a7f8... rejected from mempool: invalid nonce for pool admission: expected 2, got 22
+[32m[INFO] [0m2025/05/03 19:44:17 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: ebc21354... (To: 0x296d91..., Nonce: 23, Shard: 1)
+[33m[WARN] [0m2025/05/03 19:44:17 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx ebc21354... rejected from mempool: invalid nonce for pool admission: expected 2, got 23
+[33m[WARN] [0m2025/05/03 19:44:17 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx ebc21354... rejected from mempool: invalid nonce for pool admission: expected 2, got 23
+[33m[WARN] [0m2025/05/03 19:44:17 blockchain.go:72: [Node-0x2c07] Tx ebc21354... rejected from mempool: invalid nonce for pool admission: expected 2, got 23
+[33m[WARN] [0m2025/05/03 19:44:17 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx ebc21354... rejected from mempool: invalid nonce for pool admission: expected 2, got 23
+[32m[INFO] [0m2025/05/03 19:44:18 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:18 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:18 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:18 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:18 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:18 simple_poa.go:126: [0x296d919a16ed40ee9ba954e67941215698907b48] Proposing Block 11 (d93923e771e23ad70f5e5fb31b2210ebb7a16c0de3d9ea462e9a7cc8ae4603ff) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:44:18 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:18 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 11 (d93923e771e2) | Prev: 5ee53ef0c444... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:18 network.go:101: Network: Broadcasting Block 11 (d93923e771e2...) from 0x296d919a16ed40ee9ba954e67941215698907b48
+[32m[INFO] [0m2025/05/03 19:44:18 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:18 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 11 (d93923e771e2) | Prev: 5ee53ef0c444... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:18 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:18 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 11 (d93923e771e2) | Prev: 5ee53ef0c444... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:18 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:18 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:18 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 11 (d93923e771e2) | Prev: 5ee53ef0c444... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:18 blockchain.go:113: [Node-0x2c07] === Appended Block 11 (d93923e771e2) | Prev: 5ee53ef0c444... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:18 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: c166166e... (To: 0x188881..., Nonce: 24, Shard: 2)
+[33m[WARN] [0m2025/05/03 19:44:18 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx c166166e... rejected from mempool: invalid nonce for pool admission: expected 2, got 24
+[33m[WARN] [0m2025/05/03 19:44:18 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx c166166e... rejected from mempool: invalid nonce for pool admission: expected 2, got 24
+[33m[WARN] [0m2025/05/03 19:44:18 blockchain.go:72: [Node-0x2c07] Tx c166166e... rejected from mempool: invalid nonce for pool admission: expected 2, got 24
+[33m[WARN] [0m2025/05/03 19:44:18 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx c166166e... rejected from mempool: invalid nonce for pool admission: expected 2, got 24
+[32m[INFO] [0m2025/05/03 19:44:19 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: d7b9d613... (To: 0x2c0779..., Nonce: 25, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:19 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx d7b9d613... rejected from mempool: invalid nonce for pool admission: expected 2, got 25
+[33m[WARN] [0m2025/05/03 19:44:19 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx d7b9d613... rejected from mempool: invalid nonce for pool admission: expected 2, got 25
+[33m[WARN] [0m2025/05/03 19:44:19 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx d7b9d613... rejected from mempool: invalid nonce for pool admission: expected 2, got 25
+[33m[WARN] [0m2025/05/03 19:44:20 blockchain.go:72: [Node-0x2c07] Tx d7b9d613... rejected from mempool: invalid nonce for pool admission: expected 2, got 25
+[32m[INFO] [0m2025/05/03 19:44:21 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:21 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:21 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:21 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:21 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:21 simple_poa.go:126: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Proposing Block 12 (e98f55313ae32b7d74269b84325e5451672714bb221c1bf9ceced6da79cfbf9b) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:44:21 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:21 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 12 (e98f55313ae3) | Prev: d93923e771e2... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:21 network.go:101: Network: Broadcasting Block 12 (e98f55313ae3...) from 0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0
+[32m[INFO] [0m2025/05/03 19:44:21 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:21 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 12 (e98f55313ae3) | Prev: d93923e771e2... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:21 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:21 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 12 (e98f55313ae3) | Prev: d93923e771e2... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:21 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:21 blockchain.go:113: [Node-0x2c07] === Appended Block 12 (e98f55313ae3) | Prev: d93923e771e2... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:21 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:21 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 12 (e98f55313ae3) | Prev: d93923e771e2... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:21 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 715f471b... (To: 0x296d91..., Nonce: 26, Shard: 1)
+[33m[WARN] [0m2025/05/03 19:44:21 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 715f471b... rejected from mempool: invalid nonce for pool admission: expected 2, got 26
+[33m[WARN] [0m2025/05/03 19:44:21 blockchain.go:72: [Node-0x2c07] Tx 715f471b... rejected from mempool: invalid nonce for pool admission: expected 2, got 26
+[33m[WARN] [0m2025/05/03 19:44:21 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 715f471b... rejected from mempool: invalid nonce for pool admission: expected 2, got 26
+[33m[WARN] [0m2025/05/03 19:44:21 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 715f471b... rejected from mempool: invalid nonce for pool admission: expected 2, got 26
+[32m[INFO] [0m2025/05/03 19:44:23 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: d2986e85... (To: 0x296d91..., Nonce: 27, Shard: 1)
+[33m[WARN] [0m2025/05/03 19:44:23 blockchain.go:72: [Node-0x2c07] Tx d2986e85... rejected from mempool: invalid nonce for pool admission: expected 2, got 27
+[33m[WARN] [0m2025/05/03 19:44:23 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx d2986e85... rejected from mempool: invalid nonce for pool admission: expected 2, got 27
+[33m[WARN] [0m2025/05/03 19:44:23 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx d2986e85... rejected from mempool: invalid nonce for pool admission: expected 2, got 27
+[33m[WARN] [0m2025/05/03 19:44:23 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx d2986e85... rejected from mempool: invalid nonce for pool admission: expected 2, got 27
+[32m[INFO] [0m2025/05/03 19:44:24 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: ba5915c1... (To: 0x2c0779..., Nonce: 28, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:24 blockchain.go:72: [Node-0x2c07] Tx ba5915c1... rejected from mempool: invalid nonce for pool admission: expected 2, got 28
+[33m[WARN] [0m2025/05/03 19:44:24 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx ba5915c1... rejected from mempool: invalid nonce for pool admission: expected 2, got 28
+[33m[WARN] [0m2025/05/03 19:44:24 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx ba5915c1... rejected from mempool: invalid nonce for pool admission: expected 2, got 28
+[33m[WARN] [0m2025/05/03 19:44:24 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx ba5915c1... rejected from mempool: invalid nonce for pool admission: expected 2, got 28
+[32m[INFO] [0m2025/05/03 19:44:24 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:24 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:24 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:24 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:24 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:24 simple_poa.go:126: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Proposing Block 13 (be444e27ab582fa89be0c6ed35e701b953121a7b02268230272620ad29ccc67d) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:44:24 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:24 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 13 (be444e27ab58) | Prev: e98f55313ae3... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:24 network.go:101: Network: Broadcasting Block 13 (be444e27ab58...) from 0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0
+[32m[INFO] [0m2025/05/03 19:44:24 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:24 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 13 (be444e27ab58) | Prev: e98f55313ae3... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:24 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:24 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 13 (be444e27ab58) | Prev: e98f55313ae3... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:24 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:24 blockchain.go:113: [Node-0x2c07] === Appended Block 13 (be444e27ab58) | Prev: e98f55313ae3... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:24 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:24 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 13 (be444e27ab58) | Prev: e98f55313ae3... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:24 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: df6f5d18... (To: 0x296d91..., Nonce: 29, Shard: 1)
+[33m[WARN] [0m2025/05/03 19:44:24 blockchain.go:72: [Node-0x2c07] Tx df6f5d18... rejected from mempool: invalid nonce for pool admission: expected 2, got 29
+[33m[WARN] [0m2025/05/03 19:44:24 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx df6f5d18... rejected from mempool: invalid nonce for pool admission: expected 2, got 29
+[33m[WARN] [0m2025/05/03 19:44:24 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx df6f5d18... rejected from mempool: invalid nonce for pool admission: expected 2, got 29
+[33m[WARN] [0m2025/05/03 19:44:24 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx df6f5d18... rejected from mempool: invalid nonce for pool admission: expected 2, got 29
+[32m[INFO] [0m2025/05/03 19:44:26 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 7bc1a9f7... (To: 0xb9b35f..., Nonce: 30, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:26 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 7bc1a9f7... rejected from mempool: invalid nonce for pool admission: expected 2, got 30
+[33m[WARN] [0m2025/05/03 19:44:26 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 7bc1a9f7... rejected from mempool: invalid nonce for pool admission: expected 2, got 30
+[33m[WARN] [0m2025/05/03 19:44:26 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 7bc1a9f7... rejected from mempool: invalid nonce for pool admission: expected 2, got 30
+[33m[WARN] [0m2025/05/03 19:44:26 blockchain.go:72: [Node-0x2c07] Tx 7bc1a9f7... rejected from mempool: invalid nonce for pool admission: expected 2, got 30
+[32m[INFO] [0m2025/05/03 19:44:27 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:27 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:27 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:27 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:27 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:27 simple_poa.go:126: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Proposing Block 14 (39375b3d94eb7bbc89b44bc0f7987ceae64fff3d4557938fa52ffcd062ee4793) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:44:27 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:27 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 14 (39375b3d94eb) | Prev: be444e27ab58... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:27 network.go:101: Network: Broadcasting Block 14 (39375b3d94eb...) from 0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa
+[32m[INFO] [0m2025/05/03 19:44:27 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:27 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 14 (39375b3d94eb) | Prev: be444e27ab58... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:27 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:27 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 14 (39375b3d94eb) | Prev: be444e27ab58... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:27 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:27 blockchain.go:113: [Node-0x2c07] === Appended Block 14 (39375b3d94eb) | Prev: be444e27ab58... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:27 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:27 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 14 (39375b3d94eb) | Prev: be444e27ab58... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:28 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 57878819... (To: 0x296d91..., Nonce: 31, Shard: 1)
+[33m[WARN] [0m2025/05/03 19:44:28 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 57878819... rejected from mempool: invalid nonce for pool admission: expected 2, got 31
+[33m[WARN] [0m2025/05/03 19:44:28 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 57878819... rejected from mempool: invalid nonce for pool admission: expected 2, got 31
+[33m[WARN] [0m2025/05/03 19:44:28 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 57878819... rejected from mempool: invalid nonce for pool admission: expected 2, got 31
+[33m[WARN] [0m2025/05/03 19:44:28 blockchain.go:72: [Node-0x2c07] Tx 57878819... rejected from mempool: invalid nonce for pool admission: expected 2, got 31
+[32m[INFO] [0m2025/05/03 19:44:28 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 3bcd765e... (To: 0x2c0779..., Nonce: 32, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:29 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 3bcd765e... rejected from mempool: invalid nonce for pool admission: expected 2, got 32
+[33m[WARN] [0m2025/05/03 19:44:29 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 3bcd765e... rejected from mempool: invalid nonce for pool admission: expected 2, got 32
+[33m[WARN] [0m2025/05/03 19:44:29 blockchain.go:72: [Node-0x2c07] Tx 3bcd765e... rejected from mempool: invalid nonce for pool admission: expected 2, got 32
+[33m[WARN] [0m2025/05/03 19:44:29 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 3bcd765e... rejected from mempool: invalid nonce for pool admission: expected 2, got 32
+[32m[INFO] [0m2025/05/03 19:44:29 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: fb88ed32... (To: 0xb9b35f..., Nonce: 33, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:29 blockchain.go:72: [Node-0x2c07] Tx fb88ed32... rejected from mempool: invalid nonce for pool admission: expected 2, got 33
+[33m[WARN] [0m2025/05/03 19:44:29 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx fb88ed32... rejected from mempool: invalid nonce for pool admission: expected 2, got 33
+[33m[WARN] [0m2025/05/03 19:44:29 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx fb88ed32... rejected from mempool: invalid nonce for pool admission: expected 2, got 33
+[33m[WARN] [0m2025/05/03 19:44:29 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx fb88ed32... rejected from mempool: invalid nonce for pool admission: expected 2, got 33
+[32m[INFO] [0m2025/05/03 19:44:30 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 9e5f7488... (To: 0xb9b35f..., Nonce: 34, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:30 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 9e5f7488... rejected from mempool: invalid nonce for pool admission: expected 2, got 34
+[33m[WARN] [0m2025/05/03 19:44:30 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 9e5f7488... rejected from mempool: invalid nonce for pool admission: expected 2, got 34
+[32m[INFO] [0m2025/05/03 19:44:30 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:30 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:30 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:30 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:30 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:30 simple_poa.go:126: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Proposing Block 15 (5cd8c31a070638454c8422972c4893b207835e38f67b7ae7098a4c8fc6275036) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:44:30 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:30 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 15 (5cd8c31a0706) | Prev: 39375b3d94eb... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:30 network.go:101: Network: Broadcasting Block 15 (5cd8c31a0706...) from 0xb9b35f76679c940012f5b8f2493c1dac6f164a54
+[33m[WARN] [0m2025/05/03 19:44:30 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 9e5f7488... rejected from mempool: invalid nonce for pool admission: expected 2, got 34
+[33m[WARN] [0m2025/05/03 19:44:30 blockchain.go:72: [Node-0x2c07] Tx 9e5f7488... rejected from mempool: invalid nonce for pool admission: expected 2, got 34
+[32m[INFO] [0m2025/05/03 19:44:30 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:30 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 15 (5cd8c31a0706) | Prev: 39375b3d94eb... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:30 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:30 blockchain.go:113: [Node-0x2c07] === Appended Block 15 (5cd8c31a0706) | Prev: 39375b3d94eb... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:30 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:30 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:30 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 15 (5cd8c31a0706) | Prev: 39375b3d94eb... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:30 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 15 (5cd8c31a0706) | Prev: 39375b3d94eb... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:31 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 0b8cf393... (To: 0x296d91..., Nonce: 35, Shard: 1)
+[33m[WARN] [0m2025/05/03 19:44:31 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 0b8cf393... rejected from mempool: invalid nonce for pool admission: expected 2, got 35
+[33m[WARN] [0m2025/05/03 19:44:31 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 0b8cf393... rejected from mempool: invalid nonce for pool admission: expected 2, got 35
+[33m[WARN] [0m2025/05/03 19:44:31 blockchain.go:72: [Node-0x2c07] Tx 0b8cf393... rejected from mempool: invalid nonce for pool admission: expected 2, got 35
+[33m[WARN] [0m2025/05/03 19:44:31 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 0b8cf393... rejected from mempool: invalid nonce for pool admission: expected 2, got 35
+[32m[INFO] [0m2025/05/03 19:44:32 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 7e93933c... (To: 0x2c0779..., Nonce: 36, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:32 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 7e93933c... rejected from mempool: invalid nonce for pool admission: expected 2, got 36
+[33m[WARN] [0m2025/05/03 19:44:32 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 7e93933c... rejected from mempool: invalid nonce for pool admission: expected 2, got 36
+[33m[WARN] [0m2025/05/03 19:44:32 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 7e93933c... rejected from mempool: invalid nonce for pool admission: expected 2, got 36
+[33m[WARN] [0m2025/05/03 19:44:32 blockchain.go:72: [Node-0x2c07] Tx 7e93933c... rejected from mempool: invalid nonce for pool admission: expected 2, got 36
+[32m[INFO] [0m2025/05/03 19:44:33 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 8f8a8bb1... (To: 0x188881..., Nonce: 37, Shard: 2)
+[33m[WARN] [0m2025/05/03 19:44:33 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 8f8a8bb1... rejected from mempool: invalid nonce for pool admission: expected 2, got 37
+[33m[WARN] [0m2025/05/03 19:44:33 blockchain.go:72: [Node-0x2c07] Tx 8f8a8bb1... rejected from mempool: invalid nonce for pool admission: expected 2, got 37
+[33m[WARN] [0m2025/05/03 19:44:33 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 8f8a8bb1... rejected from mempool: invalid nonce for pool admission: expected 2, got 37
+[33m[WARN] [0m2025/05/03 19:44:33 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 8f8a8bb1... rejected from mempool: invalid nonce for pool admission: expected 2, got 37
+[32m[INFO] [0m2025/05/03 19:44:33 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:33 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:33 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:33 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:33 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:33 simple_poa.go:126: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Proposing Block 16 (d78341a187836460796cec7e626f322a9f38e2967feaa28ce7a0e59566d57b18) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:44:33 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:33 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 16 (d78341a18783) | Prev: 5cd8c31a0706... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:33 network.go:101: Network: Broadcasting Block 16 (d78341a18783...) from 0xb9b35f76679c940012f5b8f2493c1dac6f164a54
+[32m[INFO] [0m2025/05/03 19:44:33 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:33 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 16 (d78341a18783) | Prev: 5cd8c31a0706... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:33 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:33 blockchain.go:113: [Node-0x2c07] === Appended Block 16 (d78341a18783) | Prev: 5cd8c31a0706... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:33 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:33 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 16 (d78341a18783) | Prev: 5cd8c31a0706... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:33 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:33 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 16 (d78341a18783) | Prev: 5cd8c31a0706... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:35 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 76867486... (To: 0x296d91..., Nonce: 38, Shard: 1)
+[33m[WARN] [0m2025/05/03 19:44:35 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 76867486... rejected from mempool: invalid nonce for pool admission: expected 2, got 38
+[33m[WARN] [0m2025/05/03 19:44:35 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 76867486... rejected from mempool: invalid nonce for pool admission: expected 2, got 38
+[33m[WARN] [0m2025/05/03 19:44:35 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 76867486... rejected from mempool: invalid nonce for pool admission: expected 2, got 38
+[33m[WARN] [0m2025/05/03 19:44:35 blockchain.go:72: [Node-0x2c07] Tx 76867486... rejected from mempool: invalid nonce for pool admission: expected 2, got 38
+[32m[INFO] [0m2025/05/03 19:44:36 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:36 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:36 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:36 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:36 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:36 simple_poa.go:126: [0x296d919a16ed40ee9ba954e67941215698907b48] Proposing Block 17 (d6d10b2bcdb8f83732ef101c9b6a483855741d71092e867805e2bf0240906cde) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:44:36 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:36 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 17 (d6d10b2bcdb8) | Prev: d78341a18783... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:36 network.go:101: Network: Broadcasting Block 17 (d6d10b2bcdb8...) from 0x296d919a16ed40ee9ba954e67941215698907b48
+[32m[INFO] [0m2025/05/03 19:44:36 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:36 blockchain.go:113: [Node-0x2c07] === Appended Block 17 (d6d10b2bcdb8) | Prev: d78341a18783... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:36 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:36 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 17 (d6d10b2bcdb8) | Prev: d78341a18783... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:36 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:36 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 17 (d6d10b2bcdb8) | Prev: d78341a18783... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:36 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:36 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 17 (d6d10b2bcdb8) | Prev: d78341a18783... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:37 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: edf0f449... (To: 0x296d91..., Nonce: 39, Shard: 1)
+[33m[WARN] [0m2025/05/03 19:44:37 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx edf0f449... rejected from mempool: invalid nonce for pool admission: expected 2, got 39
+[33m[WARN] [0m2025/05/03 19:44:37 blockchain.go:72: [Node-0x2c07] Tx edf0f449... rejected from mempool: invalid nonce for pool admission: expected 2, got 39
+[33m[WARN] [0m2025/05/03 19:44:37 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx edf0f449... rejected from mempool: invalid nonce for pool admission: expected 2, got 39
+[33m[WARN] [0m2025/05/03 19:44:37 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx edf0f449... rejected from mempool: invalid nonce for pool admission: expected 2, got 39
+[32m[INFO] [0m2025/05/03 19:44:37 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 986f8825... (To: 0x296d91..., Nonce: 40, Shard: 1)
+[33m[WARN] [0m2025/05/03 19:44:37 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 986f8825... rejected from mempool: invalid nonce for pool admission: expected 2, got 40
+[33m[WARN] [0m2025/05/03 19:44:37 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 986f8825... rejected from mempool: invalid nonce for pool admission: expected 2, got 40
+[33m[WARN] [0m2025/05/03 19:44:37 blockchain.go:72: [Node-0x2c07] Tx 986f8825... rejected from mempool: invalid nonce for pool admission: expected 2, got 40
+[33m[WARN] [0m2025/05/03 19:44:37 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 986f8825... rejected from mempool: invalid nonce for pool admission: expected 2, got 40
+[32m[INFO] [0m2025/05/03 19:44:38 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 1ed18e8b... (To: 0x681c77..., Nonce: 41, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:38 blockchain.go:72: [Node-0x2c07] Tx 1ed18e8b... rejected from mempool: invalid nonce for pool admission: expected 2, got 41
+[33m[WARN] [0m2025/05/03 19:44:38 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 1ed18e8b... rejected from mempool: invalid nonce for pool admission: expected 2, got 41
+[33m[WARN] [0m2025/05/03 19:44:38 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 1ed18e8b... rejected from mempool: invalid nonce for pool admission: expected 2, got 41
+[33m[WARN] [0m2025/05/03 19:44:38 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 1ed18e8b... rejected from mempool: invalid nonce for pool admission: expected 2, got 41
+[32m[INFO] [0m2025/05/03 19:44:39 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: a09bac9c... (To: 0x2c0779..., Nonce: 42, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:39 blockchain.go:72: [Node-0x2c07] Tx a09bac9c... rejected from mempool: invalid nonce for pool admission: expected 2, got 42
+[33m[WARN] [0m2025/05/03 19:44:39 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx a09bac9c... rejected from mempool: invalid nonce for pool admission: expected 2, got 42
+[33m[WARN] [0m2025/05/03 19:44:39 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx a09bac9c... rejected from mempool: invalid nonce for pool admission: expected 2, got 42
+[33m[WARN] [0m2025/05/03 19:44:39 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx a09bac9c... rejected from mempool: invalid nonce for pool admission: expected 2, got 42
+[32m[INFO] [0m2025/05/03 19:44:39 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:39 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:39 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:39 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:39 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:39 simple_poa.go:126: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Proposing Block 18 (5a1b593635ed103666ceb4b5a3a7592903498573be4256c1bd6dabc7559a764c) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:44:39 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:39 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 18 (5a1b593635ed) | Prev: d6d10b2bcdb8... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:39 network.go:101: Network: Broadcasting Block 18 (5a1b593635ed...) from 0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0
+[32m[INFO] [0m2025/05/03 19:44:39 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:39 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 18 (5a1b593635ed) | Prev: d6d10b2bcdb8... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:39 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:39 blockchain.go:113: [Node-0x2c07] === Appended Block 18 (5a1b593635ed) | Prev: d6d10b2bcdb8... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:39 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:39 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 18 (5a1b593635ed) | Prev: d6d10b2bcdb8... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:39 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:39 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 18 (5a1b593635ed) | Prev: d6d10b2bcdb8... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:41 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: baa9ede3... (To: 0x188881..., Nonce: 43, Shard: 2)
+[33m[WARN] [0m2025/05/03 19:44:41 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx baa9ede3... rejected from mempool: invalid nonce for pool admission: expected 2, got 43
+[33m[WARN] [0m2025/05/03 19:44:41 blockchain.go:72: [Node-0x2c07] Tx baa9ede3... rejected from mempool: invalid nonce for pool admission: expected 2, got 43
+[33m[WARN] [0m2025/05/03 19:44:41 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx baa9ede3... rejected from mempool: invalid nonce for pool admission: expected 2, got 43
+[33m[WARN] [0m2025/05/03 19:44:41 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx baa9ede3... rejected from mempool: invalid nonce for pool admission: expected 2, got 43
+[32m[INFO] [0m2025/05/03 19:44:42 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 088aac55... (To: 0x296d91..., Nonce: 44, Shard: 1)
+[33m[WARN] [0m2025/05/03 19:44:42 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 088aac55... rejected from mempool: invalid nonce for pool admission: expected 2, got 44
+[33m[WARN] [0m2025/05/03 19:44:42 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 088aac55... rejected from mempool: invalid nonce for pool admission: expected 2, got 44
+[33m[WARN] [0m2025/05/03 19:44:42 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 088aac55... rejected from mempool: invalid nonce for pool admission: expected 2, got 44
+[33m[WARN] [0m2025/05/03 19:44:42 blockchain.go:72: [Node-0x2c07] Tx 088aac55... rejected from mempool: invalid nonce for pool admission: expected 2, got 44
+[32m[INFO] [0m2025/05/03 19:44:42 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:42 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:42 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:42 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:42 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:42 simple_poa.go:126: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Proposing Block 19 (0a49ca93f5bb836d80405db23ab9a50f9f26bebdab09dbba3b7eb4618e3c1b31) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:44:42 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:42 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 19 (0a49ca93f5bb) | Prev: 5a1b593635ed... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:42 network.go:101: Network: Broadcasting Block 19 (0a49ca93f5bb...) from 0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0
+[32m[INFO] [0m2025/05/03 19:44:42 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:42 blockchain.go:113: [Node-0x2c07] === Appended Block 19 (0a49ca93f5bb) | Prev: 5a1b593635ed... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:42 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:42 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 19 (0a49ca93f5bb) | Prev: 5a1b593635ed... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:42 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:42 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 19 (0a49ca93f5bb) | Prev: 5a1b593635ed... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:42 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:42 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 19 (0a49ca93f5bb) | Prev: 5a1b593635ed... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:44 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 958efe99... (To: 0x2c0779..., Nonce: 45, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:44 blockchain.go:72: [Node-0x2c07] Tx 958efe99... rejected from mempool: invalid nonce for pool admission: expected 2, got 45
+[33m[WARN] [0m2025/05/03 19:44:44 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 958efe99... rejected from mempool: invalid nonce for pool admission: expected 2, got 45
+[33m[WARN] [0m2025/05/03 19:44:44 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 958efe99... rejected from mempool: invalid nonce for pool admission: expected 2, got 45
+[33m[WARN] [0m2025/05/03 19:44:44 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 958efe99... rejected from mempool: invalid nonce for pool admission: expected 2, got 45
+[32m[INFO] [0m2025/05/03 19:44:45 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:45 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:45 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:45 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:45 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:45 simple_poa.go:126: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Proposing Block 20 (1af66c482c57e2764d49214c5a2468a056d3af3a56c5dab2fdaf7891eb5c4bd7) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:44:45 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:45 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 20 (1af66c482c57) | Prev: 0a49ca93f5bb... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:45 network.go:101: Network: Broadcasting Block 20 (1af66c482c57...) from 0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa
+[32m[INFO] [0m2025/05/03 19:44:45 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:45 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 20 (1af66c482c57) | Prev: 0a49ca93f5bb... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:45 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:45 blockchain.go:113: [Node-0x2c07] === Appended Block 20 (1af66c482c57) | Prev: 0a49ca93f5bb... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:45 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:45 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 20 (1af66c482c57) | Prev: 0a49ca93f5bb... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:45 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:45 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 20 (1af66c482c57) | Prev: 0a49ca93f5bb... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:45 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: a48cb684... (To: 0x188881..., Nonce: 46, Shard: 2)
+[33m[WARN] [0m2025/05/03 19:44:45 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx a48cb684... rejected from mempool: invalid nonce for pool admission: expected 2, got 46
+[33m[WARN] [0m2025/05/03 19:44:45 blockchain.go:72: [Node-0x2c07] Tx a48cb684... rejected from mempool: invalid nonce for pool admission: expected 2, got 46
+[33m[WARN] [0m2025/05/03 19:44:45 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx a48cb684... rejected from mempool: invalid nonce for pool admission: expected 2, got 46
+[33m[WARN] [0m2025/05/03 19:44:45 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx a48cb684... rejected from mempool: invalid nonce for pool admission: expected 2, got 46
+[32m[INFO] [0m2025/05/03 19:44:47 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: e36d16a3... (To: 0x188881..., Nonce: 47, Shard: 2)
+[33m[WARN] [0m2025/05/03 19:44:47 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx e36d16a3... rejected from mempool: invalid nonce for pool admission: expected 2, got 47
+[33m[WARN] [0m2025/05/03 19:44:47 blockchain.go:72: [Node-0x2c07] Tx e36d16a3... rejected from mempool: invalid nonce for pool admission: expected 2, got 47
+[33m[WARN] [0m2025/05/03 19:44:47 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx e36d16a3... rejected from mempool: invalid nonce for pool admission: expected 2, got 47
+[33m[WARN] [0m2025/05/03 19:44:47 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx e36d16a3... rejected from mempool: invalid nonce for pool admission: expected 2, got 47
+[32m[INFO] [0m2025/05/03 19:44:47 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: fa10e148... (To: 0x296d91..., Nonce: 48, Shard: 1)
+[33m[WARN] [0m2025/05/03 19:44:47 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx fa10e148... rejected from mempool: invalid nonce for pool admission: expected 2, got 48
+[33m[WARN] [0m2025/05/03 19:44:47 blockchain.go:72: [Node-0x2c07] Tx fa10e148... rejected from mempool: invalid nonce for pool admission: expected 2, got 48
+[33m[WARN] [0m2025/05/03 19:44:47 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx fa10e148... rejected from mempool: invalid nonce for pool admission: expected 2, got 48
+[33m[WARN] [0m2025/05/03 19:44:47 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx fa10e148... rejected from mempool: invalid nonce for pool admission: expected 2, got 48
+[32m[INFO] [0m2025/05/03 19:44:48 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: e6ae3222... (To: 0x681c77..., Nonce: 49, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:48 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx e6ae3222... rejected from mempool: invalid nonce for pool admission: expected 2, got 49
+[33m[WARN] [0m2025/05/03 19:44:48 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx e6ae3222... rejected from mempool: invalid nonce for pool admission: expected 2, got 49
+[32m[INFO] [0m2025/05/03 19:44:48 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:48 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:48 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:48 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:48 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:48 simple_poa.go:126: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Proposing Block 21 (8b9b79d346f9ced962ad4bd6ccfc8f26d0991f472dc7b14251081ae3ae5652fe) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:44:48 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:48 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 21 (8b9b79d346f9) | Prev: 1af66c482c57... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:48 network.go:101: Network: Broadcasting Block 21 (8b9b79d346f9...) from 0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0
+[32m[INFO] [0m2025/05/03 19:44:48 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:48 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 21 (8b9b79d346f9) | Prev: 1af66c482c57... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:48 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:48 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 21 (8b9b79d346f9) | Prev: 1af66c482c57... | State: b9deb6920684... | Txs: 0 ===
+[33m[WARN] [0m2025/05/03 19:44:48 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx e6ae3222... rejected from mempool: invalid nonce for pool admission: expected 2, got 49
+[33m[WARN] [0m2025/05/03 19:44:48 blockchain.go:72: [Node-0x2c07] Tx e6ae3222... rejected from mempool: invalid nonce for pool admission: expected 2, got 49
+[32m[INFO] [0m2025/05/03 19:44:48 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:48 blockchain.go:113: [Node-0x2c07] === Appended Block 21 (8b9b79d346f9) | Prev: 1af66c482c57... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:48 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:48 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 21 (8b9b79d346f9) | Prev: 1af66c482c57... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:49 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: e94cf947... (To: 0x2c0779..., Nonce: 50, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:49 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx e94cf947... rejected from mempool: invalid nonce for pool admission: expected 2, got 50
+[33m[WARN] [0m2025/05/03 19:44:49 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx e94cf947... rejected from mempool: invalid nonce for pool admission: expected 2, got 50
+[33m[WARN] [0m2025/05/03 19:44:49 blockchain.go:72: [Node-0x2c07] Tx e94cf947... rejected from mempool: invalid nonce for pool admission: expected 2, got 50
+[33m[WARN] [0m2025/05/03 19:44:49 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx e94cf947... rejected from mempool: invalid nonce for pool admission: expected 2, got 50
+[32m[INFO] [0m2025/05/03 19:44:51 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: d6dbd4b3... (To: 0x2c0779..., Nonce: 51, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:51 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx d6dbd4b3... rejected from mempool: invalid nonce for pool admission: expected 2, got 51
+[33m[WARN] [0m2025/05/03 19:44:51 blockchain.go:72: [Node-0x2c07] Tx d6dbd4b3... rejected from mempool: invalid nonce for pool admission: expected 2, got 51
+[33m[WARN] [0m2025/05/03 19:44:51 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx d6dbd4b3... rejected from mempool: invalid nonce for pool admission: expected 2, got 51
+[33m[WARN] [0m2025/05/03 19:44:51 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx d6dbd4b3... rejected from mempool: invalid nonce for pool admission: expected 2, got 51
+[32m[INFO] [0m2025/05/03 19:44:51 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:51 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:51 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:51 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:51 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:51 simple_poa.go:126: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Proposing Block 22 (74d04e3cfb3eda17cc9f036cb5ffb82b7ccb112af3bb6c0deb069b50ba7de210) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:44:51 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:51 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 22 (74d04e3cfb3e) | Prev: 8b9b79d346f9... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:51 network.go:101: Network: Broadcasting Block 22 (74d04e3cfb3e...) from 0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa
+[32m[INFO] [0m2025/05/03 19:44:51 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:51 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 22 (74d04e3cfb3e) | Prev: 8b9b79d346f9... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:51 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:51 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 22 (74d04e3cfb3e) | Prev: 8b9b79d346f9... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:51 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:51 blockchain.go:113: [Node-0x2c07] === Appended Block 22 (74d04e3cfb3e) | Prev: 8b9b79d346f9... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:51 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:51 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 22 (74d04e3cfb3e) | Prev: 8b9b79d346f9... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:51 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 25c16549... (To: 0xb9b35f..., Nonce: 52, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:51 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 25c16549... rejected from mempool: invalid nonce for pool admission: expected 2, got 52
+[33m[WARN] [0m2025/05/03 19:44:51 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 25c16549... rejected from mempool: invalid nonce for pool admission: expected 2, got 52
+[33m[WARN] [0m2025/05/03 19:44:51 blockchain.go:72: [Node-0x2c07] Tx 25c16549... rejected from mempool: invalid nonce for pool admission: expected 2, got 52
+[33m[WARN] [0m2025/05/03 19:44:51 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 25c16549... rejected from mempool: invalid nonce for pool admission: expected 2, got 52
+[32m[INFO] [0m2025/05/03 19:44:52 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: bdd76f88... (To: 0x188881..., Nonce: 53, Shard: 2)
+[33m[WARN] [0m2025/05/03 19:44:52 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx bdd76f88... rejected from mempool: invalid nonce for pool admission: expected 2, got 53
+[33m[WARN] [0m2025/05/03 19:44:52 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx bdd76f88... rejected from mempool: invalid nonce for pool admission: expected 2, got 53
+[33m[WARN] [0m2025/05/03 19:44:52 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx bdd76f88... rejected from mempool: invalid nonce for pool admission: expected 2, got 53
+[33m[WARN] [0m2025/05/03 19:44:52 blockchain.go:72: [Node-0x2c07] Tx bdd76f88... rejected from mempool: invalid nonce for pool admission: expected 2, got 53
+[32m[INFO] [0m2025/05/03 19:44:53 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 74dcf11c... (To: 0x681c77..., Nonce: 54, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:53 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 74dcf11c... rejected from mempool: invalid nonce for pool admission: expected 2, got 54
+[33m[WARN] [0m2025/05/03 19:44:53 blockchain.go:72: [Node-0x2c07] Tx 74dcf11c... rejected from mempool: invalid nonce for pool admission: expected 2, got 54
+[33m[WARN] [0m2025/05/03 19:44:53 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 74dcf11c... rejected from mempool: invalid nonce for pool admission: expected 2, got 54
+[33m[WARN] [0m2025/05/03 19:44:53 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 74dcf11c... rejected from mempool: invalid nonce for pool admission: expected 2, got 54
+[32m[INFO] [0m2025/05/03 19:44:54 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: de17ad71... (To: 0x681c77..., Nonce: 55, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:54 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx de17ad71... rejected from mempool: invalid nonce for pool admission: expected 2, got 55
+[33m[WARN] [0m2025/05/03 19:44:54 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx de17ad71... rejected from mempool: invalid nonce for pool admission: expected 2, got 55
+[33m[WARN] [0m2025/05/03 19:44:54 blockchain.go:72: [Node-0x2c07] Tx de17ad71... rejected from mempool: invalid nonce for pool admission: expected 2, got 55
+[33m[WARN] [0m2025/05/03 19:44:54 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx de17ad71... rejected from mempool: invalid nonce for pool admission: expected 2, got 55
+[32m[INFO] [0m2025/05/03 19:44:54 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:54 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:54 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:54 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:54 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:54 simple_poa.go:126: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Proposing Block 23 (26365f2213a08d81f5711525285454cd5cfc3c3cf0b362f3cc825dc36abad155) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:44:54 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:54 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 23 (26365f2213a0) | Prev: 74d04e3cfb3e... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:54 network.go:101: Network: Broadcasting Block 23 (26365f2213a0...) from 0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0
+[32m[INFO] [0m2025/05/03 19:44:54 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:54 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 23 (26365f2213a0) | Prev: 74d04e3cfb3e... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:54 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:54 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 23 (26365f2213a0) | Prev: 74d04e3cfb3e... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:54 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:54 blockchain.go:113: [Node-0x2c07] === Appended Block 23 (26365f2213a0) | Prev: 74d04e3cfb3e... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:54 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:54 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 23 (26365f2213a0) | Prev: 74d04e3cfb3e... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:55 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: d5b89425... (To: 0xb9b35f..., Nonce: 56, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:55 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx d5b89425... rejected from mempool: invalid nonce for pool admission: expected 2, got 56
+[33m[WARN] [0m2025/05/03 19:44:55 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx d5b89425... rejected from mempool: invalid nonce for pool admission: expected 2, got 56
+[33m[WARN] [0m2025/05/03 19:44:55 blockchain.go:72: [Node-0x2c07] Tx d5b89425... rejected from mempool: invalid nonce for pool admission: expected 2, got 56
+[33m[WARN] [0m2025/05/03 19:44:55 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx d5b89425... rejected from mempool: invalid nonce for pool admission: expected 2, got 56
+[32m[INFO] [0m2025/05/03 19:44:57 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 281df6ea... (To: 0x681c77..., Nonce: 57, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:57 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 281df6ea... rejected from mempool: invalid nonce for pool admission: expected 2, got 57
+[33m[WARN] [0m2025/05/03 19:44:57 blockchain.go:72: [Node-0x2c07] Tx 281df6ea... rejected from mempool: invalid nonce for pool admission: expected 2, got 57
+[33m[WARN] [0m2025/05/03 19:44:57 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 281df6ea... rejected from mempool: invalid nonce for pool admission: expected 2, got 57
+[33m[WARN] [0m2025/05/03 19:44:57 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 281df6ea... rejected from mempool: invalid nonce for pool admission: expected 2, got 57
+[32m[INFO] [0m2025/05/03 19:44:57 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:57 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:57 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:57 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:57 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:57 simple_poa.go:126: [0x296d919a16ed40ee9ba954e67941215698907b48] Proposing Block 24 (2ed9812c49a56e120d7829f9966b3c04b0d149a8927a3ad360d64a8fdf4e74d8) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:44:57 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:57 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 24 (2ed9812c49a5) | Prev: 26365f2213a0... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:57 network.go:101: Network: Broadcasting Block 24 (2ed9812c49a5...) from 0x296d919a16ed40ee9ba954e67941215698907b48
+[32m[INFO] [0m2025/05/03 19:44:57 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 7446e2e5... (To: 0x681c77..., Nonce: 58, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:57 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 7446e2e5... rejected from mempool: invalid nonce for pool admission: expected 2, got 58
+[32m[INFO] [0m2025/05/03 19:44:57 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:57 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:57 blockchain.go:113: [Node-0x2c07] === Appended Block 24 (2ed9812c49a5) | Prev: 26365f2213a0... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:57 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 24 (2ed9812c49a5) | Prev: 26365f2213a0... | State: b9deb6920684... | Txs: 0 ===
+[33m[WARN] [0m2025/05/03 19:44:57 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 7446e2e5... rejected from mempool: invalid nonce for pool admission: expected 2, got 58
+[33m[WARN] [0m2025/05/03 19:44:57 blockchain.go:72: [Node-0x2c07] Tx 7446e2e5... rejected from mempool: invalid nonce for pool admission: expected 2, got 58
+[33m[WARN] [0m2025/05/03 19:44:57 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 7446e2e5... rejected from mempool: invalid nonce for pool admission: expected 2, got 58
+[32m[INFO] [0m2025/05/03 19:44:57 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:57 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 24 (2ed9812c49a5) | Prev: 26365f2213a0... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:57 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:44:57 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 24 (2ed9812c49a5) | Prev: 26365f2213a0... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:44:58 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 81cab219... (To: 0x681c77..., Nonce: 59, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:44:58 blockchain.go:72: [Node-0x2c07] Tx 81cab219... rejected from mempool: invalid nonce for pool admission: expected 2, got 59
+[33m[WARN] [0m2025/05/03 19:44:58 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 81cab219... rejected from mempool: invalid nonce for pool admission: expected 2, got 59
+[33m[WARN] [0m2025/05/03 19:44:58 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 81cab219... rejected from mempool: invalid nonce for pool admission: expected 2, got 59
+[33m[WARN] [0m2025/05/03 19:44:58 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 81cab219... rejected from mempool: invalid nonce for pool admission: expected 2, got 59
+[32m[INFO] [0m2025/05/03 19:44:59 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 6080db7f... (To: 0x188881..., Nonce: 60, Shard: 2)
+[33m[WARN] [0m2025/05/03 19:44:59 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 6080db7f... rejected from mempool: invalid nonce for pool admission: expected 2, got 60
+[33m[WARN] [0m2025/05/03 19:44:59 blockchain.go:72: [Node-0x2c07] Tx 6080db7f... rejected from mempool: invalid nonce for pool admission: expected 2, got 60
+[33m[WARN] [0m2025/05/03 19:44:59 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 6080db7f... rejected from mempool: invalid nonce for pool admission: expected 2, got 60
+[33m[WARN] [0m2025/05/03 19:44:59 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 6080db7f... rejected from mempool: invalid nonce for pool admission: expected 2, got 60
+[32m[INFO] [0m2025/05/03 19:45:00 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 00852597... (To: 0x188881..., Nonce: 61, Shard: 2)
+[33m[WARN] [0m2025/05/03 19:45:00 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 00852597... rejected from mempool: invalid nonce for pool admission: expected 2, got 61
+[33m[WARN] [0m2025/05/03 19:45:00 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 00852597... rejected from mempool: invalid nonce for pool admission: expected 2, got 61
+[33m[WARN] [0m2025/05/03 19:45:00 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 00852597... rejected from mempool: invalid nonce for pool admission: expected 2, got 61
+[33m[WARN] [0m2025/05/03 19:45:00 blockchain.go:72: [Node-0x2c07] Tx 00852597... rejected from mempool: invalid nonce for pool admission: expected 2, got 61
+[32m[INFO] [0m2025/05/03 19:45:00 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:00 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:00 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:00 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:00 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:00 simple_poa.go:126: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Proposing Block 25 (ed6d404e9f6e3983cae085e6533646058294d65701e05cf5af44db8452a8af5a) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:45:00 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:00 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 25 (ed6d404e9f6e) | Prev: 2ed9812c49a5... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:00 network.go:101: Network: Broadcasting Block 25 (ed6d404e9f6e...) from 0xb9b35f76679c940012f5b8f2493c1dac6f164a54
+[32m[INFO] [0m2025/05/03 19:45:00 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:00 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:00 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 25 (ed6d404e9f6e) | Prev: 2ed9812c49a5... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:00 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 25 (ed6d404e9f6e) | Prev: 2ed9812c49a5... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:00 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:00 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 25 (ed6d404e9f6e) | Prev: 2ed9812c49a5... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:00 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:00 blockchain.go:113: [Node-0x2c07] === Appended Block 25 (ed6d404e9f6e) | Prev: 2ed9812c49a5... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:00 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 37836d54... (To: 0xb9b35f..., Nonce: 62, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:45:00 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 37836d54... rejected from mempool: invalid nonce for pool admission: expected 2, got 62
+[33m[WARN] [0m2025/05/03 19:45:00 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 37836d54... rejected from mempool: invalid nonce for pool admission: expected 2, got 62
+[33m[WARN] [0m2025/05/03 19:45:00 blockchain.go:72: [Node-0x2c07] Tx 37836d54... rejected from mempool: invalid nonce for pool admission: expected 2, got 62
+[33m[WARN] [0m2025/05/03 19:45:00 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 37836d54... rejected from mempool: invalid nonce for pool admission: expected 2, got 62
+[32m[INFO] [0m2025/05/03 19:45:02 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 8cd8ccf4... (To: 0x2c0779..., Nonce: 63, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:45:02 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 8cd8ccf4... rejected from mempool: invalid nonce for pool admission: expected 2, got 63
+[33m[WARN] [0m2025/05/03 19:45:02 blockchain.go:72: [Node-0x2c07] Tx 8cd8ccf4... rejected from mempool: invalid nonce for pool admission: expected 2, got 63
+[33m[WARN] [0m2025/05/03 19:45:02 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 8cd8ccf4... rejected from mempool: invalid nonce for pool admission: expected 2, got 63
+[33m[WARN] [0m2025/05/03 19:45:02 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 8cd8ccf4... rejected from mempool: invalid nonce for pool admission: expected 2, got 63
+[32m[INFO] [0m2025/05/03 19:45:03 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 10a47c46... (To: 0x681c77..., Nonce: 64, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:45:03 blockchain.go:72: [Node-0x2c07] Tx 10a47c46... rejected from mempool: invalid nonce for pool admission: expected 2, got 64
+[33m[WARN] [0m2025/05/03 19:45:03 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 10a47c46... rejected from mempool: invalid nonce for pool admission: expected 2, got 64
+[33m[WARN] [0m2025/05/03 19:45:03 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 10a47c46... rejected from mempool: invalid nonce for pool admission: expected 2, got 64
+[33m[WARN] [0m2025/05/03 19:45:03 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 10a47c46... rejected from mempool: invalid nonce for pool admission: expected 2, got 64
+[32m[INFO] [0m2025/05/03 19:45:03 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:03 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:03 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:03 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:03 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:03 simple_poa.go:126: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Proposing Block 26 (5889174d2b16dc7a519aae3411f7e950e6ce71ec082ccfcb038997769ff80fb0) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:45:03 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:03 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 26 (5889174d2b16) | Prev: ed6d404e9f6e... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:03 network.go:101: Network: Broadcasting Block 26 (5889174d2b16...) from 0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa
+[32m[INFO] [0m2025/05/03 19:45:03 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:03 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 26 (5889174d2b16) | Prev: ed6d404e9f6e... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:03 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:03 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 26 (5889174d2b16) | Prev: ed6d404e9f6e... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:03 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:03 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 26 (5889174d2b16) | Prev: ed6d404e9f6e... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:03 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:03 blockchain.go:113: [Node-0x2c07] === Appended Block 26 (5889174d2b16) | Prev: ed6d404e9f6e... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:04 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 8cd89734... (To: 0x188881..., Nonce: 65, Shard: 2)
+[33m[WARN] [0m2025/05/03 19:45:04 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 8cd89734... rejected from mempool: invalid nonce for pool admission: expected 2, got 65
+[33m[WARN] [0m2025/05/03 19:45:04 blockchain.go:72: [Node-0x2c07] Tx 8cd89734... rejected from mempool: invalid nonce for pool admission: expected 2, got 65
+[33m[WARN] [0m2025/05/03 19:45:04 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 8cd89734... rejected from mempool: invalid nonce for pool admission: expected 2, got 65
+[33m[WARN] [0m2025/05/03 19:45:04 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 8cd89734... rejected from mempool: invalid nonce for pool admission: expected 2, got 65
+[32m[INFO] [0m2025/05/03 19:45:05 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 8384ace5... (To: 0xb9b35f..., Nonce: 66, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:45:05 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 8384ace5... rejected from mempool: invalid nonce for pool admission: expected 2, got 66
+[33m[WARN] [0m2025/05/03 19:45:05 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 8384ace5... rejected from mempool: invalid nonce for pool admission: expected 2, got 66
+[33m[WARN] [0m2025/05/03 19:45:05 blockchain.go:72: [Node-0x2c07] Tx 8384ace5... rejected from mempool: invalid nonce for pool admission: expected 2, got 66
+[33m[WARN] [0m2025/05/03 19:45:05 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 8384ace5... rejected from mempool: invalid nonce for pool admission: expected 2, got 66
+[32m[INFO] [0m2025/05/03 19:45:06 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 06a35112... (To: 0x188881..., Nonce: 67, Shard: 2)
+[33m[WARN] [0m2025/05/03 19:45:06 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 06a35112... rejected from mempool: invalid nonce for pool admission: expected 2, got 67
+[33m[WARN] [0m2025/05/03 19:45:06 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 06a35112... rejected from mempool: invalid nonce for pool admission: expected 2, got 67
+[33m[WARN] [0m2025/05/03 19:45:06 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 06a35112... rejected from mempool: invalid nonce for pool admission: expected 2, got 67
+[32m[INFO] [0m2025/05/03 19:45:06 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:06 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:06 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:06 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:06 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:06 simple_poa.go:126: [0x296d919a16ed40ee9ba954e67941215698907b48] Proposing Block 27 (4fe5f5dfe0e591d8f161e241083369e08a4343e64901b17006964c0fe8293726) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:45:06 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:06 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 27 (4fe5f5dfe0e5) | Prev: 5889174d2b16... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:06 network.go:101: Network: Broadcasting Block 27 (4fe5f5dfe0e5...) from 0x296d919a16ed40ee9ba954e67941215698907b48
+[33m[WARN] [0m2025/05/03 19:45:06 blockchain.go:72: [Node-0x2c07] Tx 06a35112... rejected from mempool: invalid nonce for pool admission: expected 2, got 67
+[32m[INFO] [0m2025/05/03 19:45:06 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:06 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 27 (4fe5f5dfe0e5) | Prev: 5889174d2b16... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:06 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:06 blockchain.go:113: [Node-0x2c07] === Appended Block 27 (4fe5f5dfe0e5) | Prev: 5889174d2b16... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:06 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:06 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 27 (4fe5f5dfe0e5) | Prev: 5889174d2b16... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:06 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:06 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 27 (4fe5f5dfe0e5) | Prev: 5889174d2b16... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:08 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 7c372a2a... (To: 0x2c0779..., Nonce: 68, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:45:08 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 7c372a2a... rejected from mempool: invalid nonce for pool admission: expected 2, got 68
+[33m[WARN] [0m2025/05/03 19:45:08 blockchain.go:72: [Node-0x2c07] Tx 7c372a2a... rejected from mempool: invalid nonce for pool admission: expected 2, got 68
+[33m[WARN] [0m2025/05/03 19:45:08 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 7c372a2a... rejected from mempool: invalid nonce for pool admission: expected 2, got 68
+[33m[WARN] [0m2025/05/03 19:45:08 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 7c372a2a... rejected from mempool: invalid nonce for pool admission: expected 2, got 68
+[32m[INFO] [0m2025/05/03 19:45:09 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:09 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:09 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:09 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:09 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:09 simple_poa.go:126: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Proposing Block 28 (8e95ffc60e8c1971fd26433ceed797e465faedf5161a5e07e167effde5f967c0) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:45:09 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:09 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 28 (8e95ffc60e8c) | Prev: 4fe5f5dfe0e5... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:09 network.go:101: Network: Broadcasting Block 28 (8e95ffc60e8c...) from 0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0
+[32m[INFO] [0m2025/05/03 19:45:09 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:09 blockchain.go:113: [Node-0x2c07] === Appended Block 28 (8e95ffc60e8c) | Prev: 4fe5f5dfe0e5... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:09 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:09 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 28 (8e95ffc60e8c) | Prev: 4fe5f5dfe0e5... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:09 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:09 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 28 (8e95ffc60e8c) | Prev: 4fe5f5dfe0e5... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:09 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:09 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 28 (8e95ffc60e8c) | Prev: 4fe5f5dfe0e5... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:10 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 90b23af4... (To: 0x2c0779..., Nonce: 69, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:45:10 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 90b23af4... rejected from mempool: invalid nonce for pool admission: expected 2, got 69
+[33m[WARN] [0m2025/05/03 19:45:10 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 90b23af4... rejected from mempool: invalid nonce for pool admission: expected 2, got 69
+[33m[WARN] [0m2025/05/03 19:45:10 blockchain.go:72: [Node-0x2c07] Tx 90b23af4... rejected from mempool: invalid nonce for pool admission: expected 2, got 69
+[33m[WARN] [0m2025/05/03 19:45:10 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 90b23af4... rejected from mempool: invalid nonce for pool admission: expected 2, got 69
+[32m[INFO] [0m2025/05/03 19:45:11 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 200370a9... (To: 0x681c77..., Nonce: 70, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:45:11 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 200370a9... rejected from mempool: invalid nonce for pool admission: expected 2, got 70
+[33m[WARN] [0m2025/05/03 19:45:11 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 200370a9... rejected from mempool: invalid nonce for pool admission: expected 2, got 70
+[33m[WARN] [0m2025/05/03 19:45:11 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 200370a9... rejected from mempool: invalid nonce for pool admission: expected 2, got 70
+[33m[WARN] [0m2025/05/03 19:45:11 blockchain.go:72: [Node-0x2c07] Tx 200370a9... rejected from mempool: invalid nonce for pool admission: expected 2, got 70
+[32m[INFO] [0m2025/05/03 19:45:12 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: e737afb7... (To: 0x2c0779..., Nonce: 71, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:45:12 blockchain.go:72: [Node-0x2c07] Tx e737afb7... rejected from mempool: invalid nonce for pool admission: expected 2, got 71
+[33m[WARN] [0m2025/05/03 19:45:12 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx e737afb7... rejected from mempool: invalid nonce for pool admission: expected 2, got 71
+[33m[WARN] [0m2025/05/03 19:45:12 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx e737afb7... rejected from mempool: invalid nonce for pool admission: expected 2, got 71
+[33m[WARN] [0m2025/05/03 19:45:12 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx e737afb7... rejected from mempool: invalid nonce for pool admission: expected 2, got 71
+[32m[INFO] [0m2025/05/03 19:45:12 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:12 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:12 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:12 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:12 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:12 simple_poa.go:126: [0x296d919a16ed40ee9ba954e67941215698907b48] Proposing Block 29 (5a3bee85b6c5c07944a739679d377ab1600a2a9cb7b65a4a965dfe78a2d3a197) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:45:12 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:12 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 29 (5a3bee85b6c5) | Prev: 8e95ffc60e8c... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:12 network.go:101: Network: Broadcasting Block 29 (5a3bee85b6c5...) from 0x296d919a16ed40ee9ba954e67941215698907b48
+[32m[INFO] [0m2025/05/03 19:45:12 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:12 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 29 (5a3bee85b6c5) | Prev: 8e95ffc60e8c... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:12 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:12 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 29 (5a3bee85b6c5) | Prev: 8e95ffc60e8c... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:12 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:12 blockchain.go:113: [Node-0x2c07] === Appended Block 29 (5a3bee85b6c5) | Prev: 8e95ffc60e8c... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:12 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:12 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 29 (5a3bee85b6c5) | Prev: 8e95ffc60e8c... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:13 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: d5958b47... (To: 0x296d91..., Nonce: 72, Shard: 1)
+[33m[WARN] [0m2025/05/03 19:45:13 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx d5958b47... rejected from mempool: invalid nonce for pool admission: expected 2, got 72
+[33m[WARN] [0m2025/05/03 19:45:13 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx d5958b47... rejected from mempool: invalid nonce for pool admission: expected 2, got 72
+[33m[WARN] [0m2025/05/03 19:45:13 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx d5958b47... rejected from mempool: invalid nonce for pool admission: expected 2, got 72
+[33m[WARN] [0m2025/05/03 19:45:13 blockchain.go:72: [Node-0x2c07] Tx d5958b47... rejected from mempool: invalid nonce for pool admission: expected 2, got 72
+[32m[INFO] [0m2025/05/03 19:45:14 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 8b974d60... (To: 0xb9b35f..., Nonce: 73, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:45:14 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 8b974d60... rejected from mempool: invalid nonce for pool admission: expected 2, got 73
+[33m[WARN] [0m2025/05/03 19:45:14 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 8b974d60... rejected from mempool: invalid nonce for pool admission: expected 2, got 73
+[33m[WARN] [0m2025/05/03 19:45:14 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 8b974d60... rejected from mempool: invalid nonce for pool admission: expected 2, got 73
+[33m[WARN] [0m2025/05/03 19:45:14 blockchain.go:72: [Node-0x2c07] Tx 8b974d60... rejected from mempool: invalid nonce for pool admission: expected 2, got 73
+[32m[INFO] [0m2025/05/03 19:45:15 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: ca79fad2... (To: 0x296d91..., Nonce: 74, Shard: 1)
+[33m[WARN] [0m2025/05/03 19:45:15 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx ca79fad2... rejected from mempool: invalid nonce for pool admission: expected 2, got 74
+[33m[WARN] [0m2025/05/03 19:45:15 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx ca79fad2... rejected from mempool: invalid nonce for pool admission: expected 2, got 74
+[33m[WARN] [0m2025/05/03 19:45:15 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx ca79fad2... rejected from mempool: invalid nonce for pool admission: expected 2, got 74
+[33m[WARN] [0m2025/05/03 19:45:15 blockchain.go:72: [Node-0x2c07] Tx ca79fad2... rejected from mempool: invalid nonce for pool admission: expected 2, got 74
+[32m[INFO] [0m2025/05/03 19:45:15 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:15 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:15 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:15 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:15 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:15 simple_poa.go:126: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Proposing Block 30 (11c16f6221a5a69b583dd208ef200e72838f51c98166ceb75c412d00bdf1d99d) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:45:15 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:15 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 30 (11c16f6221a5) | Prev: 5a3bee85b6c5... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:15 network.go:101: Network: Broadcasting Block 30 (11c16f6221a5...) from 0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa
+[32m[INFO] [0m2025/05/03 19:45:15 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:15 blockchain.go:113: [Node-0x2c07] === Appended Block 30 (11c16f6221a5) | Prev: 5a3bee85b6c5... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:15 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:15 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 30 (11c16f6221a5) | Prev: 5a3bee85b6c5... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:15 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:15 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 30 (11c16f6221a5) | Prev: 5a3bee85b6c5... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:15 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:15 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 30 (11c16f6221a5) | Prev: 5a3bee85b6c5... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:16 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 05f13d21... (To: 0xb9b35f..., Nonce: 75, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:45:16 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 05f13d21... rejected from mempool: invalid nonce for pool admission: expected 2, got 75
+[33m[WARN] [0m2025/05/03 19:45:16 blockchain.go:72: [Node-0x2c07] Tx 05f13d21... rejected from mempool: invalid nonce for pool admission: expected 2, got 75
+[33m[WARN] [0m2025/05/03 19:45:16 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 05f13d21... rejected from mempool: invalid nonce for pool admission: expected 2, got 75
+[33m[WARN] [0m2025/05/03 19:45:16 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 05f13d21... rejected from mempool: invalid nonce for pool admission: expected 2, got 75
+[32m[INFO] [0m2025/05/03 19:45:17 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 5a47b84c... (To: 0x681c77..., Nonce: 76, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:45:17 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 5a47b84c... rejected from mempool: invalid nonce for pool admission: expected 2, got 76
+[33m[WARN] [0m2025/05/03 19:45:17 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 5a47b84c... rejected from mempool: invalid nonce for pool admission: expected 2, got 76
+[33m[WARN] [0m2025/05/03 19:45:17 blockchain.go:72: [Node-0x2c07] Tx 5a47b84c... rejected from mempool: invalid nonce for pool admission: expected 2, got 76
+[33m[WARN] [0m2025/05/03 19:45:17 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 5a47b84c... rejected from mempool: invalid nonce for pool admission: expected 2, got 76
+[32m[INFO] [0m2025/05/03 19:45:18 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: a06a063f... (To: 0xb9b35f..., Nonce: 77, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:45:18 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx a06a063f... rejected from mempool: invalid nonce for pool admission: expected 2, got 77
+[33m[WARN] [0m2025/05/03 19:45:18 blockchain.go:72: [Node-0x2c07] Tx a06a063f... rejected from mempool: invalid nonce for pool admission: expected 2, got 77
+[33m[WARN] [0m2025/05/03 19:45:18 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx a06a063f... rejected from mempool: invalid nonce for pool admission: expected 2, got 77
+[33m[WARN] [0m2025/05/03 19:45:18 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx a06a063f... rejected from mempool: invalid nonce for pool admission: expected 2, got 77
+[32m[INFO] [0m2025/05/03 19:45:18 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:18 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:18 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:18 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:18 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:18 simple_poa.go:126: [0x296d919a16ed40ee9ba954e67941215698907b48] Proposing Block 31 (ac2f9962deb9258527c78e293f338ecc505fc1c1cf52a232280814d21787825d) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:45:18 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:18 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 31 (ac2f9962deb9) | Prev: 11c16f6221a5... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:18 network.go:101: Network: Broadcasting Block 31 (ac2f9962deb9...) from 0x296d919a16ed40ee9ba954e67941215698907b48
+[32m[INFO] [0m2025/05/03 19:45:18 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:18 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:18 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 31 (ac2f9962deb9) | Prev: 11c16f6221a5... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:18 blockchain.go:113: [Node-0x2c07] === Appended Block 31 (ac2f9962deb9) | Prev: 11c16f6221a5... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:18 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:18 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 31 (ac2f9962deb9) | Prev: 11c16f6221a5... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:18 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:18 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 31 (ac2f9962deb9) | Prev: 11c16f6221a5... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:20 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: f696e1cf... (To: 0x2c0779..., Nonce: 78, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:45:20 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx f696e1cf... rejected from mempool: invalid nonce for pool admission: expected 2, got 78
+[33m[WARN] [0m2025/05/03 19:45:20 blockchain.go:72: [Node-0x2c07] Tx f696e1cf... rejected from mempool: invalid nonce for pool admission: expected 2, got 78
+[33m[WARN] [0m2025/05/03 19:45:20 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx f696e1cf... rejected from mempool: invalid nonce for pool admission: expected 2, got 78
+[33m[WARN] [0m2025/05/03 19:45:20 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx f696e1cf... rejected from mempool: invalid nonce for pool admission: expected 2, got 78
+[32m[INFO] [0m2025/05/03 19:45:21 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: b6a3443d... (To: 0x681c77..., Nonce: 79, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:45:21 blockchain.go:72: [Node-0x2c07] Tx b6a3443d... rejected from mempool: invalid nonce for pool admission: expected 2, got 79
+[33m[WARN] [0m2025/05/03 19:45:21 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx b6a3443d... rejected from mempool: invalid nonce for pool admission: expected 2, got 79
+[33m[WARN] [0m2025/05/03 19:45:21 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx b6a3443d... rejected from mempool: invalid nonce for pool admission: expected 2, got 79
+[33m[WARN] [0m2025/05/03 19:45:21 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx b6a3443d... rejected from mempool: invalid nonce for pool admission: expected 2, got 79
+[32m[INFO] [0m2025/05/03 19:45:21 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:21 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:21 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:21 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:21 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:21 simple_poa.go:126: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Proposing Block 32 (792c229e5b6cf9baffeaaacc3b475def702816a7ef0ab8d4a7a9c9d1f75473ec) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:45:21 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:21 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 32 (792c229e5b6c) | Prev: ac2f9962deb9... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:21 network.go:101: Network: Broadcasting Block 32 (792c229e5b6c...) from 0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa
+[32m[INFO] [0m2025/05/03 19:45:21 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:21 blockchain.go:113: [Node-0x2c07] === Appended Block 32 (792c229e5b6c) | Prev: ac2f9962deb9... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:21 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:21 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 32 (792c229e5b6c) | Prev: ac2f9962deb9... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:21 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:21 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 32 (792c229e5b6c) | Prev: ac2f9962deb9... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:21 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:21 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 32 (792c229e5b6c) | Prev: ac2f9962deb9... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:22 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: ee5e7f73... (To: 0xb9b35f..., Nonce: 80, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:45:22 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx ee5e7f73... rejected from mempool: invalid nonce for pool admission: expected 2, got 80
+[33m[WARN] [0m2025/05/03 19:45:22 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx ee5e7f73... rejected from mempool: invalid nonce for pool admission: expected 2, got 80
+[33m[WARN] [0m2025/05/03 19:45:22 blockchain.go:72: [Node-0x2c07] Tx ee5e7f73... rejected from mempool: invalid nonce for pool admission: expected 2, got 80
+[33m[WARN] [0m2025/05/03 19:45:22 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx ee5e7f73... rejected from mempool: invalid nonce for pool admission: expected 2, got 80
+[32m[INFO] [0m2025/05/03 19:45:23 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: c5892955... (To: 0x296d91..., Nonce: 81, Shard: 1)
+[33m[WARN] [0m2025/05/03 19:45:23 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx c5892955... rejected from mempool: invalid nonce for pool admission: expected 2, got 81
+[33m[WARN] [0m2025/05/03 19:45:23 blockchain.go:72: [Node-0x2c07] Tx c5892955... rejected from mempool: invalid nonce for pool admission: expected 2, got 81
+[33m[WARN] [0m2025/05/03 19:45:23 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx c5892955... rejected from mempool: invalid nonce for pool admission: expected 2, got 81
+[33m[WARN] [0m2025/05/03 19:45:23 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx c5892955... rejected from mempool: invalid nonce for pool admission: expected 2, got 81
+[32m[INFO] [0m2025/05/03 19:45:24 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:24 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:24 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:24 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:24 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:24 simple_poa.go:126: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Proposing Block 33 (7c3916e25b8f6c4b83c02724431a2680d28ee9947b59d7062db0040f64bab953) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:45:24 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:24 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 33 (7c3916e25b8f) | Prev: 792c229e5b6c... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:24 network.go:101: Network: Broadcasting Block 33 (7c3916e25b8f...) from 0xb9b35f76679c940012f5b8f2493c1dac6f164a54
+[32m[INFO] [0m2025/05/03 19:45:24 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:24 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 33 (7c3916e25b8f) | Prev: 792c229e5b6c... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:24 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:24 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 33 (7c3916e25b8f) | Prev: 792c229e5b6c... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:24 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:24 blockchain.go:113: [Node-0x2c07] === Appended Block 33 (7c3916e25b8f) | Prev: 792c229e5b6c... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:24 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 1fa2be0a... (To: 0x2c0779..., Nonce: 82, Shard: 0)
+[32m[INFO] [0m2025/05/03 19:45:24 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:24 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 33 (7c3916e25b8f) | Prev: 792c229e5b6c... | State: b9deb6920684... | Txs: 0 ===
+[33m[WARN] [0m2025/05/03 19:45:24 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 1fa2be0a... rejected from mempool: invalid nonce for pool admission: expected 2, got 82
+[33m[WARN] [0m2025/05/03 19:45:24 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 1fa2be0a... rejected from mempool: invalid nonce for pool admission: expected 2, got 82
+[33m[WARN] [0m2025/05/03 19:45:24 blockchain.go:72: [Node-0x2c07] Tx 1fa2be0a... rejected from mempool: invalid nonce for pool admission: expected 2, got 82
+[33m[WARN] [0m2025/05/03 19:45:24 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 1fa2be0a... rejected from mempool: invalid nonce for pool admission: expected 2, got 82
+[32m[INFO] [0m2025/05/03 19:45:26 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 9aaa02f8... (To: 0x296d91..., Nonce: 83, Shard: 1)
+[33m[WARN] [0m2025/05/03 19:45:26 blockchain.go:72: [Node-0x2c07] Tx 9aaa02f8... rejected from mempool: invalid nonce for pool admission: expected 2, got 83
+[33m[WARN] [0m2025/05/03 19:45:26 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 9aaa02f8... rejected from mempool: invalid nonce for pool admission: expected 2, got 83
+[33m[WARN] [0m2025/05/03 19:45:26 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 9aaa02f8... rejected from mempool: invalid nonce for pool admission: expected 2, got 83
+[33m[WARN] [0m2025/05/03 19:45:26 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 9aaa02f8... rejected from mempool: invalid nonce for pool admission: expected 2, got 83
+[32m[INFO] [0m2025/05/03 19:45:27 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 6e8e0c27... (To: 0x296d91..., Nonce: 84, Shard: 1)
+[33m[WARN] [0m2025/05/03 19:45:27 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 6e8e0c27... rejected from mempool: invalid nonce for pool admission: expected 2, got 84
+[33m[WARN] [0m2025/05/03 19:45:27 blockchain.go:72: [Node-0x2c07] Tx 6e8e0c27... rejected from mempool: invalid nonce for pool admission: expected 2, got 84
+[33m[WARN] [0m2025/05/03 19:45:27 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 6e8e0c27... rejected from mempool: invalid nonce for pool admission: expected 2, got 84
+[33m[WARN] [0m2025/05/03 19:45:27 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 6e8e0c27... rejected from mempool: invalid nonce for pool admission: expected 2, got 84
+[32m[INFO] [0m2025/05/03 19:45:27 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:27 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:27 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:27 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:27 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:27 simple_poa.go:126: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Proposing Block 34 (a6a5cdcc1ae056381238e014a0b5849f42d60e7e567a9c3b7685a227737fbef5) as VRF Leader with 4 signatures
+[32m[INFO] [0m2025/05/03 19:45:27 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:27 blockchain.go:113: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] === Appended Block 34 (a6a5cdcc1ae0) | Prev: 7c3916e25b8f... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:27 network.go:101: Network: Broadcasting Block 34 (a6a5cdcc1ae0...) from 0xb9b35f76679c940012f5b8f2493c1dac6f164a54
+[32m[INFO] [0m2025/05/03 19:45:27 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:27 blockchain.go:113: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] === Appended Block 34 (a6a5cdcc1ae0) | Prev: 7c3916e25b8f... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:27 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:27 blockchain.go:113: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] === Appended Block 34 (a6a5cdcc1ae0) | Prev: 7c3916e25b8f... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:27 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:27 blockchain.go:113: [Node-0x2c07] === Appended Block 34 (a6a5cdcc1ae0) | Prev: 7c3916e25b8f... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:27 merkle.go:36: Creating Merkle tree with transaction data
+[32m[INFO] [0m2025/05/03 19:45:27 blockchain.go:113: [0x296d919a16ed40ee9ba954e67941215698907b48] === Appended Block 34 (a6a5cdcc1ae0) | Prev: 7c3916e25b8f... | State: b9deb6920684... | Txs: 0 ===
+[32m[INFO] [0m2025/05/03 19:45:28 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 01043adc... (To: 0x2c0779..., Nonce: 85, Shard: 0)
+[33m[WARN] [0m2025/05/03 19:45:28 blockchain.go:72: [Node-0x2c07] Tx 01043adc... rejected from mempool: invalid nonce for pool admission: expected 2, got 85
+[33m[WARN] [0m2025/05/03 19:45:28 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 01043adc... rejected from mempool: invalid nonce for pool admission: expected 2, got 85
+[33m[WARN] [0m2025/05/03 19:45:28 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 01043adc... rejected from mempool: invalid nonce for pool admission: expected 2, got 85
+[33m[WARN] [0m2025/05/03 19:45:28 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 01043adc... rejected from mempool: invalid nonce for pool admission: expected 2, got 85
+[32m[INFO] [0m2025/05/03 19:45:29 main.go:105: ==> [0x296d919a16ed40ee9ba954e67941215698907b48] Created Tx: 4c9ded28... (To: 0x296d91..., Nonce: 86, Shard: 1)
+[33m[WARN] [0m2025/05/03 19:45:29 blockchain.go:72: [Node-0x2c07] Tx 4c9ded28... rejected from mempool: invalid nonce for pool admission: expected 2, got 86
+[33m[WARN] [0m2025/05/03 19:45:29 blockchain.go:72: [0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa] Tx 4c9ded28... rejected from mempool: invalid nonce for pool admission: expected 2, got 86
+[33m[WARN] [0m2025/05/03 19:45:29 blockchain.go:72: [0xb9b35f76679c940012f5b8f2493c1dac6f164a54] Tx 4c9ded28... rejected from mempool: invalid nonce for pool admission: expected 2, got 86
+[33m[WARN] [0m2025/05/03 19:45:29 blockchain.go:72: [0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0] Tx 4c9ded28... rejected from mempool: invalid nonce for pool admission: expected 2, got 86
+[32m[INFO] [0m2025/05/03 19:45:30 main.go:117: --- Initiating Graceful Shutdown ---
+[32m[INFO] [0m2025/05/03 19:45:30 main.go:119: Stopping nodes...
+[32m[INFO] [0m2025/05/03 19:45:30 node.go:163: Node 0x296d919a16ed40ee9ba954e67941215698907b48 shutting down...
+[32m[INFO] [0m2025/05/03 19:45:30 node.go:147: Node 0x296d919a16ed40ee9ba954e67941215698907b48 stopping proposal loop.
+[32m[INFO] [0m2025/05/03 19:45:30 main.go:98: Stopping transaction simulator.
+[32m[INFO] [0m2025/05/03 19:45:30 main.go:98: Transaction simulator loop exited.
+[32m[INFO] [0m2025/05/03 19:45:30 node.go:173: Node 0x296d919a16ed40ee9ba954e67941215698907b48 shutdown complete.
+[32m[INFO] [0m2025/05/03 19:45:30 node.go:163: Node 0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa shutting down...
+[32m[INFO] [0m2025/05/03 19:45:30 node.go:147: Node 0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa stopping proposal loop.
+[32m[INFO] [0m2025/05/03 19:45:30 node.go:173: Node 0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa shutdown complete.
+[32m[INFO] [0m2025/05/03 19:45:30 node.go:163: Node 0xb9b35f76679c940012f5b8f2493c1dac6f164a54 shutting down...
+[32m[INFO] [0m2025/05/03 19:45:30 node.go:147: Node 0xb9b35f76679c940012f5b8f2493c1dac6f164a54 stopping proposal loop.
+[32m[INFO] [0m2025/05/03 19:45:30 node.go:173: Node 0xb9b35f76679c940012f5b8f2493c1dac6f164a54 shutdown complete.
+[32m[INFO] [0m2025/05/03 19:45:30 node.go:163: Node 0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0 shutting down...
+[32m[INFO] [0m2025/05/03 19:45:30 node.go:147: Node 0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0 stopping proposal loop.
+[32m[INFO] [0m2025/05/03 19:45:30 node.go:173: Node 0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0 shutdown complete.
+[32m[INFO] [0m2025/05/03 19:45:30 node.go:163: Node Node-0x2c07 shutting down...
+[32m[INFO] [0m2025/05/03 19:45:30 node.go:155: Node Node-0x2c07 stopping listener.
+[32m[INFO] [0m2025/05/03 19:45:30 node.go:173: Node Node-0x2c07 shutdown complete.
+[32m[INFO] [0m2025/05/03 19:45:30 main.go:121: Unregistering nodes...
+[32m[INFO] [0m2025/05/03 19:45:30 network.go:60: Network: Unregistered node 0x296d919a16ed40ee9ba954e67941215698907b48 (Total: 4)
+[32m[INFO] [0m2025/05/03 19:45:30 network.go:60: Network: Unregistered node 0x188881e5e9bfa32f92b37a0e48dc45abbc2bbcfa (Total: 3)
+[32m[INFO] [0m2025/05/03 19:45:30 network.go:60: Network: Unregistered node 0xb9b35f76679c940012f5b8f2493c1dac6f164a54 (Total: 2)
+[32m[INFO] [0m2025/05/03 19:45:30 network.go:60: Network: Unregistered node 0x681c77b4c89736c3ebc0d69dc30c8e6995d89eb0 (Total: 1)
+[32m[INFO] [0m2025/05/03 19:45:30 network.go:60: Network: Unregistered node Node-0x2c07 (Total: 0)
+[32m[INFO] [0m2025/05/03 19:45:30 logger.go:100: Closing log file: blockchain.log
