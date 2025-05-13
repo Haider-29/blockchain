@@ -1,0 +1,1 @@
+$env:LOG_LEVEL="DEBUG"; go run main.go
